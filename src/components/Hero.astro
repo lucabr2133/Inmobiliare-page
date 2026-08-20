@@ -1,0 +1,444 @@
+---
+// Hero.astro — Vibrant Multi-Color High-Energy Hero
+---
+
+<section class="hero" id="inicio" aria-label="Hero principal">
+  <!-- Background Image with Multi-Color Atmosphere -->
+  <div class="hero__bg" id="hero-bg">
+    <img
+      src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+      alt="Hamburguesa artesanal Wagyu con queso fundido y costra dorada"
+      class="hero__bg-img"
+      id="hero-bg-img"
+      fetchpriority="high"
+      loading="eager"
+    />
+    <div class="hero__overlay"></div>
+    <div class="hero__glow hero__glow--flame"></div>
+    <div class="hero__glow hero__glow--cobalt"></div>
+  </div>
+
+  <!-- Decorative Side Tag -->
+  <div class="hero__side-tag" aria-hidden="true">
+    <span>AUTOR · FUEGO · 2025</span>
+  </div>
+
+  <div class="container hero__content">
+    <!-- Meta tag -->
+    <div class="hero__meta" id="hero-tag">
+      <span class="hero__badge">⚡ ATELIER GASTRONOMIQUE</span>
+      <span class="hero__sep">·</span>
+      <span class="hero__loc">Palermo Soho, Buenos Aires</span>
+    </div>
+
+    <!-- Bold Heading with Multi-Color Emphasis -->
+    <h1 class="hero__heading display-heading" id="hero-heading">
+      Fuego,<br />
+      <span class="hero__accent-text">Materia</span><br />
+      &amp; Técnica
+    </h1>
+
+    <p class="hero__sub" id="hero-sub">
+      La hamburguesa elevada al estatus de alta gastronomía.
+      Blend de carne 100% Wagyu madurada, pan brioche de masa madre viva 48h y coctelería de autor.
+    </p>
+
+    <!-- Multi-color Specs Grid -->
+    <div class="hero__specs" id="hero-specs">
+      <div class="spec-card spec-card--flame">
+        <span class="spec-card__val">A5</span>
+        <span class="spec-card__lbl">Wagyu Criollo</span>
+      </div>
+      <div class="spec-card spec-card--saffron">
+        <span class="spec-card__val">48H</span>
+        <span class="spec-card__lbl">Masa Madre</span>
+      </div>
+      <div class="spec-card spec-card--mint">
+        <span class="spec-card__val">300°C</span>
+        <span class="spec-card__lbl">Maillard Smash</span>
+      </div>
+      <div class="spec-card spec-card--cobalt">
+        <span class="spec-card__val">8 PAX</span>
+        <span class="spec-card__lbl">Chef's Table</span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="hero__actions" id="hero-actions">
+      <a href="#propiedades" class="btn btn-gold">
+        <span>Explorar la Carta</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="#contacto" class="btn btn-outline">
+        <span>Mesa del Chef</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Cue -->
+  <div class="hero__scroll" id="hero-scroll" aria-hidden="true">
+    <div class="hero__scroll-bar"></div>
+    <span class="hero__scroll-txt">DESCUBRIR</span>
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #090D16;
+}
+
+/* Background */
+.hero__bg { position: absolute; inset: 0; z-index: 0; }
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: brightness(0.65) contrast(1.15) saturate(1.1);
+  transform: scale(1.06);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 45%,
+    rgba(11, 15, 25, 0.4) 0%,
+    rgba(11, 15, 25, 0.8) 55%,
+    rgba(7, 10, 16, 0.98) 100%
+  );
+}
+
+.hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+
+.hero__glow--flame {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.25) 0%, rgba(255, 183, 3, 0.1) 60%, transparent 80%);
+  top: 25%;
+  left: 20%;
+}
+
+.hero__glow--cobalt {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(6, 214, 160, 0.08) 60%, transparent 80%);
+  bottom: 10%;
+  right: 15%;
+}
+
+/* Side vertical tag */
+.hero__side-tag {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 3rem);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: rgba(255, 183, 3, 0.7);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* Content */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: calc(var(--navbar-h) + 3.5rem);
+  padding-bottom: 6.5rem;
+}
+
+/* Initial states before reveal animation */
+.hero__meta,
+.hero__heading,
+.hero__sub,
+.hero__specs,
+.hero__actions,
+.hero__scroll {
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+/* Meta */
+.hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero__badge {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--grad-sunset);
+  color: #FFFFFF;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+}
+
+.hero__sep {
+  color: rgba(255, 183, 3, 0.6);
+  font-size: 1.2rem;
+}
+
+.hero__loc {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+  font-weight: 500;
+}
+
+/* Heading */
+.hero__heading {
+  font-size: clamp(3.8rem, 8vw, 7rem);
+  color: #FFFFFF;
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+}
+
+.hero__accent-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(135deg, #FFB703 0%, #FF5722 50%, #EF233C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 4px 20px rgba(255, 87, 34, 0.4));
+}
+
+/* Subheading */
+.hero__sub {
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  color: var(--color-cream-muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+
+/* Multi-color Specs Cards */
+.hero__specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 2.75rem;
+  max-width: 620px;
+}
+
+.spec-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  background: rgba(22, 31, 51, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.spec-card:hover {
+  transform: translateY(-4px);
+}
+
+.spec-card--flame { border-bottom: 2px solid #FF5722; }
+.spec-card--flame .spec-card__val { color: #FF5722; }
+
+.spec-card--saffron { border-bottom: 2px solid #FFB703; }
+.spec-card--saffron .spec-card__val { color: #FFB703; }
+
+.spec-card--mint { border-bottom: 2px solid #06D6A0; }
+.spec-card--mint .spec-card__val { color: #06D6A0; }
+
+.spec-card--cobalt { border-bottom: 2px solid #3B82F6; }
+.spec-card--cobalt .spec-card__val { color: #3B82F6; }
+
+.spec-card__val {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.spec-card__lbl {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+  font-weight: 600;
+}
+
+/* Actions */
+.hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Scroll Cue */
+.hero__scroll {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.hero__scroll-bar {
+  width: 2px;
+  height: 48px;
+  background: var(--grad-flame);
+  border-radius: 1px;
+  animation: scroll-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.2; transform: scaleY(0.4); transform-origin: top; }
+  50%       { opacity: 1;   transform: scaleY(1); }
+}
+
+.hero__scroll-txt {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero__heading { font-size: clamp(2.8rem, 12vw, 4.2rem); }
+  .hero__content { padding-top: calc(var(--navbar-h) + 2rem); }
+  .hero__specs { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+  .hero__actions { width: 100%; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+  .hero__side-tag { display: none; }
+}
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { SplitText } from 'gsap/SplitText';
+
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  let hasRevealed = false;
+
+  const revealHero = () => {
+    if (hasRevealed) return;
+    hasRevealed = true;
+
+    const heading = document.getElementById('hero-heading');
+    const specs   = document.getElementById('hero-specs');
+    const heroTl  = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    // Make ALL parent containers visible before animating their content
+    gsap.set(['#hero-tag', '#hero-heading', '#hero-sub', '#hero-specs', '#hero-actions', '#hero-scroll'], { visibility: 'visible' });
+
+    // 1. Heading — SplitText word cascade
+    if (heading) {
+      const split = new SplitText(heading, { type: 'words,chars' });
+      heroTl.fromTo(split.words,
+        { opacity: 0, yPercent: 120, rotateX: -30, scale: 0.9, transformOrigin: '0% 50% -50' },
+        {
+          opacity: 1, yPercent: 0, rotateX: 0, scale: 1,
+          duration: 1.4, stagger: 0.05, ease: 'expo.out',
+          onComplete: () => split.revert()
+        }
+      );
+    }
+
+    // 2. Cascade the rest with overlapping timings
+    heroTl
+      .fromTo('#hero-tag',
+        { opacity: 0, y: 25 },
+        { opacity: 1, y: 0, duration: 1, ease: 'expo.out', clearProps: 'transform' },
+        '-=1.1'
+      )
+      .fromTo('#hero-sub',
+        { opacity: 0, y: 25 },
+        { opacity: 1, y: 0, duration: 1, ease: 'expo.out', clearProps: 'transform' },
+        '-=0.9'
+      )
+      .fromTo('.spec-card',
+        { opacity: 0, y: 30, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.08, ease: 'back.out(1.5)', clearProps: 'transform' },
+        '-=0.85'
+      )
+      .fromTo('#hero-actions',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, ease: 'expo.out', clearProps: 'transform' },
+        '-=0.75'
+      )
+      .fromTo('#hero-scroll',
+        { opacity: 0 },
+        { opacity: 1, duration: 1.2, ease: 'power2.out' },
+        '-=0.4'
+      );
+
+    // Navbar entrance slide-down (separate tween with delay)
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+      gsap.fromTo(navbar,
+        { y: -30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: 'expo.out', delay: 0.3, clearProps: 'transform' }
+      );
+    }
+  };
+
+  // Robust synchronization with preloader
+  // @ts-ignore
+  if (window.isPreloaderRevealed) {
+    revealHero();
+  } else {
+    window.addEventListener('preloaderReveal', revealHero);
+    window.addEventListener('preloaderComplete', revealHero);
+
+    // Failsafe: if no preloader exists on this page
+    if (!document.getElementById('preloader')) {
+      revealHero();
+    }
+  }
+
+  // Parallax on hero background image
+  gsap.to('#hero-bg-img', {
+    yPercent: 15,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#inicio',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+</script>

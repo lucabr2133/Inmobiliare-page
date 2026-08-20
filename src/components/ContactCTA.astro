@@ -1,0 +1,473 @@
+---
+// ContactCTA.astro — Reservas & Concierge (Multi-Color)
+---
+
+<section class="contact-section" id="contacto" aria-labelledby="contact-heading">
+  <div class="contact-section__inner">
+    <!-- Left panel: Info & Concierge -->
+    <div class="contact-panel contact-panel--info">
+      <div class="contact-panel__content">
+        <span class="eyebrow">CONCIERGE &amp; RESERVAS</span>
+        <span class="gold-line"></span>
+        <h2 class="display-heading contact-heading" id="contact-heading">
+          Asegure su <span class="highlight-flame">Mesa</span>
+        </h2>
+        <p class="contact-intro">
+          Debido a nuestro aforo reducido y al proceso de maduración de nuestras carnes, recomendamos reservar con al menos 48 horas de anticipación.
+        </p>
+
+        <!-- Contact info with Multi-Color Icons -->
+        <div class="contact-info-list" role="list">
+          <div class="contact-info-item" role="listitem">
+            <div class="contact-info-icon contact-info-icon--flame" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-info-label" style="color: #FF5722;">Atelier Palermo</span>
+              <span class="contact-info-value">Honduras 5580 · Palermo Soho, Buenos Aires</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item" role="listitem">
+            <div class="contact-info-icon contact-info-icon--saffron" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.1 19.79 19.79 0 0 1 1.63 2.55a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-info-label" style="color: #FFB703;">Línea Directa Concierge</span>
+              <span class="contact-info-value">+54 11 5500-1111</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item" role="listitem">
+            <div class="contact-info-icon contact-info-icon--mint" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-info-label" style="color: #06D6A0;">Eventos &amp; Galas Privadas</span>
+              <span class="contact-info-value">concierge@eliteatelier.com.ar</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item" role="listitem">
+            <div class="contact-info-icon contact-info-icon--cobalt" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-info-label" style="color: #3B82F6;">Turnos de Servicio</span>
+              <span class="contact-info-value">Martes a Domingo · 20:00 y 22:30 hs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel: Booking Form -->
+    <div class="contact-panel contact-panel--form">
+      <form class="contact-form" id="contact-form" novalidate aria-label="Formulario de reserva">
+        <h3 class="contact-form__title">Solicitud de Reserva</h3>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contact-name" class="form-label">Nombre y Apellido <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="contact-name"
+              name="nombre"
+              class="form-input"
+              placeholder="Ej: Sebastián Thorne"
+              required
+              autocomplete="name"
+              aria-required="true"
+            />
+          </div>
+          <div class="form-field">
+            <label for="contact-email" class="form-label">Email de Contacto <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              class="form-input"
+              placeholder="sebastian@ejemplo.com"
+              required
+              autocomplete="email"
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contact-phone" class="form-label">Teléfono / WhatsApp <span aria-hidden="true">*</span></label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="telefono"
+              class="form-input"
+              placeholder="+54 11 9999-9999"
+              required
+              autocomplete="tel"
+            />
+          </div>
+          <div class="form-field">
+            <label for="contact-type" class="form-label">Experiencia Deseada <span aria-hidden="true">*</span></label>
+            <select
+              id="contact-type"
+              name="tipo-consulta"
+              class="form-select"
+              required
+              aria-required="true"
+            >
+              <option value="" disabled selected>Seleccione experiencia</option>
+              <option value="salon">Mesa en Salón Clandestino</option>
+              <option value="chefs-table">Chef's Table Omakase (5 Pasos)</option>
+              <option value="cava">La Cava &amp; Degustación Privada</option>
+              <option value="gala">Atelier Privé (Evento Exclusivo)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="contact-message" class="form-label">Fecha, Horario y Cantidad de Personas</label>
+          <textarea
+            id="contact-message"
+            name="mensaje"
+            class="form-textarea"
+            placeholder="Indíquenos fecha estimada, turno deseado (20:00 o 22:30), número de comensales y cualquier restricción o preferencia..."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold form-submit" id="form-submit-btn">
+          <span>Confirmar Solicitud con Concierge</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06D6A0" stroke-width="2.5" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22,4 12,14.01 9,11.01"/>
+          </svg>
+          ¡Solicitud enviada! Nuestro Concierge se pondrá en contacto para confirmar su mesa.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-section {
+  background: var(--color-bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  min-height: 640px;
+}
+
+/* Panels */
+.contact-panel--info {
+  background: var(--color-bg-dark-2);
+  padding: clamp(3.5rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+}
+
+.contact-panel__content {
+  max-width: 480px;
+}
+
+.contact-panel--form {
+  padding: clamp(3.5rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-alt);
+}
+
+/* Info panel */
+.contact-heading {
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.highlight-flame {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-flame);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-intro {
+  font-size: var(--fs-md);
+  color: var(--color-cream-muted);
+  line-height: var(--lh-loose);
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-info-icon--flame   { color: #FF5722; box-shadow: 0 0 15px rgba(255, 87, 34, 0.3); }
+.contact-info-icon--saffron { color: #FFB703; box-shadow: 0 0 15px rgba(255, 183, 3, 0.3); }
+.contact-info-icon--mint    { color: #06D6A0; box-shadow: 0 0 15px rgba(6, 214, 160, 0.3); }
+.contact-info-icon--cobalt  { color: #3B82F6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+
+.contact-info-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.contact-info-value {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--color-cream-muted);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Form */
+.contact-form {
+  width: 100%;
+}
+
+.contact-form__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.form-field + .form-field {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+}
+
+.form-label span { color: var(--color-flame); }
+
+.form-input,
+.form-select,
+.form-textarea {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 400;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  width: 100%;
+  transition: border-color var(--transition-base), background var(--transition-base), box-shadow var(--transition-base);
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(148, 163, 184, 0.5);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-saffron);
+  background: var(--color-bg-card-hover);
+  box-shadow: 0 0 20px rgba(255, 183, 3, 0.2);
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: #EF233C;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FFB703' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  cursor: pointer;
+}
+
+.form-select option {
+  background: var(--color-bg-card);
+  color: #FFFFFF;
+}
+
+.form-textarea { resize: vertical; min-height: 110px; }
+
+.form-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  padding: 1.15rem;
+}
+
+/* Success */
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(6, 214, 160, 0.12);
+  border: 1px solid #06D6A0;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 900px) {
+  .contact-section__inner { grid-template-columns: 1fr; }
+  .contact-panel--info { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successEl = document.getElementById('form-success');
+  const submitBtn = document.getElementById('form-submit-btn') as HTMLButtonElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let valid = true;
+    const required = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]');
+    required.forEach(field => {
+      field.classList.remove('error');
+      if (!field.value.trim()) {
+        field.classList.add('error');
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Procesando Reserva...</span>';
+
+    await new Promise(r => setTimeout(r, 1200));
+
+    form.style.display = 'none';
+    if (successEl) successEl.hidden = false;
+  });
+
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { SplitText } from 'gsap/SplitText';
+
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  const contactSection = document.querySelector('.contact-section');
+  const contactHeading = document.getElementById('contact-heading');
+  const contactItems   = document.querySelectorAll('.contact-info-item');
+  const contactForm    = document.querySelector('.contact-panel--form');
+
+  if (contactSection && contactHeading) {
+    const split = new SplitText(contactHeading, { type: 'words,chars' });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contactSection,
+        start: 'top 78%',
+        toggleActions: 'play none none none',
+        once: true,
+      }
+    });
+
+    tl.from(split.words, {
+      opacity: 0,
+      yPercent: 100,
+      rotateX: -25,
+      duration: 1.1,
+      stagger: 0.05,
+      ease: 'expo.out',
+      onComplete: () => split.revert(),
+    })
+    .from('.contact-intro', {
+      opacity: 0,
+      y: 20,
+      duration: 0.7,
+      ease: 'power3.out',
+    }, '-=0.7')
+    .from(contactItems, {
+      opacity: 0,
+      x: -25,
+      duration: 0.7,
+      stagger: 0.08,
+      ease: 'power3.out',
+      clearProps: 'transform',
+    }, '-=0.5')
+    .from(contactForm, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: 'power3.out',
+      clearProps: 'transform',
+    }, '-=0.6');
+  }
+</script>

@@ -1,0 +1,338 @@
+---
+// Testimonials.astro — Críticas & Reseñas Gastronómicas Multi-Color
+const testimonials = [
+  {
+    id: 1,
+    quote: "La Wagyu Melanosporum no es simplemente la mejor hamburguesa de Buenos Aires: es una lección magistral de equilibrio graso, acidez y textura. El pan de papa tiene una esponjosidad sideral.",
+    name: "Guillermo Von Stecher",
+    role: "Crítico Gastronómico · Guía Gourmet BA",
+    avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&dpr=1",
+    rating: 5,
+    tagColor: "#FF5722",
+  },
+  {
+    id: 2,
+    quote: "Vivir el Chef’s Table frente a las brasas de quebracho y probar el smash de ojo de bife con maridaje de Pinot Noir fue una experiencia que redefine por completo la cultura burger internacional.",
+    name: "Federico Marchetti",
+    role: "Sommelier Internacional & Autor",
+    avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&dpr=1",
+    rating: 5,
+    tagColor: "#FFB703",
+  },
+  {
+    id: 3,
+    quote: "El rigor que ponen en la fermentación del brioche y la maduración en seco de los cortes sitúa a Élite al nivel de los ateliers gastronómicos más exigentes de París o Tokio.",
+    name: "Claire Delacroix",
+    role: "Food & Travel Columnist · Le Monde Gourmet",
+    avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&dpr=1",
+    rating: 5,
+    tagColor: "#06D6A0",
+  },
+  {
+    id: 4,
+    quote: "La coctelería de autor y la música en vinilo generan una atmósfera nocturna impecable. La Smoked Bone Marrow con tuétano a la brasa es una obra de arte irrepetible.",
+    name: "Matías Zavaleta",
+    role: "Restaurateur & Jurado Culinario",
+    avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&dpr=1",
+    rating: 5,
+    tagColor: "#3B82F6",
+  }
+];
+---
+
+<section class="section testimonials" id="testimonios" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="testimonials__header reveal">
+      <span class="eyebrow">LA PALABRA DE LA CRÍTICA</span>
+      <span class="gold-line gold-line--center"></span>
+      <h2 class="display-heading testimonials__heading" id="testimonials-heading">
+        Elogios que <span class="highlight-flame">honran</span> el fuego
+      </h2>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel reveal" role="region" aria-label="Críticas gastronómicas" aria-roledescription="carrusel">
+      <div class="carousel__track" id="carousel-track" aria-live="polite">
+        {testimonials.map((t, i) => (
+          <article
+            class="testimonial-card"
+            role="group"
+            aria-roledescription="diapositiva"
+            aria-label={`Crítica ${i + 1} de ${testimonials.length}`}
+            aria-hidden={i !== 0 ? 'true' : 'false'}
+          >
+            <!-- Stars with Vibrant Gold -->
+            <div class="testimonial-stars" aria-label={`${t.rating} de 5 estrellas`}>
+              {Array.from({ length: t.rating }).map(() => (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB703" aria-hidden="true">
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                </svg>
+              ))}
+            </div>
+            <blockquote class="testimonial-quote">
+              <p>"{t.quote}"</p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <img
+                src={t.avatar}
+                alt={`Foto de ${t.name}`}
+                class="testimonial-avatar"
+                loading="lazy"
+                width="56"
+                height="56"
+              />
+              <div>
+                <cite class="testimonial-name">{t.name}</cite>
+                <span class="testimonial-role" style={`color: ${t.tagColor};`}>{t.role}</span>
+              </div>
+            </footer>
+          </article>
+        ))}
+      </div>
+
+      <!-- Controls -->
+      <div class="carousel__controls">
+        <button class="carousel__btn" id="carousel-prev" aria-label="Testimonio anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <div class="carousel__dots" role="tablist" aria-label="Seleccionar testimonio" id="carousel-dots">
+          {testimonials.map((_, i) => (
+            <button
+              class={`carousel__dot${i === 0 ? ' active' : ''}`}
+              role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-label={`Ir a la reseña ${i + 1}`}
+              data-index={i}
+            ></button>
+          ))}
+        </div>
+
+        <button class="carousel__btn" id="carousel-next" aria-label="Siguiente testimonio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonials {
+  background: var(--color-bg-alt);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.testimonials__header {
+  margin-bottom: 3.5rem;
+}
+
+.testimonials__heading {
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  color: #FFFFFF;
+  margin-top: 0.5rem;
+}
+
+.highlight-flame {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-flame);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Carousel */
+.carousel {
+  max-width: 860px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.carousel__track {
+  position: relative;
+  min-height: 280px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Card */
+.testimonial-card {
+  grid-area: 1 / 1;
+  background: var(--color-bg-card);
+  padding: clamp(2.5rem, 5vw, 4rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.testimonial-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-flame);
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(255, 87, 34, 0.4);
+}
+
+.testimonial-name {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Controls */
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.carousel__btn {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--color-bg-card);
+  color: var(--color-saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.carousel__btn:hover {
+  border-color: var(--color-flame);
+  background: var(--color-flame);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
+}
+
+.carousel__dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-base);
+}
+
+.carousel__dot.active {
+  background: var(--grad-flame);
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
+  transform: scale(1.3);
+}
+</style>
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const cards = track?.querySelectorAll<HTMLElement>('.testimonial-card');
+  const dots = document.querySelectorAll<HTMLButtonElement>('.carousel__dot');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (cards && dots && cards.length > 0) {
+    let current = 0;
+    let autoPlayTimer: ReturnType<typeof setInterval>;
+
+    function goTo(index: number) {
+      if (!cards) return;
+      cards[current].classList.remove('active');
+      cards[current].setAttribute('aria-hidden', 'true');
+      if (dots[current]) {
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+      }
+
+      current = (index + cards.length) % cards.length;
+
+      cards[current].classList.add('active');
+      cards[current].setAttribute('aria-hidden', 'false');
+      if (dots[current]) {
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+    }
+
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(() => goTo(current + 1), 6000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+
+    goTo(0);
+    startAutoPlay();
+
+    prevBtn?.addEventListener('click', () => { goTo(current - 1); resetAutoPlay(); });
+    nextBtn?.addEventListener('click', () => { goTo(current + 1); resetAutoPlay(); });
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { goTo(i); resetAutoPlay(); });
+    });
+
+    track?.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    track?.addEventListener('mouseleave', startAutoPlay);
+  }
+</script>

@@ -1,0 +1,298 @@
+/* ============================================================
+   ÉLITE ATELIER — Vibrant Haute Gastronomie Visual Identity
+   Palette: Royal Midnight, Flame Coral, Saffron Gold, Mint Jade, Ruby & Cream
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@700;800&display=swap');
+
+/* ─── Variables ──────────────────────────────────────────── */
+:root {
+  /* === MULTI-COLOR VIBRANT PALETTE === */
+  --color-bg:           #0B0F19;   /* Royal Midnight Navy */
+  --color-bg-alt:       #111827;   /* Deep Slate Navy */
+  --color-bg-card:      #161F33;   /* Rich Cobalt Surface */
+  --color-bg-card-hover:#1E2B47;   /* Elevated Card Surface */
+  --color-bg-light:     #FBF8F3;   /* Warm Vanilla Canvas */
+  --color-bg-dark:      #070A10;   /* Deep Abyssal Black */
+  --color-bg-dark-2:    #0F1420;
+
+  /* === MULTI-COLOR ACCENTS === */
+  --color-flame:        #FF5722;   /* Vibrant Flame Coral */
+  --color-flame-light:  #FF7A50;
+  --color-saffron:      #FFB703;   /* Neon Golden Saffron */
+  --color-saffron-light:#FFD166;
+  --color-ruby:         #EF233C;   /* Crimson Ruby */
+  --color-ruby-dark:    #D90429;
+  --color-mint:         #06D6A0;   /* Electric Mint Jade */
+  --color-cobalt:       #3B82F6;   /* Electric Royal Blue */
+  --color-violet:       #8B5CF6;   /* Vivid Violet */
+  --color-cream:        #FDFBF7;   /* Warm Cream */
+  --color-cream-muted:  #94A3B8;   /* Cool Slate Text */
+  --color-cream-dim:    #64748B;   /* Slate Dim */
+
+  /* Functional Aliases */
+  --color-text:         #F8FAFC;
+  --color-text-muted:   #94A3B8;
+  --color-text-dim:     #64748B;
+  --color-border:       rgba(255, 183, 3, 0.18);
+  --color-border-flame: rgba(255, 87, 34, 0.35);
+  --color-border-subtle:rgba(255, 255, 255, 0.08);
+  --color-white:        #FFFFFF;
+
+  /* Gold aliases for backward compatibility */
+  --color-gold:         var(--color-saffron);
+  --color-gold-light:   var(--color-saffron-light);
+  --color-gold-muted:   #B45309;
+
+  /* === GRADIENTS === */
+  --grad-flame:         linear-gradient(135deg, #FF5722 0%, #FFB703 100%);
+  --grad-sunset:        linear-gradient(135deg, #EF233C 0%, #FF5722 50%, #FFB703 100%);
+  --grad-ocean:         linear-gradient(135deg, #3B82F6 0%, #06D6A0 100%);
+  --grad-aurora:        linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #06D6A0 100%);
+  --grad-berry:         linear-gradient(135deg, #8B5CF6 0%, #EF233C 100%);
+
+  /* === TYPOGRAPHY === */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-heading: 'Syne', system-ui, sans-serif;
+
+  /* Scale */
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   1.5rem;
+  --fs-2xl:  2.25rem;
+  --fs-3xl:  3rem;
+  --fs-4xl:  4.25rem;
+  --fs-5xl:  6rem;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.25;
+  --lh-normal: 1.6;
+  --lh-loose:  1.85;
+
+  --ls-tight:  -0.03em;
+  --ls-normal: 0em;
+  --ls-wide:   0.08em;
+  --ls-wider:  0.18em;
+  --ls-widest: 0.3em;
+
+  --space-1:  0.25rem;  --space-2:  0.5rem;   --space-3:  0.75rem;
+  --space-4:  1rem;     --space-5:  1.25rem;  --space-6:  1.5rem;
+  --space-8:  2rem;     --space-10: 2.5rem;   --space-12: 3rem;
+  --space-16: 4rem;     --space-20: 5rem;     --space-24: 6rem;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:   0 8px 24px rgba(0,0,0,0.6);
+  --shadow-lg:   0 20px 50px rgba(0,0,0,0.8);
+  --shadow-glow: 0 0 35px rgba(255, 87, 34, 0.35);
+
+  --transition-fast:   140ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base:   300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:   500ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --container-max: 1340px;
+  --container-pad: clamp(1.5rem, 6vw, 4rem);
+  --navbar-h: 90px;
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient multi-color background glows */
+body::before {
+  content: '';
+  position: fixed;
+  top: -150px;
+  right: -100px;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.12) 0%, rgba(139, 92, 246, 0.06) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -150px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 214, 160, 0.1) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul, ol { list-style: none; }
+
+/* ─── Container ─────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Typography ─────────────────────────────────────────── */
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.eyebrow::before {
+  content: '⚡';
+  font-size: 0.8rem;
+  color: var(--color-flame);
+}
+
+/* ─── Divisor ────────────────────────────────────────────── */
+.gold-line {
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: var(--grad-flame);
+  margin: var(--space-4) 0;
+  border-radius: 1px;
+}
+
+.gold-line--center {
+  margin-inline: auto;
+  background: linear-gradient(90deg, transparent, #FF5722, #FFB703, transparent);
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Primary Multi-color Flame Button */
+.btn-gold {
+  background: var(--grad-sunset);
+  color: #FFFFFF;
+  box-shadow: 0 6px 25px rgba(239, 35, 60, 0.35);
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FF5722 0%, #FFB703 100%);
+  box-shadow: 0 8px 32px rgba(255, 87, 34, 0.55);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Outline Button with Multi-color glow */
+.btn-outline {
+  background: rgba(22, 31, 51, 0.6);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-saffron);
+  color: var(--color-saffron);
+  background: rgba(255, 183, 3, 0.12);
+  box-shadow: 0 0 25px rgba(255, 183, 3, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  background: rgba(22, 31, 51, 0.7);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--color-flame);
+  color: var(--color-flame-light);
+  background: rgba(255, 87, 34, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ─── Section Spacing ────────────────────────────────────── */
+.section {
+  padding-block: clamp(5rem, 10vw, 9rem);
+  position: relative;
+}
+
+/* ─── Reveal Animations (GSAP Driven) ─────────────────── */
+.reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--grad-flame); border-radius: 3px; }
+
+/* ─── Selection ─────────────────────────────────────────── */
+::selection {
+  background: var(--color-flame);
+  color: #FFFFFF;
+}

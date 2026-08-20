@@ -1,0 +1,268 @@
+---
+// Blog.astro — Las Crónicas del Atelier (Multi-Color)
+const posts = [
+  {
+    id: 1,
+    category: 'CIENCIA & CARNE',
+    categoryColor: 'ruby',
+    date: '14 AGOSTO, 2025',
+    title: 'La Arquitectura de la Grasa: Por qué el Wagyu A5 revoluciona el Smash',
+    excerpt: 'El punto de fusión de la grasa monoinsaturada del Wagyu se sitúa a 25°C. Analizamos la termodinámica de cocción y por qué se traduce en una untuosidad inalcanzable con carnes convencionales.',
+    image: 'https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=700&h=460&dpr=1',
+    alt: 'Carne Wagyu a la parrilla con marmoleo visible y brasa ardiente',
+    readTime: '4 MIN'
+  },
+  {
+    id: 2,
+    category: 'PANADERÍA & QUÍMICA',
+    categoryColor: 'saffron',
+    date: '02 AGOSTO, 2025',
+    title: 'Masa Madre Viva 48h: La Estructura Alveolar del Brioche de Papa',
+    excerpt: 'Una hamburguesa de autor fracasa si el pan absorbe líquido sin retener su elasticidad. Desvelamos el proceso de doble amasado con manteca avellanada y fécula de papa andina.',
+    image: 'https://images.pexels.com/photos/1756062/pexels-photo-1756062.jpeg?auto=compress&cs=tinysrgb&w=700&h=460&dpr=1',
+    alt: 'Pan brioche artesanal dorado recién horneado',
+    readTime: '6 MIN'
+  },
+  {
+    id: 3,
+    category: 'MIXOLOGÍA & CAVA',
+    categoryColor: 'cobalt',
+    date: '18 JULIO, 2025',
+    title: 'El Maridaje Perfecto: Alta Coctelería con Destilados de Roble & Vinos Naturales',
+    excerpt: '¿Por qué un Bourbon Old Fashioned infusionado con grasa de panceta clarificada (fat-washed) eleva el perfil umami de un medallón madurado? Una guía sensorial por nuestra cava.',
+    image: 'https://images.pexels.com/photos/1304469/pexels-photo-1304469.jpeg?auto=compress&cs=tinysrgb&w=700&h=460&dpr=1',
+    alt: 'Cóctel de autor con hielo artesanal y naranja',
+    readTime: '5 MIN'
+  },
+];
+---
+
+<section class="section blog" id="blog" aria-labelledby="blog-heading">
+  <div class="container">
+    <div class="blog__header reveal">
+      <span class="eyebrow">EL CUADERNO DE INVESTIGACIÓN</span>
+      <span class="gold-line"></span>
+      <h2 class="display-heading blog__heading" id="blog-heading">
+        Crónicas <span class="highlight-flame">Gastronómicas</span>
+      </h2>
+      <p class="blog__desc">
+        Ensayos culinarios, ciencia de los alimentos, técnicas de fuego y relatos sobre nuestra devoción por la materia prima.
+      </p>
+    </div>
+
+    <div class="blog__grid" role="list" aria-label="Artículos y crónicas">
+      {posts.map((post, i) => (
+        <article class={`blog-card blog-card--${post.categoryColor} reveal reveal-delay-${i + 1}`} role="listitem" aria-label={post.title}>
+          <div class="blog-card__inner">
+            <div class="blog-card__img-wrap">
+              <img
+                src={post.image}
+                alt={post.alt}
+                class="blog-card__img"
+                loading="lazy"
+                width="700"
+                height="460"
+              />
+              <span class={`blog-card__category blog-card__category--${post.categoryColor}`}>{post.category}</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <time class="blog-card__date">{post.date}</time>
+                <span class="blog-card__read-time">{post.readTime} LECTURA</span>
+              </div>
+              <h3 class="blog-card__title">{post.title}</h3>
+              <p class="blog-card__excerpt">{post.excerpt}</p>
+              <a href="#contacto" class="blog-card__cta">
+                <span>Leer Ensayo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.blog {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.blog__header {
+  margin-bottom: 3.5rem;
+  max-width: 620px;
+}
+
+.blog__heading {
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  color: #FFFFFF;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-flame {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-flame);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog__desc {
+  color: var(--color-cream-muted);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  font-weight: 400;
+}
+
+/* Grid */
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Card */
+.blog-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+.blog-card--ruby:hover {
+  border-color: #EF233C;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(239, 35, 60, 0.3);
+}
+.blog-card--saffron:hover {
+  border-color: #FFB703;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 183, 3, 0.3);
+}
+.blog-card--cobalt:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.blog-card__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.blog-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.9);
+}
+
+.blog-card:hover .blog-card__img {
+  transform: scale(1.08);
+}
+
+.blog-card__category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.blog-card__category--ruby { background: #EF233C; color: #FFFFFF; }
+.blog-card__category--saffron { background: #FFB703; color: #090D16; }
+.blog-card__category--cobalt { background: #3B82F6; color: #FFFFFF; }
+
+.blog-card__body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.blog-card__date,
+.blog-card__read-time {
+  font-size: 0.72rem;
+  color: var(--color-cream-muted);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.blog-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 0.875rem;
+  transition: color var(--transition-base);
+}
+
+.blog-card:hover .blog-card__title {
+  color: var(--color-saffron);
+}
+
+.blog-card__excerpt {
+  font-size: 0.85rem;
+  color: var(--color-cream-muted);
+  line-height: 1.65;
+  font-weight: 400;
+  margin-bottom: 1.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-flame);
+  transition: gap var(--transition-base), color var(--transition-base);
+  margin-top: auto;
+}
+
+.blog-card:hover .blog-card__cta {
+  gap: 0.85rem;
+  color: var(--color-saffron);
+}
+
+@media (max-width: 900px) {
+  .blog__grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .blog__grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>

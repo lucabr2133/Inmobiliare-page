@@ -1,0 +1,205 @@
+---
+// Stats.astro — Métricas Multi-Color del Atelier
+---
+
+<section class="stats" id="estadisticas" aria-labelledby="stats-heading">
+  <div class="stats__bg">
+    <img
+      src="https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+      alt="Brasas ardientes de carbón en parrilla"
+      class="stats__bg-img"
+      loading="lazy"
+    />
+    <div class="stats__overlay"></div>
+  </div>
+
+  <div class="container stats__content">
+    <div class="stats__intro reveal">
+      <span class="eyebrow">EL RIGOR DE LA TÉCNICA</span>
+      <span class="gold-line gold-line--center"></span>
+      <h2 class="display-heading stats__heading" id="stats-heading">
+        Números que <span class="highlight-flame">definen</span> nuestra cocina
+      </h2>
+    </div>
+
+    <div class="stats__grid" role="list" aria-label="Estadísticas de Élite Atelier">
+      <!-- Stat 1: Flame -->
+      <div class="stat-item stat-item--flame reveal reveal-delay-1" role="listitem">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="48">0</span>
+          <span class="stat-unit">H</span>
+        </div>
+        <p class="stat-label">Fermentación lenta de masa madre</p>
+      </div>
+
+      <!-- Stat 2: Mint -->
+      <div class="stat-item stat-item--mint reveal reveal-delay-2" role="listitem">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="100">0</span>
+          <span class="stat-unit">%</span>
+        </div>
+        <p class="stat-label">Wagyu Criollo Certificado</p>
+      </div>
+
+      <!-- Stat 3: Saffron -->
+      <div class="stat-item stat-item--saffron reveal reveal-delay-3" role="listitem">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="300">0</span>
+          <span class="stat-unit">°C</span>
+        </div>
+        <p class="stat-label">Temperatura de sellado Maillard</p>
+      </div>
+
+      <!-- Stat 4: Cobalt -->
+      <div class="stat-item stat-item--cobalt reveal reveal-delay-4" role="listitem">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="8">0</span>
+          <span class="stat-unit"> PAX</span>
+        </div>
+        <p class="stat-label">Cupo por servicio Chef's Table</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.stats {
+  position: relative;
+  padding-block: clamp(5.5rem, 11vw, 9rem);
+  overflow: hidden;
+  text-align: center;
+}
+
+.stats__bg { position: absolute; inset: 0; }
+
+.stats__bg-img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 50%;
+  filter: brightness(0.4) contrast(1.2) saturate(1.1);
+}
+
+.stats__overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at center, rgba(11,15,25,0.75) 0%, rgba(7,10,16,0.98) 100%);
+}
+
+.stats__content { position: relative; z-index: 1; }
+.stats__intro { margin-bottom: 4rem; }
+
+.stats__heading {
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  color: #FFFFFF;
+  margin-top: 0.5rem;
+}
+
+.highlight-flame {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-flame);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.stat-item {
+  padding: 3rem 1.75rem;
+  background: rgba(22, 31, 51, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  position: relative;
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base), background var(--transition-base), transform var(--transition-base);
+}
+
+.stat-item:hover {
+  background: rgba(30, 43, 71, 0.9);
+  transform: translateY(-8px);
+}
+
+/* Multi-Color Stat Items */
+.stat-item--flame { border-bottom: 3px solid #FF5722; }
+.stat-item--flame .stat-number { color: #FF5722; }
+.stat-item--flame .stat-unit   { color: #FFB703; }
+
+.stat-item--mint { border-bottom: 3px solid #06D6A0; }
+.stat-item--mint .stat-number { color: #06D6A0; }
+.stat-item--mint .stat-unit   { color: #3B82F6; }
+
+.stat-item--saffron { border-bottom: 3px solid #FFB703; }
+.stat-item--saffron .stat-number { color: #FFB703; }
+.stat-item--saffron .stat-unit   { color: #FF5722; }
+
+.stat-item--cobalt { border-bottom: 3px solid #3B82F6; }
+.stat-item--cobalt .stat-number { color: #3B82F6; }
+.stat-item--cobalt .stat-unit   { color: #8B5CF6; }
+
+.stat-number-wrap { display: flex; align-items: baseline; justify-content: center; gap: 2px; }
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-unit {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-label {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) { .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; } }
+@media (max-width: 480px) { .stats__grid { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const counters = document.querySelectorAll<HTMLElement>('.stat-number[data-target]');
+  
+  if (counters.length > 0) {
+    ScrollTrigger.create({
+      trigger: '.stats',
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        counters.forEach(counter => {
+          const target = parseInt(counter.dataset.target ?? '0', 10);
+          gsap.to(counter, {
+            innerText: target,
+            duration: 1.8,
+            ease: "power3.out",
+            snap: { innerText: 1 },
+            onUpdate: function() {
+              counter.innerText = Math.round(Number(this.targets()[0].innerText)).toLocaleString('es-AR');
+            },
+            onComplete: function() {
+              counter.innerText = target.toLocaleString('es-AR');
+            }
+          });
+        });
+      }
+    });
+  }
+</script>

@@ -1,0 +1,280 @@
+---
+// Navbar.astro — Vibrant Multi-Color Header
+---
+
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <!-- Logo -->
+    <a href="#inicio" class="navbar__logo" aria-label="Élite Atelier - inicio">
+      <div class="navbar__logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C8.5 7 5 10 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 10 15.5 7 12 2Z" fill="url(#navFlameGrad)" />
+          <defs>
+            <linearGradient id="navFlameGrad" x1="5" y1="2" x2="19" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFB703"/>
+              <stop offset="0.5" stop-color="#FF5722"/>
+              <stop offset="1" stop-color="#EF233C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-name">ÉLITE</span>
+        <span class="navbar__logo-sub">ATELIER DU SMASH</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <nav class="navbar__nav" aria-label="Navegación principal">
+      <a href="#propiedades" class="navbar__link">La Carta</a>
+      <a href="#nosotros" class="navbar__link">El Manifiesto</a>
+      <a href="#servicios" class="navbar__link">Experiencias</a>
+      <a href="#blog" class="navbar__link">Crónicas</a>
+      <a href="#contacto" class="navbar__link">Reservas</a>
+    </nav>
+
+    <!-- CTA + Hamburger -->
+    <div class="navbar__actions">
+      <a href="#contacto" class="btn btn-gold navbar__cta">
+        <span>Reservar Mesa</span>
+      </a>
+      <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile" id="mobile-menu" role="dialog" aria-label="Menú móvil" aria-hidden="true">
+    <nav class="navbar__mobile-nav">
+      <a href="#propiedades" class="navbar__mobile-link">La Carta</a>
+      <a href="#nosotros" class="navbar__mobile-link">El Manifiesto</a>
+      <a href="#servicios" class="navbar__mobile-link">Experiencias</a>
+      <a href="#blog" class="navbar__mobile-link">Crónicas</a>
+      <a href="#contacto" class="navbar__mobile-link">Reservas</a>
+      <a href="#contacto" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1.5rem;">Reservar Mesa</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--navbar-h);
+  transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 183, 3, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-6);
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.navbar__logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255, 87, 34, 0.3);
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.navbar__logo-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.12em;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #FFB703, #FF5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav links */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.navbar__link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  position: relative;
+  padding-block: 0.25rem;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--grad-flame);
+  border-radius: 1px;
+  transition: width var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: #FFFFFF;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.navbar__cta {
+  padding: 0.75rem 1.6rem;
+  font-size: 0.75rem;
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  z-index: 1001;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  border-radius: 1px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.navbar__hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.navbar__hamburger.open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* Mobile Menu */
+.navbar__mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.98);
+  backdrop-filter: blur(24px);
+  z-index: 999;
+  padding: calc(var(--navbar-h) + 2rem) var(--container-pad) 3rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar__mobile.open {
+  display: flex;
+}
+
+.navbar__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  transition: color var(--transition-base);
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-saffron);
+}
+
+@media (max-width: 900px) {
+  .navbar__nav { display: none; }
+  .navbar__hamburger { display: flex; }
+  .navbar__cta { display: none; }
+}
+</style>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  hamburgerBtn?.addEventListener('click', () => {
+    const isOpen = hamburgerBtn.classList.toggle('open');
+    mobileMenu?.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn?.classList.remove('open');
+      mobileMenu?.classList.remove('open');
+      hamburgerBtn?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>

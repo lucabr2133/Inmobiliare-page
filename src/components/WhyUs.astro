@@ -1,0 +1,216 @@
+---
+// WhyUs.astro — El Manifiesto del Atelier (Vibrant Multi-Color)
+---
+
+<section class="section why-us" id="nosotros" aria-labelledby="whyus-heading">
+  <div class="container">
+    <div class="why-us__grid">
+      <!-- Left Visual -->
+      <div class="why-us__visual reveal">
+        <div class="why-us__img-wrap">
+          <img
+            src="https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&dpr=1"
+            alt="Chef del atelier sellando medallones de Wagyu sobre plancha de hierro fundido"
+            class="why-us__img"
+            loading="lazy"
+          />
+          <div class="why-us__badge">
+            <span class="why-us__badge-icon">⚡</span>
+            <span class="why-us__badge-title">EL ARTE DEL FUEGO</span>
+            <span class="why-us__badge-sub">Sin conservantes. 100% Pasión artesanal.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="why-us__content reveal reveal-delay-2">
+        <span class="eyebrow">NUESTRA DOCTRINA</span>
+        <span class="gold-line"></span>
+        <h2 class="display-heading why-us__heading" id="whyus-heading">
+          El Manifiesto<br /><span class="highlight-flame">del Atelier</span>
+        </h2>
+        <p class="why-us__intro">
+          No somos una hamburguesería convencional. Somos un laboratorio de sabor donde la técnica francesa, las brasas argentinas y el marmoleo del Wagyu convergen en una sola meta: el bocado definitivo.
+        </p>
+
+        <div class="why-us__pillars" role="list">
+          <!-- Pillar 1: Flame -->
+          <div class="why-pillar why-pillar--flame" role="listitem">
+            <span class="why-pillar__num">01</span>
+            <div class="why-pillar__body">
+              <h3 class="why-pillar__title">Blend Secreto 100% Wagyu</h3>
+              <p class="why-pillar__desc">Selección estricta de cortes nobles con un 28% de grasa intramuscular. Picado en frío diario para preservar la estructura celular y retener todos los jugos.</p>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Saffron -->
+          <div class="why-pillar why-pillar--saffron" role="listitem">
+            <span class="why-pillar__num">02</span>
+            <div class="why-pillar__body">
+              <h3 class="why-pillar__title">Fermentación Lenta de 48 Horas</h3>
+              <p class="why-pillar__desc">Nuestros panes brioche de papa nacen de una masa madre viva cultivada desde 2018. Horneados dos veces por turno con manteca clarificada.</p>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Mint -->
+          <div class="why-pillar why-pillar--mint" role="listitem">
+            <span class="why-pillar__num">03</span>
+            <div class="why-pillar__body">
+              <h3 class="why-pillar__title">La Reacción de Maillard a 300°C</h3>
+              <p class="why-pillar__desc">Smasheamos con prensas de hierro macizo sobre superficies ardientes para provocar una caramelización profunda y crujiente, con centro sedoso.</p>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Violet -->
+          <div class="why-pillar why-pillar--violet" role="listitem">
+            <span class="why-pillar__num">04</span>
+            <div class="why-pillar__body">
+              <h3 class="why-pillar__title">Quesos de Autor & Afinados Propios</h3>
+              <p class="why-pillar__desc">Desde Cheddar inglés añejado 18 meses hasta Morbier francés y provoletas artesanales de masa hilada fundidas a temperatura exacta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.why-us {
+  background: var(--color-bg-alt);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.why-us__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.why-us__visual { position: relative; }
+
+.why-us__img-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-xl);
+}
+
+.why-us__img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.8s ease;
+}
+
+.why-us__img-wrap:hover .why-us__img { transform: scale(1.04); }
+
+.why-us__badge {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  background: rgba(11, 15, 25, 0.92);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  backdrop-filter: blur(16px);
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.why-us__badge-icon { font-size: 1.2rem; }
+
+.why-us__badge-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.why-us__badge-sub {
+  font-size: 0.78rem;
+  color: var(--color-cream-muted);
+}
+
+.why-us__content { display: flex; flex-direction: column; }
+
+.why-us__heading {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+
+.highlight-flame {
+  font-family: var(--font-display);
+  font-style: italic;
+  background: var(--grad-flame);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why-us__intro {
+  font-size: var(--fs-md);
+  color: var(--color-cream-muted);
+  line-height: var(--lh-loose);
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.why-us__pillars { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.why-pillar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform var(--transition-base);
+}
+
+.why-pillar:last-child { border-bottom: none; padding-bottom: 0; }
+.why-pillar:hover { transform: translateX(8px); }
+
+.why-pillar__num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+/* Pillar Multi-Color Numbers */
+.why-pillar--flame .why-pillar__num   { color: #FF5722; text-shadow: 0 0 15px rgba(255, 87, 34, 0.4); }
+.why-pillar--saffron .why-pillar__num { color: #FFB703; text-shadow: 0 0 15px rgba(255, 183, 3, 0.4); }
+.why-pillar--mint .why-pillar__num    { color: #06D6A0; text-shadow: 0 0 15px rgba(6, 214, 160, 0.4); }
+.why-pillar--violet .why-pillar__num  { color: #8B5CF6; text-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
+
+.why-pillar__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.why-pillar__desc {
+  font-size: 0.85rem;
+  color: var(--color-cream-muted);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .why-us__grid { grid-template-columns: 1fr; }
+}
+</style>
