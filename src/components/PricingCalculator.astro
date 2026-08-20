@@ -1,11 +1,10 @@
 ---
-// PricingCalculator.astro — Interactive Membership Pass Builder
+// PricingCalculator.astro — Interactive Membership Pass Builder (No Blue, No Top Tag)
 ---
 
 <section class="section pass-builder" id="membresias">
   <div class="container">
     <div class="pass-builder__head reveal">
-      <span class="mono-tag">06 // CONFIGURADOR DE ACCESO</span>
       <h2 class="display-title pass-builder__title">
         PASS <span class="highlight-volt">BUILDER</span>
       </h2>
@@ -144,7 +143,7 @@
 
 .pass-builder__title {
   font-size: clamp(2.6rem, 5vw, 4.5rem);
-  margin-block: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .pass-builder__desc {
@@ -200,12 +199,12 @@
 }
 
 .tier-btn:hover {
-  background: rgba(22, 30, 48, 0.9);
+  background: rgba(26, 30, 39, 0.9);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
 .tier-btn.active {
-  background: rgba(22, 30, 48, 0.95);
+  background: rgba(26, 30, 39, 0.95);
   border-color: var(--color-volt);
   box-shadow: 0 0 20px rgba(217, 255, 0, 0.2);
 }
@@ -268,7 +267,7 @@
   font-family: var(--font-mono);
   font-size: 0.6rem;
   background: var(--color-volt);
-  color: #06080D;
+  color: #080A0E;
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-sm);
 }
@@ -281,7 +280,7 @@
 
 .freq-btn.active {
   border-color: var(--color-volt);
-  background: rgba(22, 30, 48, 0.95);
+  background: rgba(26, 30, 39, 0.95);
 }
 
 /* Addons */
@@ -340,7 +339,7 @@
 .digital-pass {
   width: 100%;
   max-width: 440px;
-  background: linear-gradient(135deg, #161E30 0%, #0D1320 60%, #06080D 100%);
+  background: linear-gradient(135deg, #1A1E27 0%, #12151C 60%, #080A0E 100%);
   border: 1.5px solid var(--color-volt);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
@@ -382,7 +381,7 @@
 .pass-tier-badge {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  color: var(--color-cyber);
+  color: var(--color-volt);
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
 }
@@ -416,7 +415,7 @@
 }
 
 .pass-qr {
-  background: #06080D;
+  background: #080A0E;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4px;
   border-radius: 4px;

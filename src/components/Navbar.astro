@@ -1,14 +1,14 @@
 ---
-// Navbar.astro — APEX Athletic HUD Header
+// Navbar.astro — APEX Athletic Header (No Blue, Clean Links)
 ---
 
 <header class="hud-nav" id="navbar">
-  <!-- Top Telemetry Ribbon -->
+  <!-- Top Ribbon -->
   <div class="hud-ribbon">
     <div class="container hud-ribbon__inner">
       <div class="hud-ribbon__status">
         <span class="pulse-dot"></span>
-        <span class="hud-ribbon__txt">PALERMO: 74% CAPACIDAD // RECOLETA: VIP ONLY</span>
+        <span class="hud-ribbon__txt">PALERMO SOHO // RECOLETA · BUENOS AIRES</span>
       </div>
       <div class="hud-ribbon__time" id="live-time">
         BA: --:--:-- GMT-3
@@ -27,18 +27,18 @@
       </div>
       <div class="hud-nav__titles">
         <span class="hud-nav__name">APEX</span>
-        <span class="hud-nav__sub">ATHLETIC LAB</span>
+        <span class="hud-nav__sub">ATHLETIC CLUB</span>
       </div>
     </a>
 
     <!-- Nav Items -->
     <nav class="hud-nav__menu" aria-label="Navegación principal">
-      <a href="#zonas" class="hud-nav__link"><span>01</span> ZONAS</a>
-      <a href="#disciplinas" class="hud-nav__link"><span>02</span> DISCIPLINAS</a>
-      <a href="#horarios" class="hud-nav__link"><span>03</span> HORARIOS</a>
-      <a href="#coaches" class="hud-nav__link"><span>04</span> COACHES</a>
-      <a href="#biohacking" class="hud-nav__link"><span>05</span> BIOHACKING</a>
-      <a href="#membresias" class="hud-nav__link"><span>06</span> PASES</a>
+      <a href="#zonas" class="hud-nav__link">Zonas</a>
+      <a href="#disciplinas" class="hud-nav__link">Disciplinas</a>
+      <a href="#horarios" class="hud-nav__link">Horarios</a>
+      <a href="#coaches" class="hud-nav__link">Coaches</a>
+      <a href="#biohacking" class="hud-nav__link">Biohacking</a>
+      <a href="#membresias" class="hud-nav__link">Pases</a>
     </nav>
 
     <!-- Action -->
@@ -57,12 +57,12 @@
   <!-- Mobile Drawer -->
   <div class="hud-mobile-menu" id="hud-mobile" hidden>
     <div class="hud-mobile-nav">
-      <a href="#zonas" class="hud-mobile-link"><span>01 //</span> ZONAS</a>
-      <a href="#disciplinas" class="hud-mobile-link"><span>02 //</span> DISCIPLINAS</a>
-      <a href="#horarios" class="hud-mobile-link"><span>03 //</span> HORARIOS</a>
-      <a href="#coaches" class="hud-mobile-link"><span>04 //</span> COACHES</a>
-      <a href="#biohacking" class="hud-mobile-link"><span>05 //</span> BIOHACKING</a>
-      <a href="#membresias" class="hud-mobile-link"><span>06 //</span> PASES</a>
+      <a href="#zonas" class="hud-mobile-link">ZONAS</a>
+      <a href="#disciplinas" class="hud-mobile-link">DISCIPLINAS</a>
+      <a href="#horarios" class="hud-mobile-link">HORARIOS</a>
+      <a href="#coaches" class="hud-mobile-link">COACHES</a>
+      <a href="#biohacking" class="hud-mobile-link">BIOHACKING</a>
+      <a href="#membresias" class="hud-mobile-link">PASES</a>
       <a href="#vip-pass" class="btn btn-volt" style="margin-top:1.5rem;width:100%;">SOLICITAR 1-DAY PASS</a>
     </div>
   </div>
@@ -76,22 +76,22 @@
   right: 0;
   z-index: 1000;
   transition: all 0.35s ease;
-  background: rgba(6, 8, 13, 0.7);
+  background: rgba(8, 10, 14, 0.85);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .hud-nav.scrolled {
-  background: rgba(6, 8, 13, 0.95);
+  background: rgba(8, 10, 14, 0.98);
   border-bottom: 1px solid var(--color-border-volt);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
 }
 
 /* Ribbon */
 .hud-ribbon {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-block: 0.35rem;
-  background: rgba(16, 22, 36, 0.4);
+  background: rgba(20, 23, 30, 0.5);
 }
 
 .hud-ribbon__inner {
@@ -173,25 +173,18 @@
 .hud-nav__menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.25rem;
 }
 
 .hud-nav__link {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
+  text-transform: uppercase;
   color: var(--color-text-muted);
   text-decoration: none;
   letter-spacing: 0.08em;
   transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.hud-nav__link span {
-  color: var(--color-volt);
-  font-size: 0.65rem;
 }
 
 .hud-nav__link:hover {
@@ -227,7 +220,7 @@
   top: 100px;
   inset-inline: 0;
   bottom: 0;
-  background: #06080D;
+  background: #080A0E;
   padding: 2rem;
   z-index: 999;
 }
@@ -243,12 +236,9 @@
   font-size: 1.5rem;
   color: #FFFFFF;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
 }
 
-.hud-mobile-link span { color: var(--color-volt); }
+.hud-mobile-link:hover { color: var(--color-volt); }
 
 @media (max-width: 960px) {
   .hud-nav__menu, .hud-nav__btn { display: none; }
@@ -263,7 +253,6 @@
   const mobile = document.getElementById('hud-mobile');
   const timeEl = document.getElementById('live-time');
 
-  // Clock
   const updateClock = () => {
     const now = new Date();
     const str = now.toLocaleTimeString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', hour12: false });

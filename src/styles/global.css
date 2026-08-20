@@ -1,29 +1,26 @@
-/* ─── APEX PERFORMANCE CLUB · HIGH-TECH ATHLETIC DESIGN SYSTEM ─── */
+/* ─── APEX PERFORMANCE CLUB · HIGH-TECH ATHLETIC DESIGN SYSTEM (NO BLUE) ─── */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=JetBrains+Mono:wght@400;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
 
 :root {
-  /* Core Colors */
-  --color-bg: #06080D;
-  --color-bg-alt: #0A0F18;
-  --color-bg-card: #101624;
-  --color-bg-elevated: #161E30;
+  /* Pure Athletic Charcoal & Obsidian (ZERO BLUE) */
+  --color-bg: #080A0E;
+  --color-bg-alt: #0E1015;
+  --color-bg-card: #14171E;
+  --color-bg-elevated: #1A1E27;
   
-  /* Cyber Athletic Accents */
+  /* Electric Volt & Crisp Titanium Accents */
   --color-volt: #D9FF00;
-  --color-volt-glow: rgba(217, 255, 0, 0.4);
-  --color-cyber: #00F0FF;
-  --color-cyber-glow: rgba(0, 240, 255, 0.35);
+  --color-volt-glow: rgba(217, 255, 0, 0.35);
   --color-mint: #00FFA3;
   --color-flame: #FF3E3E;
-  --color-titanium: #E2E8F0;
-  --color-text-muted: #8E9BAE;
-  --color-border: rgba(255, 255, 255, 0.09);
+  --color-titanium: #F1F5F9;
+  --color-text-muted: #94A3B8;
+  --color-border: rgba(255, 255, 255, 0.08);
   --color-border-volt: rgba(217, 255, 0, 0.3);
 
   /* Gradients */
-  --grad-volt: linear-gradient(135deg, #D9FF00 0%, #00FFA3 100%);
-  --grad-cyber: linear-gradient(135deg, #00F0FF 0%, #7000FF 100%);
-  --grad-dark: linear-gradient(180deg, rgba(16, 22, 36, 0.95) 0%, rgba(6, 8, 13, 0.98) 100%);
+  --grad-volt: linear-gradient(135deg, #D9FF00 0%, #FFFFFF 100%);
+  --grad-dark: linear-gradient(180deg, rgba(20, 23, 30, 0.95) 0%, rgba(8, 10, 14, 0.98) 100%);
 
   /* Typography */
   --font-display: 'Syne', sans-serif;
@@ -60,8 +57,8 @@ body {
   overflow-x: hidden;
   background-color: var(--color-bg);
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(217, 255, 0, 0.035) 0%, transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(0, 240, 255, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 15% 15%, rgba(217, 255, 0, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.02) 0%, transparent 45%),
     linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
@@ -96,24 +93,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-.mono-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-volt);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.mono-tag::before {
-  content: '//';
-  color: var(--color-cyber);
-  font-weight: 800;
-}
-
 .highlight-volt {
   background: var(--grad-volt);
   -webkit-background-clip: text;
@@ -121,14 +100,7 @@ body {
   display: inline-block;
 }
 
-.highlight-cyber {
-  background: var(--grad-cyber);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* High-Impact Athletic Buttons */
+/* Athletic Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -150,31 +122,17 @@ body {
 
 .btn-volt {
   background: var(--color-volt);
-  color: #06080D;
+  color: #080A0E;
   border-color: var(--color-volt);
-  box-shadow: 0 0 25px rgba(217, 255, 0, 0.4);
+  box-shadow: 0 0 25px rgba(217, 255, 0, 0.35);
 }
 
 .btn-volt:hover {
   background: #FFFFFF;
   border-color: #FFFFFF;
-  color: #06080D;
+  color: #080A0E;
   transform: translateY(-3px);
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.6);
-}
-
-.btn-cyber {
-  background: transparent;
-  color: var(--color-cyber);
-  border-color: var(--color-cyber);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
-}
-
-.btn-cyber:hover {
-  background: var(--color-cyber);
-  color: #06080D;
-  transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
 }
 
 .btn-ghost {
@@ -205,16 +163,6 @@ body {
   0% { transform: scale(0.9); opacity: 1; }
   50% { transform: scale(1.4); opacity: 0.5; }
   100% { transform: scale(0.9); opacity: 1; }
-}
-
-/* Telemetry Grid Line */
-.hud-line {
-  display: block;
-  width: 48px;
-  height: 2px;
-  background: var(--color-volt);
-  margin-block: 0.85rem;
-  box-shadow: 0 0 12px var(--color-volt);
 }
 
 /* Scroll reveal & animation helpers */

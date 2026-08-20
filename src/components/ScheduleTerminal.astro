@@ -1,5 +1,5 @@
 ---
-// ScheduleTerminal.astro — Interactive Weekly Class Timetable
+// ScheduleTerminal.astro — Interactive Weekly Class Timetable (No Blue, No Top Tag)
 const scheduleData = [
   {
     day: 'LUN',
@@ -75,7 +75,6 @@ const scheduleData = [
 <section class="section schedule" id="horarios">
   <div class="container">
     <div class="schedule__head reveal">
-      <span class="mono-tag">03 // GESTIÓN DE SESIONES &amp; CAPACIDAD</span>
       <h2 class="display-title schedule__title">
         LIVE SCHEDULE <span class="highlight-volt">TERMINAL</span>
       </h2>
@@ -175,7 +174,7 @@ const scheduleData = [
 
 .schedule__title {
   font-size: clamp(2.6rem, 5vw, 4.5rem);
-  margin-block: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .schedule__desc {
@@ -186,18 +185,18 @@ const scheduleData = [
 
 /* Terminal Box */
 .schedule-terminal {
-  background: #06080D;
+  background: #080A0E;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
 }
 
 /* Days Bar */
 .schedule-days-bar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  background: rgba(16, 22, 36, 0.6);
+  background: rgba(20, 23, 30, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -304,13 +303,13 @@ const scheduleData = [
 
 .slot-tag {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   font-weight: 800;
-  padding: 0.2rem 0.45rem;
+  padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
-  background: rgba(0, 240, 255, 0.1);
-  color: var(--color-cyber);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .slot-title {

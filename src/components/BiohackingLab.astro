@@ -1,11 +1,10 @@
 ---
-// BiohackingLab.astro — Cellular Recovery Chamber & Science
+// BiohackingLab.astro — Cellular Recovery Chamber & Science (No Blue, No Top Tag)
 ---
 
 <section class="section biohack" id="biohacking">
   <div class="container">
     <div class="biohack__head reveal">
-      <span class="mono-tag">05 // RECUPERACIÓN CELULAR &amp; BIOHACKING</span>
       <h2 class="display-title biohack__title">
         RECOVERY <span class="highlight-volt">CHAMBER</span>
       </h2>
@@ -14,11 +13,11 @@
       </p>
     </div>
 
-    <!-- Main Interactive Biohack Grid -->
+    <!-- Main Biohack Grid (No Blue) -->
     <div class="biohack__grid reveal">
       <!-- Feature 1: Cryo -110°C -->
       <div class="biohack-card biohack-card--cryo">
-        <div class="biohack-card__tag">CRIOTERAPIA // SENSOR -110°C</div>
+        <div class="biohack-card__tag">CRIOTERAPIA // SENSOR TÉRMICO</div>
         <div class="biohack-card__val">-110°C</div>
         <h3 class="biohack-card__title">Whole-Body Cryo Chamber</h3>
         <p class="biohack-card__txt">
@@ -92,7 +91,6 @@
     <!-- Science Deep-Dive Banner -->
     <div class="biohack__banner reveal">
       <div class="biohack__banner-left">
-        <span class="mono-tag">EL ESTÁNDAR BIOMÉDICO</span>
         <h3 class="biohack__banner-title">Evaluación InBody 770 &amp; Mapeo 3D</h3>
         <p class="biohack__banner-txt">
           Cada atleta recibe un análisis segmental de masa muscular por bioimpedancia multifrecuencia, balance hídrico intra/extracelular y variabilidad cardíaca cada 30 días.
@@ -121,7 +119,7 @@
 
 .biohack__title {
   font-size: clamp(2.6rem, 5vw, 4.5rem);
-  margin-block: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .biohack__desc {
@@ -139,7 +137,7 @@
 }
 
 .biohack-card {
-  background: #06080D;
+  background: #080A0E;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: 2.25rem 2rem;
@@ -154,18 +152,18 @@
 }
 
 .biohack-card--cryo:hover {
-  border-color: var(--color-cyber);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.2);
+  border-color: #FFFFFF;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 255, 255, 0.15);
 }
 
 .biohack-card--infrared:hover {
   border-color: var(--color-flame);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 62, 62, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 62, 62, 0.2);
 }
 
 .biohack-card--plunge:hover {
   border-color: var(--color-volt);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(217, 255, 0, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(217, 255, 0, 0.2);
 }
 
 .biohack-card__tag {
@@ -184,7 +182,7 @@
   margin-bottom: 1rem;
 }
 
-.biohack-card--cryo .biohack-card__val { color: var(--color-cyber); }
+.biohack-card--cryo .biohack-card__val { color: #FFFFFF; }
 .biohack-card--infrared .biohack-card__val { color: var(--color-flame); }
 .biohack-card--plunge .biohack-card__val { color: var(--color-volt); }
 
@@ -208,7 +206,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  background: rgba(16, 22, 36, 0.6);
+  background: rgba(20, 23, 30, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 0.85rem 0.5rem;
   border-radius: var(--radius-sm);
@@ -233,7 +231,7 @@
 
 /* Banner */
 .biohack__banner {
-  background: linear-gradient(135deg, #101624 0%, #0A0F18 100%);
+  background: linear-gradient(135deg, #14171E 0%, #0E1015 100%);
   border: 1px solid var(--color-border-volt);
   border-radius: var(--radius-md);
   padding: 2.5rem 3rem;
@@ -247,7 +245,7 @@
   font-family: var(--font-tech);
   font-size: 1.6rem;
   color: #FFFFFF;
-  margin-block: 0.35rem 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .biohack__banner-txt {
