@@ -10,12 +10,12 @@ export interface Props {
 }
 
 const {
-  title = 'Élite Burgers — Hamburguesas de Autor',
-  description = 'Élite Burgers — Hamburguesas de Autor. Carne 100% Wagyu, ingredientes premium y coctelería de autor.',
-  ogImage = 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80',
+  title = 'APEX Performance Club · Haute Performance & Athletic Sanctuary',
+  description = 'Santuario de alto rendimiento, biomecánica y longevidad celular en Buenos Aires. 2.500 m² de equipamiento Eleiko, crioterapia a -110°C y coaching 1-on-1.',
+  ogImage = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=1',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://eliteburgers.com.ar');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://apexclub.com.ar');
 ---
 
 <!DOCTYPE html>
@@ -30,13 +30,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://elitebur
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="Élite Burgers" />
-    <meta name="keywords" content="hamburguesas, gourmet, wagyu, buenos aires, comida premium, hamburguesería" />
+    <meta name="author" content="APEX Performance Club" />
+    <meta name="keywords" content="gimnasio de lujo, alto rendimiento, biomecanica, eleiko, crioterapia, hyrox, halterofilia, buenos aires, palermo soho, recoleta" />
 
-    <!-- Fuentes: Cormorant Garamond (Serif) & Inter (Sans) -->
+    <!-- Google Fonts: Syne, Plus Jakarta Sans, Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -45,7 +45,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://elitebur
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="Élite Burgers" />
+    <meta property="og:site_name" content="APEX Performance Club" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />

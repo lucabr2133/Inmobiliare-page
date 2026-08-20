@@ -1,11 +1,12 @@
 ---
-// src/pages/index.astro
+// src/pages/index.astro — APEX Performance Club Home
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import FeaturedProperties from '../components/FeaturedProperties.astro';
 import WhyUs from '../components/WhyUs.astro';
 import Services from '../components/Services.astro';
+import Pricing from '../components/Pricing.astro';
 import Stats from '../components/Stats.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Blog from '../components/Blog.astro';
@@ -14,8 +15,8 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="ÉLITE · Atelier du Smash — Gastronomía, Brasas & Wagyu"
-  description="Élite Atelier es la experiencia definitiva de hamburguesas de alta gastronomía en Buenos Aires. Carne 100% Wagyu criollo, pan brioche de masa madre 48h y coctelería de autor."
+  title="APEX Performance Club · Haute Performance & Athletic Sanctuary"
+  description="APEX Performance Club es el centro de entrenamiento de alto rendimiento, biomecánica y longevidad celular más exclusivo de Buenos Aires. 2.500 m² de equipamiento Eleiko, crioterapia a -110°C y coaching 1-on-1."
 >
   <Navbar />
   <main id="main-content">
@@ -23,6 +24,7 @@ import Footer from '../components/Footer.astro';
     <FeaturedProperties />
     <WhyUs />
     <Services />
+    <Pricing />
     <Stats />
     <Testimonials />
     <Blog />
@@ -40,7 +42,7 @@ import Footer from '../components/Footer.astro';
 
   // ─── 1. Lenis smooth scroll ───────────────────────────────
   const lenis = new Lenis({
-    duration: 1.4,
+    duration: 1.3,
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
     gestureOrientation: 'vertical',
@@ -60,7 +62,6 @@ import Footer from '../components/Footer.astro';
   const revealElements = document.querySelectorAll<HTMLElement>('.reveal');
 
   revealElements.forEach((el) => {
-    // Determine staggered delay if class is present
     let delay = 0;
     if (el.classList.contains('reveal-delay-1')) delay = 0.08;
     else if (el.classList.contains('reveal-delay-2')) delay = 0.16;

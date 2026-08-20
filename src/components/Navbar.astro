@@ -1,42 +1,43 @@
 ---
-// Navbar.astro — Vibrant Multi-Color Header
+// Navbar.astro — APEX Performance Club Athletic Navigation
 ---
 
 <header class="navbar" id="navbar">
   <div class="container navbar__inner">
     <!-- Logo -->
-    <a href="#inicio" class="navbar__logo" aria-label="Élite Atelier - inicio">
+    <a href="#inicio" class="navbar__logo" aria-label="APEX Performance Club - inicio">
       <div class="navbar__logo-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.5 7 5 10 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 10 15.5 7 12 2Z" fill="url(#navFlameGrad)" />
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#navVoltGrad)" stroke="#080C14" stroke-width="0.5"/>
           <defs>
-            <linearGradient id="navFlameGrad" x1="5" y1="2" x2="19" y2="22" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFB703"/>
-              <stop offset="0.5" stop-color="#FF5722"/>
-              <stop offset="1" stop-color="#EF233C"/>
+            <linearGradient id="navVoltGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#CCFF00"/>
+              <stop offset="0.6" stop-color="#00F0FF"/>
+              <stop offset="1" stop-color="#FF5500"/>
             </linearGradient>
           </defs>
         </svg>
       </div>
       <div class="navbar__logo-text">
-        <span class="navbar__logo-name">ÉLITE</span>
-        <span class="navbar__logo-sub">ATELIER DU SMASH</span>
+        <span class="navbar__logo-name">APEX</span>
+        <span class="navbar__logo-sub">PERFORMANCE CLUB</span>
       </div>
     </a>
 
     <!-- Nav Links -->
     <nav class="navbar__nav" aria-label="Navegación principal">
-      <a href="#propiedades" class="navbar__link">La Carta</a>
-      <a href="#nosotros" class="navbar__link">El Manifiesto</a>
-      <a href="#servicios" class="navbar__link">Experiencias</a>
-      <a href="#blog" class="navbar__link">Crónicas</a>
-      <a href="#contacto" class="navbar__link">Reservas</a>
+      <a href="#instalaciones" class="navbar__link">Instalaciones</a>
+      <a href="#manifiesto" class="navbar__link">El Estándar</a>
+      <a href="#programas" class="navbar__link">Disciplinas</a>
+      <a href="#membresias" class="navbar__link">Membresías</a>
+      <a href="#testimonios" class="navbar__link">Atletas</a>
+      <a href="#contacto" class="navbar__link">Contacto</a>
     </nav>
 
     <!-- CTA + Hamburger -->
     <div class="navbar__actions">
-      <a href="#contacto" class="btn btn-gold navbar__cta">
-        <span>Reservar Mesa</span>
+      <a href="#contacto" class="btn btn-volt navbar__cta">
+        <span>1-Day VIP Pass</span>
       </a>
       <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
         <span></span>
@@ -49,12 +50,13 @@
   <!-- Mobile Menu -->
   <div class="navbar__mobile" id="mobile-menu" role="dialog" aria-label="Menú móvil" aria-hidden="true">
     <nav class="navbar__mobile-nav">
-      <a href="#propiedades" class="navbar__mobile-link">La Carta</a>
-      <a href="#nosotros" class="navbar__mobile-link">El Manifiesto</a>
-      <a href="#servicios" class="navbar__mobile-link">Experiencias</a>
-      <a href="#blog" class="navbar__mobile-link">Crónicas</a>
-      <a href="#contacto" class="navbar__mobile-link">Reservas</a>
-      <a href="#contacto" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1.5rem;">Reservar Mesa</a>
+      <a href="#instalaciones" class="navbar__mobile-link">Instalaciones</a>
+      <a href="#manifiesto" class="navbar__mobile-link">El Estándar</a>
+      <a href="#programas" class="navbar__mobile-link">Disciplinas</a>
+      <a href="#membresias" class="navbar__mobile-link">Membresías</a>
+      <a href="#testimonios" class="navbar__mobile-link">Atletas</a>
+      <a href="#contacto" class="navbar__mobile-link">Contacto</a>
+      <a href="#contacto" class="btn btn-volt" style="width:100%;justify-content:center;margin-top:1.5rem;">Reclamar 1-Day VIP Pass</a>
     </nav>
   </div>
 </header>
@@ -72,11 +74,11 @@
 }
 
 .navbar.scrolled {
-  background: rgba(11, 15, 25, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 183, 3, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: rgba(8, 12, 20, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(204, 255, 0, 0.15);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
 }
 
 .navbar__inner {
@@ -96,15 +98,15 @@
 }
 
 .navbar__logo-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 183, 3, 0.3);
+  background: rgba(18, 24, 38, 0.8);
+  border: 1px solid rgba(204, 255, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(255, 87, 34, 0.3);
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.35);
 }
 
 .navbar__logo-text {
@@ -114,20 +116,20 @@
 }
 
 .navbar__logo-name {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
   color: #FFFFFF;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
 .navbar__logo-sub {
   font-family: var(--font-body);
   font-size: 0.58rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: var(--ls-widest);
   text-transform: uppercase;
-  background: linear-gradient(90deg, #FFB703, #FF5722);
+  background: linear-gradient(90deg, #CCFF00, #00F0FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -141,7 +143,7 @@
 
 .navbar__link {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-cream-muted);
@@ -157,7 +159,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--grad-flame);
+  background: var(--grad-volt);
   border-radius: 1px;
   transition: width var(--transition-base);
 }
@@ -211,7 +213,7 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(11, 15, 25, 0.98);
+  background: rgba(8, 12, 20, 0.98);
   backdrop-filter: blur(24px);
   z-index: 999;
   padding: calc(var(--navbar-h) + 2rem) var(--container-pad) 3rem;
@@ -231,15 +233,16 @@
 }
 
 .navbar__mobile-link {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
   color: #FFFFFF;
   transition: color var(--transition-base);
 }
 
 .navbar__mobile-link:hover {
-  color: var(--color-saffron);
+  color: var(--color-volt);
 }
 
 @media (max-width: 900px) {
@@ -278,3 +281,4 @@
     });
   });
 </script>
+

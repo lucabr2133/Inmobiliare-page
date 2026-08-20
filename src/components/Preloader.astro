@@ -1,24 +1,23 @@
 ---
-// Preloader.astro — 100% Solid, Self-Contained, Centered Haute Preloader
+// Preloader.astro — 100% Solid Opaque High-Performance Athletic Preloader
 ---
 
 <div class="site-preloader" id="preloader">
-  <!-- Vibrant Ambient Aura in Center -->
-  <div class="preloader-aura preloader-aura--flame"></div>
-  <div class="preloader-aura preloader-aura--cobalt"></div>
+  <!-- Dynamic Volt & Cyan Kinetic Aura in Center -->
+  <div class="preloader-aura preloader-aura--volt"></div>
+  <div class="preloader-aura preloader-aura--cyan"></div>
 
-  <!-- Dead-Center Content Box -->
+  <!-- Dead-Center Box -->
   <div class="preloader-center" id="preloader-center">
     <!-- Emblem -->
     <div class="preloader-emblem">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C8.5 7 5 10 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 10 15.5 7 12 2Z" fill="url(#plFlameGrad)" />
-        <path d="M12 9C10.5 12 8 13.5 8 16.5C8 18.709 9.791 20.5 12 20.5C14.209 20.5 16 18.709 16 16.5C16 13.5 13.5 12 12 9Z" fill="#FFFFFF" opacity="0.9" />
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#plVoltGrad)" stroke="#080C14" stroke-width="0.5"/>
         <defs>
-          <linearGradient id="plFlameGrad" x1="5" y1="2" x2="19" y2="22" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FFB703"/>
-            <stop offset="0.5" stop-color="#FF5722"/>
-            <stop offset="1" stop-color="#EF233C"/>
+          <linearGradient id="plVoltGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#CCFF00"/>
+            <stop offset="0.6" stop-color="#00F0FF"/>
+            <stop offset="1" stop-color="#FF5500"/>
           </linearGradient>
         </defs>
       </svg>
@@ -26,18 +25,18 @@
 
     <!-- Brand -->
     <div class="preloader-brand">
-      <span class="preloader-title">ÉLITE</span>
-      <span class="preloader-sub">ATELIER DU SMASH · BUENOS AIRES</span>
+      <span class="preloader-title">APEX</span>
+      <span class="preloader-sub">PERFORMANCE CLUB · ATHLETIC SANCTUARY</span>
     </div>
 
-    <!-- Centered Percentage & Progress Bar (Requested) -->
+    <!-- Centered Percentage & Progress Bar -->
     <div class="preloader-progress-box">
       <div class="preloader-counter">
         <span class="preloader-number" id="preloader-count">0</span>
-        <span class="preloader-pct">%</span>
+        <span class="preloader-pct">RPM</span>
       </div>
 
-      <!-- Visible Centered Progress Bar -->
+      <!-- Centered Progress Bar -->
       <div class="preloader-bar-track">
         <div class="preloader-bar-fill" id="preloader-bar"></div>
       </div>
@@ -45,11 +44,11 @@
 
     <!-- Subtitle Tags -->
     <div class="preloader-tags">
-      <span>WAGYU A5</span>
+      <span>BIOMECÁNICA 3D</span>
       <span class="dot">✦</span>
-      <span>MASA MADRE 48H</span>
+      <span>ELEIKO ZONE</span>
       <span class="dot">✦</span>
-      <span>BRASAS</span>
+      <span>CRYO -110°C</span>
     </div>
   </div>
 </div>
@@ -60,7 +59,7 @@
   position: fixed;
   inset: 0;
   z-index: 999999;
-  background-color: #060911 !important;
+  background-color: #080C14 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,22 +75,22 @@
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(80px);
+  filter: blur(85px);
 }
 
-.preloader-aura--flame {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(255, 87, 34, 0.3) 0%, rgba(255, 183, 3, 0.15) 50%, transparent 75%);
+.preloader-aura--volt {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(204, 255, 0, 0.25) 0%, rgba(0, 240, 255, 0.12) 50%, transparent 75%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.preloader-aura--cobalt {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(6, 214, 160, 0.1) 50%, transparent 75%);
+.preloader-aura--cyan {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.2) 0%, rgba(255, 85, 0, 0.08) 50%, transparent 75%);
   top: 55%;
   left: 52%;
   transform: translate(-50%, -50%);
@@ -112,21 +111,21 @@
 
 /* Emblem */
 .preloader-emblem {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  background: rgba(22, 31, 51, 0.8);
-  border: 2px solid rgba(255, 183, 3, 0.5);
+  background: rgba(18, 24, 38, 0.85);
+  border: 2px solid rgba(204, 255, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 35px rgba(255, 87, 34, 0.5);
+  box-shadow: 0 0 35px rgba(204, 255, 0, 0.45);
   animation: pulse-aura 2s ease-in-out infinite;
 }
 
 @keyframes pulse-aura {
-  0%, 100% { transform: scale(0.96); box-shadow: 0 0 25px rgba(255, 87, 34, 0.4); }
-  50%       { transform: scale(1.05); box-shadow: 0 0 45px rgba(255, 183, 3, 0.7); }
+  0%, 100% { transform: scale(0.96); box-shadow: 0 0 25px rgba(204, 255, 0, 0.35); }
+  50%       { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 240, 255, 0.65); }
 }
 
 /* Brand */
@@ -138,10 +137,10 @@
 }
 
 .preloader-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(3rem, 6.5vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-family: 'Syne', system-ui, sans-serif;
+  font-size: clamp(3.2rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
   color: #FFFFFF;
   line-height: 1;
   text-shadow: 0 4px 30px rgba(0,0,0,0.9);
@@ -153,7 +152,7 @@
   font-weight: 800;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #FFB703, #FF5722, #06D6A0);
+  background: linear-gradient(90deg, #CCFF00, #00F0FF, #FF5500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -170,39 +169,40 @@
 .preloader-counter {
   display: flex;
   align-items: baseline;
-  gap: 3px;
+  gap: 6px;
 }
 
 .preloader-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 400;
+  font-family: 'Syne', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
   color: #FFFFFF;
   line-height: 1;
-  min-width: 60px;
+  min-width: 70px;
   text-align: right;
   font-variant-numeric: tabular-nums;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 25px rgba(204, 255, 0, 0.4);
 }
 
 .preloader-pct {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
-  color: #FFB703;
+  color: #CCFF00;
+  letter-spacing: 0.15em;
 }
 
-/* The Centered Visible Bar */
+/* Centered Progress Bar */
 .preloader-bar-track {
   width: 320px;
   max-width: 80vw;
   height: 6px;
   background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 183, 3, 0.4);
+  border: 1px solid rgba(204, 255, 0, 0.4);
   border-radius: 9999px;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 1px 4px rgba(0,0,0,0.6), 0 0 15px rgba(255, 87, 34, 0.2);
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.6), 0 0 15px rgba(204, 255, 0, 0.25);
 }
 
 .preloader-bar-fill {
@@ -210,11 +210,11 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #EF233C 0%, #FF5722 30%, #FFB703 65%, #06D6A0 100%);
+  background: linear-gradient(90deg, #FF5500 0%, #CCFF00 50%, #00F0FF 100%);
   border-radius: 9999px;
   transform-origin: left;
   transform: scaleX(0);
-  box-shadow: 0 0 20px rgba(255, 183, 3, 1);
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.9);
 }
 
 /* Tags */
@@ -222,15 +222,15 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.68rem;
+  font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(148, 163, 184, 0.8);
 }
 
 .preloader-tags .dot {
-  color: #FF5722;
+  color: #CCFF00;
   font-size: 0.65rem;
 }
 </style>
@@ -260,7 +260,7 @@ if (preloader && preBar && preCount && preCenter) {
     { opacity: 0, y: 24, scale: 0.92 },
     { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
   )
-  // 2. Animate counter 0 -> 100 and fill the center bar smoothly over ~2.4s
+  // 2. Animate counter 0 -> 100 and fill the center bar smoothly
   .to(counterObj, {
     value: 100,
     duration: 2.2,
@@ -270,7 +270,7 @@ if (preloader && preBar && preCount && preCenter) {
     }
   }, '+=0.05')
   .to(preBar, { scaleX: 1, duration: 2.2, ease: 'expo.inOut' }, '<')
-  // 3. Hold at 100% for a moment so the completed state is clearly visible
+  // 3. Hold at 100% for a moment
   .to(preCenter, { scale: 1.05, duration: 0.35, ease: 'power2.out' }, '+=0.1')
   // 4. Center smoothly fades out
   .to(preCenter, { opacity: 0, y: -40, scale: 1.1, duration: 0.5, ease: 'power3.in' }, '+=0.1')
@@ -280,7 +280,6 @@ if (preloader && preBar && preCount && preCenter) {
     duration: 1.1,
     ease: 'expo.inOut',
     onStart: () => {
-      // Trigger Hero entrance right as the curtain starts sliding up!
       // @ts-ignore
       window.isPreloaderRevealed = true;
       window.dispatchEvent(new Event('preloaderReveal'));
@@ -305,3 +304,4 @@ if (preloader && preBar && preCount && preCenter) {
   window.dispatchEvent(new Event('preloaderComplete'));
 }
 </script>
+

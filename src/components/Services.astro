@@ -1,103 +1,114 @@
 ---
-// Services.astro — Experiencias Gastronómicas Multi-Color
+// Services.astro → APEX Signature Athletic Programs
 ---
 
-<section class="section services" id="servicios" aria-labelledby="services-heading">
+<section class="section services" id="programas" aria-labelledby="services-heading">
   <div class="container">
     <div class="services__header reveal">
-      <span class="eyebrow">HOSPITALIDAD DE ALTA GAMA</span>
-      <span class="gold-line"></span>
+      <span class="eyebrow">DISCIPLINAS DE AUTOR</span>
+      <span class="volt-line"></span>
       <h2 class="display-heading services__heading" id="services-heading">
-        Experiencias <span class="highlight-aurora">Inmersivas</span>
+        Programas de <span class="highlight-volt">Alto Rendimiento</span>
       </h2>
       <p class="services__desc">
-        Más que una cena: una atmósfera diseñada al milímetro con iluminación tenue, vinilos en directo y servicio de mantel largo.
+        Clases de intensidad graduada dirigidas por head coaches y atletas de nivel competitivo. Cupos limitados para garantizar supervisión técnica personalizada.
       </p>
     </div>
 
     <div class="services__grid" role="list">
 
-      <!-- Experiencia 1: Ruby Sunset -->
-      <div class="service-card service-card--ruby reveal reveal-delay-1" role="listitem" tabindex="0">
+      <!-- Programa 1: Volt / Hyrox -->
+      <div class="service-card service-card--volt reveal reveal-delay-1" role="listitem" tabindex="0">
         <div class="service-card__top">
           <span class="service-card__num">№ 01</span>
           <div class="service-card__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
-              <path d="M12 6v6l4 2"/>
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
           </div>
         </div>
-        <h3 class="service-card__title">Salón Clandestino</h3>
+        <div class="service-card__badge-row">
+          <span class="service-tag">⚡ ALTA INTENSIDAD</span>
+          <span class="service-meta">60 MIN · 850 KCAL</span>
+        </div>
+        <h3 class="service-card__title">Hyrox Engine Lab</h3>
         <p class="service-card__desc">
-          Ambiente intimista en penumbras, sillones de terciopelo y barra de mármol negro. Música en vinilo seleccionada y servicio de mesa con cubertería francesa.
+          Entrenamiento metabólico de competición. Combinaciones de carrera sobre césped sintético, empuje de trineos Prowler, SkiErg, remos y burpees con estándares de carrera oficial.
         </p>
         <a href="#contacto" class="service-card__link">
-          <span>Reservar en Sala</span>
+          <span>Reservar Cupo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
-      <!-- Experiencia 2: Flame Saffron -->
-      <div class="service-card service-card--flame reveal reveal-delay-2" role="listitem" tabindex="0">
+      <!-- Programa 2: Cyan / Weightlifting -->
+      <div class="service-card service-card--cyan reveal reveal-delay-2" role="listitem" tabindex="0">
         <div class="service-card__top">
           <span class="service-card__num">№ 02</span>
           <div class="service-card__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              <path d="M6 5v14M18 5v14M2 12h20M6 9H3M6 15H3M18 9h3M18 15h3"/>
             </svg>
           </div>
         </div>
-        <h3 class="service-card__title">Chef's Table Omakase</h3>
+        <div class="service-card__badge-row">
+          <span class="service-tag">🏋️ FUERZA &amp; TÉCNICA</span>
+          <span class="service-meta">75 MIN · IWF ELEIKO</span>
+        </div>
+        <h3 class="service-card__title">Olympic Weightlifting</h3>
         <p class="service-card__desc">
-          Solo 8 comensales por servicio frente a las brasas. Menú degustación de 5 pasos con cortes no revelados en carta, maridados copa a copa por nuestro sommelier.
+          Perfeccionamiento técnico en arrancada (Snatch) y dos tiempos (Clean &amp; Jerk). Análisis de trayectoria de barra por video y periodización de fuerza máxima absoluta.
         </p>
         <a href="#contacto" class="service-card__link">
-          <span>Pase Chef's Table</span>
+          <span>Reservar Cupo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
-      <!-- Experiencia 3: Cobalt Violet -->
-      <div class="service-card service-card--cobalt reveal reveal-delay-3" role="listitem" tabindex="0">
+      <!-- Programa 3: Flame / Boxing -->
+      <div class="service-card service-card--flame reveal reveal-delay-3" role="listitem" tabindex="0">
         <div class="service-card__top">
           <span class="service-card__num">№ 03</span>
           <div class="service-card__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M8 22h8M12 15v7M17 2l2 6H5l2-6h10z"/>
-              <path d="M5 8c0 4.418 3.134 8 7 8s7-3.582 7-8H5z"/>
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>
             </svg>
           </div>
         </div>
-        <h3 class="service-card__title">La Cava & Mixología</h3>
+        <div class="service-card__badge-row">
+          <span class="service-tag">🥊 COMBATE &amp; AGILIDAD</span>
+          <span class="service-meta">50 MIN · 700 KCAL</span>
+        </div>
+        <h3 class="service-card__title">Combat Boxing Club</h3>
         <p class="service-card__desc">
-          Mixología de autor concebida con destilados premium, ahumados al soplete y maceraciones propias, junto a más de 120 etiquetas de vinos naturales.
+          Fundamentos de boxeo profesional en ring y bolsas de agua Aquabag. Trabajo de pies, reflejos, esquivas defensivas y rounds de alta demanda cardiovascular.
         </p>
         <a href="#contacto" class="service-card__link">
-          <span>Carta de Coctelería</span>
+          <span>Reservar Cupo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
-      <!-- Experiencia 4: Mint Jade -->
-      <div class="service-card service-card--mint reveal reveal-delay-4" role="listitem" tabindex="0">
+      <!-- Programa 4: Titanium / Reformer -->
+      <div class="service-card service-card--titanium reveal reveal-delay-4" role="listitem" tabindex="0">
         <div class="service-card__top">
           <span class="service-card__num">№ 04</span>
           <div class="service-card__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
             </svg>
           </div>
         </div>
-        <h3 class="service-card__title">Atelier Privé & Galas</h3>
+        <div class="service-card__badge-row">
+          <span class="service-tag">🧘 CONTROL &amp; CORE</span>
+          <span class="service-meta">55 MIN · REFORMER PRO</span>
+        </div>
+        <h3 class="service-card__title">Athletic Reformer</h3>
         <p class="service-card__desc">
-          Reserva completa del salón o catering VIP in situ para celebraciones exclusivas y eventos corporativos con cocina en vivo a cargo del chef ejecutivo.
+          Pilates dinámico de alta resistencia sobre camas Allegro 2. Enfoque en alineación escapular, estabilizadores profundos de la columna y prevención biomecánica de lesiones.
         </p>
         <a href="#contacto" class="service-card__link">
-          <span>Consultar Galas</span>
+          <span>Reservar Cupo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -114,7 +125,7 @@
 
 .services__header {
   margin-bottom: 4rem;
-  max-width: 620px;
+  max-width: 640px;
 }
 
 .services__heading {
@@ -123,10 +134,8 @@
   margin-bottom: 1rem;
 }
 
-.highlight-aurora {
-  font-family: var(--font-display);
-  font-style: italic;
-  background: linear-gradient(135deg, #06D6A0 0%, #3B82F6 50%, #8B5CF6 100%);
+.highlight-volt {
+  background: var(--grad-volt);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -154,7 +163,7 @@
   flex-direction: column;
   border-radius: var(--radius-md);
   position: relative;
-  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   overflow: hidden;
 }
 
@@ -162,43 +171,43 @@
   transform: translateY(-8px);
 }
 
-.service-card--ruby:hover {
-  border-color: #EF233C;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(239, 35, 60, 0.3);
+.service-card--volt:hover {
+  border-color: var(--color-volt);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(204, 255, 0, 0.3);
 }
-.service-card--ruby .service-card__num,
-.service-card--ruby .service-card__icon,
-.service-card--ruby .service-card__link { color: #EF233C; }
+.service-card--volt .service-card__num,
+.service-card--volt .service-card__icon,
+.service-card--volt .service-card__link { color: var(--color-volt); }
+
+.service-card--cyan:hover {
+  border-color: var(--color-cyan);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(0, 240, 255, 0.3);
+}
+.service-card--cyan .service-card__num,
+.service-card--cyan .service-card__icon,
+.service-card--cyan .service-card__link { color: var(--color-cyan); }
 
 .service-card--flame:hover {
-  border-color: #FF5722;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(255, 87, 34, 0.3);
+  border-color: var(--color-flame);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(255, 85, 0, 0.3);
 }
 .service-card--flame .service-card__num,
 .service-card--flame .service-card__icon,
-.service-card--flame .service-card__link { color: #FF5722; }
+.service-card--flame .service-card__link { color: var(--color-flame); }
 
-.service-card--cobalt:hover {
-  border-color: #3B82F6;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(59, 130, 246, 0.3);
+.service-card--titanium:hover {
+  border-color: #FFFFFF;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(255, 255, 255, 0.25);
 }
-.service-card--cobalt .service-card__num,
-.service-card--cobalt .service-card__icon,
-.service-card--cobalt .service-card__link { color: #3B82F6; }
-
-.service-card--mint:hover {
-  border-color: #06D6A0;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px rgba(6, 214, 160, 0.3);
-}
-.service-card--mint .service-card__num,
-.service-card--mint .service-card__icon,
-.service-card--mint .service-card__link { color: #06D6A0; }
+.service-card--titanium .service-card__num,
+.service-card--titanium .service-card__icon,
+.service-card--titanium .service-card__link { color: #FFFFFF; }
 
 .service-card__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .service-card__num {
@@ -218,13 +227,41 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
+.service-card__badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.service-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-volt);
+  background: rgba(204, 255, 0, 0.1);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.service-meta {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-cream-muted);
+}
+
 .service-card__title {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #FFFFFF;
   margin-bottom: 0.85rem;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .service-card__desc {
@@ -241,7 +278,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   transition: gap 0.3s ease;
@@ -260,3 +297,4 @@
   .services__grid { grid-template-columns: 1fr; }
 }
 </style>
+

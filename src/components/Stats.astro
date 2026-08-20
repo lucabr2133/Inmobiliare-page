@@ -1,12 +1,13 @@
 ---
-// Stats.astro — Métricas Multi-Color del Atelier
+// Stats.astro — Métricas de Rendimiento APEX
 ---
 
-<section class="stats" id="estadisticas" aria-labelledby="stats-heading">
-  <div class="stats__bg">
+<section class="section stats" id="estadisticas" aria-labelledby="stats-heading">
+  <!-- Dynamic Background with Performance Aura -->
+  <div class="stats__bg" aria-hidden="true">
     <img
-      src="https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
-      alt="Brasas ardientes de carbón en parrilla"
+      src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+      alt="Zona de pesas y fuerza en APEX Performance Club"
       class="stats__bg-img"
       loading="lazy"
     />
@@ -15,49 +16,48 @@
 
   <div class="container stats__content">
     <div class="stats__intro reveal">
-      <span class="eyebrow">EL RIGOR DE LA TÉCNICA</span>
-      <span class="gold-line gold-line--center"></span>
+      <span class="eyebrow">EL IMPACTO EN NÚMEROS</span>
+      <span class="volt-line volt-line--center"></span>
       <h2 class="display-heading stats__heading" id="stats-heading">
-        Números que <span class="highlight-flame">definen</span> nuestra cocina
+        Métricas de <span class="highlight-volt">Rendimiento</span>
       </h2>
     </div>
 
-    <div class="stats__grid" role="list" aria-label="Estadísticas de Élite Atelier">
-      <!-- Stat 1: Flame -->
-      <div class="stat-item stat-item--flame reveal reveal-delay-1" role="listitem">
+    <!-- 4 High-Impact Counters -->
+    <div class="stats__grid" role="list">
+
+      <div class="stat-item stat-item--volt reveal reveal-delay-1" role="listitem">
         <div class="stat-number-wrap">
-          <span class="stat-number" data-target="48">0</span>
-          <span class="stat-unit">H</span>
+          <span class="stat-number" data-target="15000">0</span>
+          <span class="stat-unit">KG</span>
         </div>
-        <p class="stat-label">Fermentación lenta de masa madre</p>
+        <p class="stat-label">Discos &amp; Barras Eleiko IWF</p>
       </div>
 
-      <!-- Stat 2: Mint -->
-      <div class="stat-item stat-item--mint reveal reveal-delay-2" role="listitem">
+      <div class="stat-item stat-item--cyan reveal reveal-delay-2" role="listitem">
         <div class="stat-number-wrap">
-          <span class="stat-number" data-target="100">0</span>
+          <span class="stat-number" data-target="98">0</span>
           <span class="stat-unit">%</span>
         </div>
-        <p class="stat-label">Wagyu Criollo Certificado</p>
+        <p class="stat-label">Retención de Atletas</p>
       </div>
 
-      <!-- Stat 3: Saffron -->
-      <div class="stat-item stat-item--saffron reveal reveal-delay-3" role="listitem">
+      <div class="stat-item stat-item--flame reveal reveal-delay-3" role="listitem">
         <div class="stat-number-wrap">
-          <span class="stat-number" data-target="300">0</span>
+          <span class="stat-number" data-target="40">0</span>
+          <span class="stat-unit">M</span>
+        </div>
+        <p class="stat-label">Pista de Trineo Prowler</p>
+      </div>
+
+      <div class="stat-item stat-item--titanium reveal reveal-delay-4" role="listitem">
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-target="110">0</span>
           <span class="stat-unit">°C</span>
         </div>
-        <p class="stat-label">Temperatura de sellado Maillard</p>
+        <p class="stat-label">Cámara Criogénica Celular</p>
       </div>
 
-      <!-- Stat 4: Cobalt -->
-      <div class="stat-item stat-item--cobalt reveal reveal-delay-4" role="listitem">
-        <div class="stat-number-wrap">
-          <span class="stat-number" data-target="8">0</span>
-          <span class="stat-unit"> PAX</span>
-        </div>
-        <p class="stat-label">Cupo por servicio Chef's Table</p>
-      </div>
     </div>
   </div>
 </section>
@@ -74,13 +74,13 @@
 
 .stats__bg-img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center 50%;
-  filter: brightness(0.4) contrast(1.2) saturate(1.1);
+  object-fit: cover; object-position: center 40%;
+  filter: brightness(0.35) contrast(1.25) saturate(1.05);
 }
 
 .stats__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at center, rgba(11,15,25,0.75) 0%, rgba(7,10,16,0.98) 100%);
+  background: radial-gradient(circle at center, rgba(8,12,20,0.75) 0%, rgba(5,8,14,0.98) 100%);
 }
 
 .stats__content { position: relative; z-index: 1; }
@@ -92,10 +92,8 @@
   margin-top: 0.5rem;
 }
 
-.highlight-flame {
-  font-family: var(--font-display);
-  font-style: italic;
-  background: var(--grad-flame);
+.highlight-volt {
+  background: var(--grad-volt);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -108,7 +106,7 @@
 
 .stat-item {
   padding: 3rem 1.75rem;
-  background: rgba(22, 31, 51, 0.75);
+  background: rgba(18, 24, 38, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
   position: relative;
@@ -117,28 +115,28 @@
 }
 
 .stat-item:hover {
-  background: rgba(30, 43, 71, 0.9);
+  background: rgba(26, 35, 56, 0.95);
   transform: translateY(-8px);
 }
 
-/* Multi-Color Stat Items */
-.stat-item--flame { border-bottom: 3px solid #FF5722; }
-.stat-item--flame .stat-number { color: #FF5722; }
-.stat-item--flame .stat-unit   { color: #FFB703; }
+/* Stat Items Accent Borders */
+.stat-item--volt { border-bottom: 3px solid var(--color-volt); }
+.stat-item--volt .stat-number { color: var(--color-volt); }
+.stat-item--volt .stat-unit   { color: var(--color-cyan); }
 
-.stat-item--mint { border-bottom: 3px solid #06D6A0; }
-.stat-item--mint .stat-number { color: #06D6A0; }
-.stat-item--mint .stat-unit   { color: #3B82F6; }
+.stat-item--cyan { border-bottom: 3px solid var(--color-cyan); }
+.stat-item--cyan .stat-number { color: var(--color-cyan); }
+.stat-item--cyan .stat-unit   { color: var(--color-volt); }
 
-.stat-item--saffron { border-bottom: 3px solid #FFB703; }
-.stat-item--saffron .stat-number { color: #FFB703; }
-.stat-item--saffron .stat-unit   { color: #FF5722; }
+.stat-item--flame { border-bottom: 3px solid var(--color-flame); }
+.stat-item--flame .stat-number { color: var(--color-flame); }
+.stat-item--flame .stat-unit   { color: #FFFFFF; }
 
-.stat-item--cobalt { border-bottom: 3px solid #3B82F6; }
-.stat-item--cobalt .stat-number { color: #3B82F6; }
-.stat-item--cobalt .stat-unit   { color: #8B5CF6; }
+.stat-item--titanium { border-bottom: 3px solid #FFFFFF; }
+.stat-item--titanium .stat-number { color: #FFFFFF; }
+.stat-item--titanium .stat-unit   { color: var(--color-volt); }
 
-.stat-number-wrap { display: flex; align-items: baseline; justify-content: center; gap: 2px; }
+.stat-number-wrap { display: flex; align-items: baseline; justify-content: center; gap: 4px; }
 
 .stat-number {
   font-family: var(--font-heading);
@@ -151,7 +149,7 @@
 
 .stat-unit {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
   font-weight: 800;
   line-height: 1;
 }
@@ -159,8 +157,8 @@
 .stat-label {
   margin-top: 1rem;
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-cream-muted);
   line-height: 1.5;
@@ -188,8 +186,8 @@
           const target = parseInt(counter.dataset.target ?? '0', 10);
           gsap.to(counter, {
             innerText: target,
-            duration: 1.8,
-            ease: "power3.out",
+            duration: 2,
+            ease: "power2.out",
             snap: { innerText: 1 },
             onUpdate: function() {
               counter.innerText = Math.round(Number(this.targets()[0].innerText)).toLocaleString('es-AR');

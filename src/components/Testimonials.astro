@@ -29,42 +29,65 @@ const testimonials = [
     tagColor: "#06D6A0",
   },
   {
-    id: 4,
-    quote: "La coctelería de autor y la música en vinilo generan una atmósfera nocturna impecable. La Smoked Bone Marrow con tuétano a la brasa es una obra de arte irrepetible.",
-    name: "Matías Zavaleta",
-    role: "Restaurateur & Jurado Culinario",
-    avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&dpr=1",
+    quote: 'El nivel biomecánico y la precisión en cada plataforma de levantamiento Eleiko no tienen comparación en el país. Mejoré mi total en Snatch y Clean & Jerk en 22 kg en solo 6 meses bajo la supervisión de los head coaches.',
+    name: 'Valentina Rossi',
+    role: 'Atleta Nacional de Halterofilia & Miembro APEX',
+    tagColor: '#CCFF00',
+    avatar: 'https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1',
     rating: 5,
-    tagColor: "#3B82F6",
-  }
+  },
+  {
+    quote: 'Como fundador con jornadas de 14 horas, el sistema de periodización basado en HRV y las sesiones de crioterapia a -110°C transformaron mi energía física y claridad mental. Es un santuario de alto rendimiento.',
+    name: 'Lucas Benítez',
+    role: 'Tech Founder & Atleta Hyrox Pro',
+    tagColor: '#00F0FF',
+    avatar: 'https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1',
+    rating: 5,
+  },
+  {
+    quote: 'El rigor fisiológico y la selección de maquinaria Prime y Arsenal Strength reducen a cero el impacto articular en sentadillas pesadas. Para atletas que buscan longevidad y fuerza real, APEX es el estándar definitivo.',
+    name: 'Dra. Camila Duarte',
+    role: 'Médica Especialista en Medicina Deportiva',
+    tagColor: '#FF5500',
+    avatar: 'https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1',
+    rating: 5,
+  },
+  {
+    quote: 'El tatami olímpico y el ring de boxeo profesional con sacos Aquabag ofrecen un entorno de entrenamiento de combate de primer nivel mundial. La comunidad empuja tus límites en cada round.',
+    name: 'Mateo Silva',
+    role: 'Luchador BJJ Black Belt & Boxeo Competitivo',
+    tagColor: '#FFFFFF',
+    avatar: 'https://images.pexels.com/photos/4754146/pexels-photo-4754146.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1',
+    rating: 5,
+  },
 ];
 ---
 
 <section class="section testimonials" id="testimonios" aria-labelledby="testimonials-heading">
   <div class="container">
     <div class="testimonials__header reveal">
-      <span class="eyebrow">LA PALABRA DE LA CRÍTICA</span>
-      <span class="gold-line gold-line--center"></span>
+      <span class="eyebrow">VOCES DE ALTO RENDIMIENTO</span>
+      <span class="volt-line volt-line--center"></span>
       <h2 class="display-heading testimonials__heading" id="testimonials-heading">
-        Elogios que <span class="highlight-flame">honran</span> el fuego
+        Historias de <span class="highlight-volt">Transformación</span>
       </h2>
     </div>
 
     <!-- Carousel -->
-    <div class="carousel reveal" role="region" aria-label="Críticas gastronómicas" aria-roledescription="carrusel">
+    <div class="carousel reveal" role="region" aria-label="Testimonios de atletas" aria-roledescription="carrusel">
       <div class="carousel__track" id="carousel-track" aria-live="polite">
         {testimonials.map((t, i) => (
           <article
             class="testimonial-card"
             role="group"
             aria-roledescription="diapositiva"
-            aria-label={`Crítica ${i + 1} de ${testimonials.length}`}
+            aria-label={`Testimonio ${i + 1} de ${testimonials.length}`}
             aria-hidden={i !== 0 ? 'true' : 'false'}
           >
-            <!-- Stars with Vibrant Gold -->
+            <!-- Stars -->
             <div class="testimonial-stars" aria-label={`${t.rating} de 5 estrellas`}>
               {Array.from({ length: t.rating }).map(() => (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB703" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#CCFF00" aria-hidden="true">
                   <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
                 </svg>
               ))}
@@ -104,7 +127,7 @@ const testimonials = [
               class={`carousel__dot${i === 0 ? ' active' : ''}`}
               role="tab"
               aria-selected={i === 0 ? 'true' : 'false'}
-              aria-label={`Ir a la reseña ${i + 1}`}
+              aria-label={`Ir al testimonio ${i + 1}`}
               data-index={i}
             ></button>
           ))}
@@ -122,7 +145,7 @@ const testimonials = [
 
 <style>
 .testimonials {
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -138,17 +161,15 @@ const testimonials = [
   margin-top: 0.5rem;
 }
 
-.highlight-flame {
-  font-family: var(--font-display);
-  font-style: italic;
-  background: var(--grad-flame);
+.highlight-volt {
+  background: var(--grad-volt);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Carousel */
 .carousel {
-  max-width: 860px;
+  max-width: 880px;
   margin-inline: auto;
   position: relative;
 }
@@ -191,12 +212,11 @@ const testimonials = [
 }
 
 .testimonial-quote {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 400;
   color: #FFFFFF;
   line-height: 1.7;
-  font-style: italic;
   margin-bottom: 2rem;
 }
 
@@ -212,19 +232,20 @@ const testimonials = [
   height: 56px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-flame);
+  border: 2px solid var(--color-volt);
   flex-shrink: 0;
-  box-shadow: 0 0 16px rgba(255, 87, 34, 0.4);
+  box-shadow: 0 0 16px rgba(204, 255, 0, 0.4);
 }
 
 .testimonial-name {
   display: block;
   font-style: normal;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #FFFFFF;
   margin-bottom: 0.2rem;
+  text-transform: uppercase;
 }
 
 .testimonial-role {
@@ -248,25 +269,26 @@ const testimonials = [
   height: 46px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: var(--color-bg-card);
-  color: var(--color-saffron);
+  color: var(--color-volt);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-base);
   border-radius: 50%;
-  flex-shrink: 0;
+  transition: all var(--transition-base);
 }
 
 .carousel__btn:hover {
-  border-color: var(--color-flame);
-  background: var(--color-flame);
-  color: #FFFFFF;
-  box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
+  border-color: var(--color-volt);
+  background: var(--color-volt);
+  color: #080C14;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
 }
 
 .carousel__dots {
   display: flex;
   gap: 0.6rem;
+  align-items: center;
 }
 
 .carousel__dot {
@@ -274,13 +296,16 @@ const testimonials = [
   height: 10px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0;
   transition: all var(--transition-base);
+  cursor: pointer;
 }
 
 .carousel__dot.active {
-  background: var(--grad-flame);
-  box-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
+  background: var(--color-volt);
   transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(204, 255, 0, 0.8);
 }
 </style>
 

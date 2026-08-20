@@ -1,78 +1,78 @@
 ---
-// Hero.astro — Vibrant Multi-Color High-Energy Hero
+// Hero.astro — APEX Performance Club Kinetic Athletic Hero
 ---
 
 <section class="hero" id="inicio" aria-label="Hero principal">
-  <!-- Background Image with Multi-Color Atmosphere -->
+  <!-- Background Image with Carbon & Volt Atmosphere -->
   <div class="hero__bg" id="hero-bg">
     <img
-      src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
-      alt="Hamburguesa artesanal Wagyu con queso fundido y costra dorada"
+      src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+      alt="Atleta de élite entrenando con barra olímpica en APEX Performance Club"
       class="hero__bg-img"
       id="hero-bg-img"
       fetchpriority="high"
       loading="eager"
     />
     <div class="hero__overlay"></div>
-    <div class="hero__glow hero__glow--flame"></div>
-    <div class="hero__glow hero__glow--cobalt"></div>
+    <div class="hero__glow hero__glow--volt"></div>
+    <div class="hero__glow hero__glow--cyan"></div>
   </div>
 
   <!-- Decorative Side Tag -->
   <div class="hero__side-tag" aria-hidden="true">
-    <span>AUTOR · FUEGO · 2025</span>
+    <span>ELITE TRAINING · BIOHACKING · 2025</span>
   </div>
 
   <div class="container hero__content">
     <!-- Meta tag -->
     <div class="hero__meta" id="hero-tag">
-      <span class="hero__badge">⚡ ATELIER GASTRONOMIQUE</span>
+      <span class="hero__badge">⚡ ATHLETIC SANCTUARY</span>
       <span class="hero__sep">·</span>
-      <span class="hero__loc">Palermo Soho, Buenos Aires</span>
+      <span class="hero__loc">Palermo Soho &amp; Recoleta, Buenos Aires</span>
     </div>
 
-    <!-- Bold Heading with Multi-Color Emphasis -->
+    <!-- Bold Heading with Volt Kinetic Emphasis -->
     <h1 class="hero__heading display-heading" id="hero-heading">
-      Fuego,<br />
-      <span class="hero__accent-text">Materia</span><br />
-      &amp; Técnica
+      Fuerza,<br />
+      <span class="hero__accent-text">Biomecánica</span><br />
+      &amp; Potencia
     </h1>
 
     <p class="hero__sub" id="hero-sub">
-      La hamburguesa elevada al estatus de alta gastronomía.
-      Blend de carne 100% Wagyu madurada, pan brioche de masa madre viva 48h y coctelería de autor.
+      El santuario definitivo de entrenamiento de alta intensidad, recuperación celular y longevidad en Buenos Aires. 
+      2.500 m² de equipamiento olímpico Eleiko, crioterapia a -110°C y coaching biomecánico personalizado.
     </p>
 
-    <!-- Multi-color Specs Grid -->
+    <!-- High-Performance Specs Grid -->
     <div class="hero__specs" id="hero-specs">
+      <div class="spec-card spec-card--volt">
+        <span class="spec-card__val">2.500 M²</span>
+        <span class="spec-card__lbl">Luxury Facility</span>
+      </div>
+      <div class="spec-card spec-card--cyan">
+        <span class="spec-card__val">100%</span>
+        <span class="spec-card__lbl">Eleiko &amp; Arsenal</span>
+      </div>
       <div class="spec-card spec-card--flame">
-        <span class="spec-card__val">A5</span>
-        <span class="spec-card__lbl">Wagyu Criollo</span>
+        <span class="spec-card__val">-110°C</span>
+        <span class="spec-card__lbl">Cryo &amp; Biohacking</span>
       </div>
-      <div class="spec-card spec-card--saffron">
-        <span class="spec-card__val">48H</span>
-        <span class="spec-card__lbl">Masa Madre</span>
-      </div>
-      <div class="spec-card spec-card--mint">
-        <span class="spec-card__val">300°C</span>
-        <span class="spec-card__lbl">Maillard Smash</span>
-      </div>
-      <div class="spec-card spec-card--cobalt">
-        <span class="spec-card__val">8 PAX</span>
-        <span class="spec-card__lbl">Chef's Table</span>
+      <div class="spec-card spec-card--titanium">
+        <span class="spec-card__val">1-ON-1</span>
+        <span class="spec-card__lbl">Head Coaches</span>
       </div>
     </div>
 
     <!-- Actions -->
     <div class="hero__actions" id="hero-actions">
-      <a href="#propiedades" class="btn btn-gold">
-        <span>Explorar la Carta</span>
+      <a href="#contacto" class="btn btn-volt">
+        <span>Reclamar 1-Day VIP Pass</span>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href="#contacto" class="btn btn-outline">
-        <span>Mesa del Chef</span>
+      <a href="#instalaciones" class="btn btn-outline">
+        <span>Explorar Instalaciones</span>
       </a>
     </div>
   </div>
@@ -91,7 +91,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #090D16;
+  background: #080C14;
 }
 
 /* Background */
@@ -101,8 +101,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
-  filter: brightness(0.65) contrast(1.15) saturate(1.1);
+  object-position: center 32%;
+  filter: brightness(0.55) contrast(1.2) saturate(1.05);
   transform: scale(1.06);
 }
 
@@ -111,9 +111,9 @@
   inset: 0;
   background: radial-gradient(
     circle at 30% 45%,
-    rgba(11, 15, 25, 0.4) 0%,
-    rgba(11, 15, 25, 0.8) 55%,
-    rgba(7, 10, 16, 0.98) 100%
+    rgba(8, 12, 20, 0.45) 0%,
+    rgba(8, 12, 20, 0.85) 55%,
+    rgba(5, 8, 14, 0.98) 100%
   );
 }
 
@@ -121,21 +121,21 @@
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(90px);
+  filter: blur(95px);
 }
 
-.hero__glow--flame {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 87, 34, 0.25) 0%, rgba(255, 183, 3, 0.1) 60%, transparent 80%);
-  top: 25%;
-  left: 20%;
+.hero__glow--volt {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(204, 255, 0, 0.2) 0%, rgba(0, 240, 255, 0.08) 60%, transparent 80%);
+  top: 20%;
+  left: 18%;
 }
 
-.hero__glow--cobalt {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(6, 214, 160, 0.08) 60%, transparent 80%);
+.hero__glow--cyan {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.18) 0%, rgba(255, 85, 0, 0.06) 60%, transparent 80%);
   bottom: 10%;
   right: 15%;
 }
@@ -148,9 +148,9 @@
   transform: translateY(-50%) rotate(90deg);
   font-family: var(--font-body);
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.3em;
-  color: rgba(255, 183, 3, 0.7);
+  color: rgba(204, 255, 0, 0.8);
   z-index: 2;
   white-space: nowrap;
 }
@@ -189,15 +189,15 @@
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: var(--grad-sunset);
-  color: #FFFFFF;
+  background: var(--color-volt);
+  color: #080C14;
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+  box-shadow: 0 4px 20px rgba(204, 255, 0, 0.45);
 }
 
 .hero__sep {
-  color: rgba(255, 183, 3, 0.6);
+  color: rgba(204, 255, 0, 0.6);
   font-size: 1.2rem;
 }
 
@@ -206,47 +206,47 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-cream-muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Heading */
 .hero__heading {
-  font-size: clamp(3.8rem, 8vw, 7rem);
+  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
   color: #FFFFFF;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 0.96;
   letter-spacing: -0.02em;
   margin-bottom: 1.75rem;
 }
 
 .hero__accent-text {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
-  background: linear-gradient(135deg, #FFB703 0%, #FF5722 50%, #EF233C 100%);
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 800;
+  background: linear-gradient(135deg, #CCFF00 0%, #00F0FF 60%, #FFFFFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  filter: drop-shadow(0 4px 20px rgba(255, 87, 34, 0.4));
+  filter: drop-shadow(0 4px 25px rgba(204, 255, 0, 0.35));
 }
 
 /* Subheading */
 .hero__sub {
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
   color: var(--color-cream-muted);
   line-height: 1.7;
-  max-width: 540px;
+  max-width: 560px;
   margin-bottom: 2.25rem;
   font-weight: 400;
 }
 
-/* Multi-color Specs Cards */
+/* Specs Cards */
 .hero__specs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.85rem;
   margin-bottom: 2.75rem;
-  max-width: 620px;
+  max-width: 640px;
 }
 
 .spec-card {
@@ -254,7 +254,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0.85rem 1rem;
-  background: rgba(22, 31, 51, 0.75);
+  background: rgba(18, 24, 38, 0.8);
   backdrop-filter: blur(12px);
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -265,17 +265,17 @@
   transform: translateY(-4px);
 }
 
-.spec-card--flame { border-bottom: 2px solid #FF5722; }
-.spec-card--flame .spec-card__val { color: #FF5722; }
+.spec-card--volt { border-bottom: 2px solid #CCFF00; }
+.spec-card--volt .spec-card__val { color: #CCFF00; }
 
-.spec-card--saffron { border-bottom: 2px solid #FFB703; }
-.spec-card--saffron .spec-card__val { color: #FFB703; }
+.spec-card--cyan { border-bottom: 2px solid #00F0FF; }
+.spec-card--cyan .spec-card__val { color: #00F0FF; }
 
-.spec-card--mint { border-bottom: 2px solid #06D6A0; }
-.spec-card--mint .spec-card__val { color: #06D6A0; }
+.spec-card--flame { border-bottom: 2px solid #FF5500; }
+.spec-card--flame .spec-card__val { color: #FF5500; }
 
-.spec-card--cobalt { border-bottom: 2px solid #3B82F6; }
-.spec-card--cobalt .spec-card__val { color: #3B82F6; }
+.spec-card--titanium { border-bottom: 2px solid #FFFFFF; }
+.spec-card--titanium .spec-card__val { color: #FFFFFF; }
 
 .spec-card__val {
   font-family: var(--font-heading);
@@ -290,7 +290,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-cream-muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Actions */
@@ -316,7 +316,7 @@
 .hero__scroll-bar {
   width: 2px;
   height: 48px;
-  background: var(--grad-flame);
+  background: var(--grad-volt);
   border-radius: 1px;
   animation: scroll-pulse 2.2s ease-in-out infinite;
 }
@@ -330,8 +330,8 @@
   font-size: 0.58rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-saffron);
-  font-weight: 700;
+  color: var(--color-volt);
+  font-weight: 800;
 }
 
 /* Responsive */
@@ -359,7 +359,6 @@
     hasRevealed = true;
 
     const heading = document.getElementById('hero-heading');
-    const specs   = document.getElementById('hero-specs');
     const heroTl  = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     // Make ALL parent containers visible before animating their content
@@ -406,7 +405,7 @@
         '-=0.4'
       );
 
-    // Navbar entrance slide-down (separate tween with delay)
+    // Navbar entrance slide-down
     const navbar = document.getElementById('navbar');
     if (navbar) {
       gsap.fromTo(navbar,
@@ -442,3 +441,4 @@
     }
   });
 </script>
+

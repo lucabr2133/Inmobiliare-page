@@ -1,473 +1,406 @@
 ---
-// ContactCTA.astro — Reservas & Concierge (Multi-Color)
+// ContactCTA.astro — APEX 1-Day VIP Pass Application & Concierge
 ---
 
-<section class="contact-section" id="contacto" aria-labelledby="contact-heading">
-  <div class="contact-section__inner">
-    <!-- Left panel: Info & Concierge -->
-    <div class="contact-panel contact-panel--info">
-      <div class="contact-panel__content">
-        <span class="eyebrow">CONCIERGE &amp; RESERVAS</span>
-        <span class="gold-line"></span>
-        <h2 class="display-heading contact-heading" id="contact-heading">
-          Asegure su <span class="highlight-flame">Mesa</span>
+<section class="section contact" id="contacto" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact__grid">
+      <!-- Left: High-Energy Athletic Info -->
+      <div class="contact__info">
+        <span class="eyebrow">RECLAMAR 1-DAY VIP PASS</span>
+        <span class="volt-line"></span>
+        <h2 class="display-heading contact__heading" id="contact-heading">
+          Desata tu <span class="highlight-volt">Potencial</span>
         </h2>
-        <p class="contact-intro">
-          Debido a nuestro aforo reducido y al proceso de maduración de nuestras carnes, recomendamos reservar con al menos 48 horas de anticipación.
+        <p class="contact__desc">
+          Vive la experiencia de entrenar en el club biomecánico más avanzado de la región. Tu VIP Pass incluye acceso total a las 6 zonas, evaluación con Head Coach y sesión en el Recovery Spa.
         </p>
 
-        <!-- Contact info with Multi-Color Icons -->
-        <div class="contact-info-list" role="list">
-          <div class="contact-info-item" role="listitem">
-            <div class="contact-info-icon contact-info-icon--flame" aria-hidden="true">
+        <div class="contact__details">
+          <div class="contact-item contact-item--volt">
+            <div class="contact-item__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
             <div>
-              <span class="contact-info-label" style="color: #FF5722;">Atelier Palermo</span>
-              <span class="contact-info-value">Honduras 5580 · Palermo Soho, Buenos Aires</span>
+              <span class="contact-item__label">SEDES BUENOS AIRES</span>
+              <p class="contact-item__val">Palermo Soho (Gorriti 5120)<br />Recoleta (Av. Alvear 1890)</p>
             </div>
           </div>
 
-          <div class="contact-info-item" role="listitem">
-            <div class="contact-info-icon contact-info-icon--saffron" aria-hidden="true">
+          <div class="contact-item contact-item--cyan">
+            <div class="contact-item__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.1 19.79 19.79 0 0 1 1.63 2.55a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
               </svg>
             </div>
             <div>
-              <span class="contact-info-label" style="color: #FFB703;">Línea Directa Concierge</span>
-              <span class="contact-info-value">+54 11 5500-1111</span>
+              <span class="contact-item__label">HORARIOS DE APERTURA</span>
+              <p class="contact-item__val">Lunes a Viernes: 06:00 – 23:00<br />Sábados y Domingos: 08:00 – 20:00</p>
             </div>
           </div>
 
-          <div class="contact-info-item" role="listitem">
-            <div class="contact-info-icon contact-info-icon--mint" aria-hidden="true">
+          <div class="contact-item contact-item--flame">
+            <div class="contact-item__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </div>
             <div>
-              <span class="contact-info-label" style="color: #06D6A0;">Eventos &amp; Galas Privadas</span>
-              <span class="contact-info-value">concierge@eliteatelier.com.ar</span>
-            </div>
-          </div>
-
-          <div class="contact-info-item" role="listitem">
-            <div class="contact-info-icon contact-info-icon--cobalt" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12,6 12,12 16,14"/>
-              </svg>
-            </div>
-            <div>
-              <span class="contact-info-label" style="color: #3B82F6;">Turnos de Servicio</span>
-              <span class="contact-info-value">Martes a Domingo · 20:00 y 22:30 hs</span>
+              <span class="contact-item__label">LÍNEA DIRECTA CONCIERGE</span>
+              <p class="contact-item__val">+54 11 4899-APEX (2739)<br />vip@apexclub.com.ar</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Right panel: Booking Form -->
-    <div class="contact-panel contact-panel--form">
-      <form class="contact-form" id="contact-form" novalidate aria-label="Formulario de reserva">
-        <h3 class="contact-form__title">Solicitud de Reserva</h3>
+      <!-- Right: Application Form -->
+      <div class="contact__form-wrap">
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="form-badge">⚡ AFORO EXCLUSIVO · CUPOS LIMITADOS POR TURNO</div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="form-label">Nombre Completo *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Ej. Martina Silva" required />
+            </div>
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="contact-name" class="form-label">Nombre y Apellido <span aria-hidden="true">*</span></label>
-            <input
-              type="text"
-              id="contact-name"
-              name="nombre"
-              class="form-input"
-              placeholder="Ej: Sebastián Thorne"
-              required
-              autocomplete="name"
-              aria-required="true"
-            />
+            <div class="form-group">
+              <label for="email" class="form-label">Email Corporativo / Personal *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required />
+            </div>
           </div>
-          <div class="form-field">
-            <label for="contact-email" class="form-label">Email de Contacto <span aria-hidden="true">*</span></label>
-            <input
-              type="email"
-              id="contact-email"
-              name="email"
-              class="form-input"
-              placeholder="sebastian@ejemplo.com"
-              required
-              autocomplete="email"
-              aria-required="true"
-            />
-          </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="contact-phone" class="form-label">Teléfono / WhatsApp <span aria-hidden="true">*</span></label>
-            <input
-              type="tel"
-              id="contact-phone"
-              name="telefono"
-              class="form-input"
-              placeholder="+54 11 9999-9999"
-              required
-              autocomplete="tel"
-            />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone" class="form-label">WhatsApp Móvil *</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+54 9 11 ..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="location" class="form-label">Sede de Preferencia *</label>
+              <select id="location" name="location" class="form-input form-select" required>
+                <option value="palermo">Palermo Soho — Gorriti 5120</option>
+                <option value="recoleta">Recoleta — Av. Alvear 1890</option>
+              </select>
+            </div>
           </div>
-          <div class="form-field">
-            <label for="contact-type" class="form-label">Experiencia Deseada <span aria-hidden="true">*</span></label>
-            <select
-              id="contact-type"
-              name="tipo-consulta"
-              class="form-select"
-              required
-              aria-required="true"
-            >
-              <option value="" disabled selected>Seleccione experiencia</option>
-              <option value="salon">Mesa en Salón Clandestino</option>
-              <option value="chefs-table">Chef's Table Omakase (5 Pasos)</option>
-              <option value="cava">La Cava &amp; Degustación Privada</option>
-              <option value="gala">Atelier Privé (Evento Exclusivo)</option>
+
+          <div class="form-group">
+            <label for="goal" class="form-label">Objetivo Principal de Rendimiento *</label>
+            <select id="goal" name="goal" class="form-input form-select" required>
+              <option value="fuerza">Fuerza Máxima &amp; Levantamiento Olímpico</option>
+              <option value="hipertrofia">Hipertrofia &amp; Biomecánica Muscular</option>
+              <option value="hyrox">Acondicionamiento Metabólico &amp; Hyrox</option>
+              <option value="biohacking">Longevidad Celular &amp; Biohacking Crio</option>
+              <option value="combate">Boxeo de Combate &amp; Agilidad</option>
             </select>
           </div>
-        </div>
 
-        <div class="form-field">
-          <label for="contact-message" class="form-label">Fecha, Horario y Cantidad de Personas</label>
-          <textarea
-            id="contact-message"
-            name="mensaje"
-            class="form-textarea"
-            placeholder="Indíquenos fecha estimada, turno deseado (20:00 o 22:30), número de comensales y cualquier restricción o preferencia..."
-            rows="4"
-          ></textarea>
-        </div>
+          <div class="form-group">
+            <label for="notes" class="form-label">Experiencia previa o notas al Head Coach (Opcional)</label>
+            <textarea id="notes" name="notes" class="form-input form-textarea" rows="3" placeholder="Contanos sobre tu nivel de entrenamiento actual, lesiones o metas específicas..."></textarea>
+          </div>
 
-        <button type="submit" class="btn btn-gold form-submit" id="form-submit-btn">
-          <span>Confirmar Solicitud con Concierge</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </button>
+          <button type="submit" class="btn btn-volt contact__btn" style="width:100%;justify-content:center;">
+            <span>Solicitar 1-Day VIP Pass Gratuito</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
 
-        <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06D6A0" stroke-width="2.5" aria-hidden="true">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22,4 12,14.01 9,11.01"/>
-          </svg>
-          ¡Solicitud enviada! Nuestro Concierge se pondrá en contacto para confirmar su mesa.
-        </div>
-      </form>
+          <p class="form-legal">
+            Al enviar tu solicitud, un Concierge de APEX te contactará por WhatsApp en menos de 2 horas para coordinar tu fecha y horario preferido.
+          </p>
+
+          <div class="form-success" id="form-success" role="alert" aria-live="assertive">
+            <span class="form-success__icon">⚡</span>
+            <div>
+              <strong style="color:#CCFF00;font-size:1.1rem;display:block;margin-bottom:0.3rem;">¡SOLICITUD VIP RECIBIDA CON ÉXITO!</strong>
+              <p>Tu 1-Day Pass ha sido reservado. Te enviamos los detalles de acceso y vestuario a tu WhatsApp y correo electrónico.</p>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-.contact-section {
-  background: var(--color-bg-dark);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+.contact {
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-section__inner {
+.contact__grid {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  min-height: 640px;
-}
-
-/* Panels */
-.contact-panel--info {
-  background: var(--color-bg-dark-2);
-  padding: clamp(3.5rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
+  gap: clamp(3rem, 6vw, 6rem);
   align-items: center;
 }
 
-.contact-panel__content {
-  max-width: 480px;
-}
-
-.contact-panel--form {
-  padding: clamp(3.5rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+.contact__info {
   display: flex;
-  align-items: center;
-  background: var(--color-bg-alt);
+  flex-direction: column;
 }
 
-/* Info panel */
-.contact-heading {
-  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+.contact__heading {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   color: #FFFFFF;
   margin-bottom: 1.25rem;
-  margin-top: 0.5rem;
 }
 
-.highlight-flame {
-  font-family: var(--font-display);
-  font-style: italic;
-  background: var(--grad-flame);
+.highlight-volt {
+  background: var(--grad-volt);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.contact-intro {
+.contact__desc {
   font-size: var(--fs-md);
   color: var(--color-cream-muted);
   line-height: var(--lh-loose);
-  font-weight: 400;
   margin-bottom: 2.5rem;
+  font-weight: 400;
 }
 
-.contact-info-list {
+.contact__details {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
-.contact-info-item {
+.contact-item {
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
+  padding: 1.25rem;
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.contact-info-icon {
+.contact-item:hover { transform: translateX(6px); }
+
+.contact-item--volt:hover { border-color: var(--color-volt); }
+.contact-item--volt .contact-item__icon { color: var(--color-volt); }
+
+.contact-item--cyan:hover { border-color: var(--color-cyan); }
+.contact-item--cyan .contact-item__icon { color: var(--color-cyan); }
+
+.contact-item--flame:hover { border-color: var(--color-flame); }
+.contact-item--flame .contact-item__icon { color: var(--color-flame); }
+
+.contact-item__icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
 }
 
-.contact-info-icon--flame   { color: #FF5722; box-shadow: 0 0 15px rgba(255, 87, 34, 0.3); }
-.contact-info-icon--saffron { color: #FFB703; box-shadow: 0 0 15px rgba(255, 183, 3, 0.3); }
-.contact-info-icon--mint    { color: #06D6A0; box-shadow: 0 0 15px rgba(6, 214, 160, 0.3); }
-.contact-info-icon--cobalt  { color: #3B82F6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
-
-.contact-info-label {
-  display: block;
-  font-size: 0.72rem;
+.contact-item__label {
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: var(--ls-wider);
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  color: var(--color-cream-muted);
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-.contact-info-value {
-  display: block;
-  font-size: 0.92rem;
-  color: var(--color-cream-muted);
-  font-weight: 400;
+.contact-item__val {
+  font-size: 0.88rem;
+  color: #FFFFFF;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 /* Form */
-.contact-form {
-  width: 100%;
+.contact__form-wrap {
+  position: relative;
 }
 
-.contact-form__title {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 2rem;
+.contact__form {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(204, 255, 0, 0.25);
+  border-radius: var(--radius-md);
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+  position: relative;
+}
+
+.form-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-volt);
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
-.form-field {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 0;
-}
-
-.form-field + .form-field {
   margin-bottom: 1.25rem;
 }
 
 .form-label {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: var(--ls-wide);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-cream-muted);
 }
 
-.form-label span { color: var(--color-flame); }
-
-.form-input,
-.form-select,
-.form-textarea {
-  background: var(--color-bg-card);
+.form-input {
+  background: rgba(8, 12, 20, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
   color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 400;
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius-sm);
-  width: 100%;
-  transition: border-color var(--transition-base), background var(--transition-base), box-shadow var(--transition-base);
+  font-size: 0.88rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
   outline: none;
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: rgba(148, 163, 184, 0.5);
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  border-color: var(--color-saffron);
-  background: var(--color-bg-card-hover);
-  box-shadow: 0 0 20px rgba(255, 183, 3, 0.2);
-}
-
-.form-input.error,
-.form-select.error,
-.form-textarea.error {
-  border-color: #EF233C;
+  border-color: var(--color-volt);
+  box-shadow: 0 0 16px rgba(204, 255, 0, 0.3);
 }
 
 .form-select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FFB703' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23CCFF00' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1.2rem center;
+  background-position: right 1rem center;
   cursor: pointer;
 }
 
 .form-select option {
-  background: var(--color-bg-card);
+  background: #080C14;
   color: #FFFFFF;
 }
 
-.form-textarea { resize: vertical; min-height: 110px; }
+.form-textarea { resize: vertical; }
 
-.form-submit {
-  width: 100%;
-  justify-content: center;
-  margin-top: 1.75rem;
-  margin-bottom: 1rem;
-  padding: 1.15rem;
+.contact__btn {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-size: 0.82rem;
 }
 
-/* Success */
-.form-success {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 1.25rem 1.5rem;
-  background: rgba(6, 214, 160, 0.12);
-  border: 1px solid #06D6A0;
-  color: #FFFFFF;
-  font-size: 0.95rem;
+.form-legal {
+  font-size: 0.72rem;
+  color: var(--color-cream-muted);
   line-height: 1.5;
-  border-radius: var(--radius-sm);
+  text-align: center;
+  margin-top: 1rem;
 }
+
+.form-success {
+  display: none;
+  background: rgba(204, 255, 0, 0.1);
+  border: 1px solid var(--color-volt);
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  margin-top: 1.5rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form-success.show { display: flex; }
+.form-success__icon { font-size: 2rem; }
 
 @media (max-width: 900px) {
-  .contact-section__inner { grid-template-columns: 1fr; }
-  .contact-panel--info { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+  .contact__grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
 </style>
 
 <script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const successEl = document.getElementById('form-success');
-  const submitBtn = document.getElementById('form-submit-btn') as HTMLButtonElement;
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    let valid = true;
-    const required = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]');
-    required.forEach(field => {
-      field.classList.remove('error');
-      if (!field.value.trim()) {
-        field.classList.add('error');
-        valid = false;
-      }
-    });
-
-    if (!valid) return;
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>Procesando Reserva...</span>';
-
-    await new Promise(r => setTimeout(r, 1200));
-
-    form.style.display = 'none';
-    if (successEl) successEl.hidden = false;
-  });
-
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { SplitText } from 'gsap/SplitText';
 
-  gsap.registerPlugin(ScrollTrigger, SplitText);
+  gsap.registerPlugin(ScrollTrigger);
 
-  const contactSection = document.querySelector('.contact-section');
-  const contactHeading = document.getElementById('contact-heading');
-  const contactItems   = document.querySelectorAll('.contact-info-item');
-  const contactForm    = document.querySelector('.contact-panel--form');
+  const contactSection = document.getElementById('contacto');
+  const info = contactSection?.querySelector<HTMLElement>('.contact__info');
+  const form = contactSection?.querySelector<HTMLElement>('.contact__form-wrap');
 
-  if (contactSection && contactHeading) {
-    const split = new SplitText(contactHeading, { type: 'words,chars' });
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: contactSection,
-        start: 'top 78%',
-        toggleActions: 'play none none none',
-        once: true,
+  if (contactSection && info && form) {
+    gsap.fromTo(info,
+      { opacity: 0, x: -35 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: contactSection,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        onComplete: () => {
+          gsap.set(info, { clearProps: 'transform' });
+        }
       }
-    });
+    );
 
-    tl.from(split.words, {
-      opacity: 0,
-      yPercent: 100,
-      rotateX: -25,
-      duration: 1.1,
-      stagger: 0.05,
-      ease: 'expo.out',
-      onComplete: () => split.revert(),
-    })
-    .from('.contact-intro', {
-      opacity: 0,
-      y: 20,
-      duration: 0.7,
-      ease: 'power3.out',
-    }, '-=0.7')
-    .from(contactItems, {
-      opacity: 0,
-      x: -25,
-      duration: 0.7,
-      stagger: 0.08,
-      ease: 'power3.out',
-      clearProps: 'transform',
-    }, '-=0.5')
-    .from(contactForm, {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: 'power3.out',
-      clearProps: 'transform',
-    }, '-=0.6');
+    gsap.fromTo(form,
+      { opacity: 0, x: 35 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        delay: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: contactSection,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        onComplete: () => {
+          gsap.set(form, { clearProps: 'transform' });
+        }
+      }
+    );
   }
+
+  // Handle Form Submission
+  const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+  const formSuccess = document.getElementById('form-success');
+
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (contactForm.checkValidity()) {
+      if (formSuccess) {
+        formSuccess.classList.add('show');
+        gsap.fromTo(formSuccess,
+          { opacity: 0, scale: 0.95 },
+          { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.5)' }
+        );
+      }
+    } else {
+      contactForm.reportValidity();
+    }
+  });
 </script>
