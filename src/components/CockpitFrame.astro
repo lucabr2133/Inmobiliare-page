@@ -1,0 +1,287 @@
+---
+// CockpitFrame.astro — Tactical Athletic Cockpit Master Shell
+---
+
+<div class="cockpit-hud">
+  <!-- Top Command Ribbon -->
+  <header class="cockpit-ribbon">
+    <div class="cockpit-ribbon__left">
+      <div class="cockpit-brand">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
+        </svg>
+        <span class="cockpit-sys-name">APEX OS v5.0</span>
+      </div>
+      <div class="cockpit-sep">|</div>
+      <div class="cockpit-status-item">
+        <span class="os-lamp"></span>
+        <span>PALERMO SOHO · RECOLETA</span>
+      </div>
+    </div>
+
+    <div class="cockpit-ribbon__center">
+      <nav class="cockpit-modes" id="cockpit-nav" aria-label="Selector de módulos de consola">
+        <button class="mode-tab active" data-mode="zones">01 // ZONAS</button>
+        <button class="mode-tab" data-mode="protocols">02 // PROTOCOLOS</button>
+        <button class="mode-tab" data-mode="radar">03 // HORARIOS</button>
+        <button class="mode-tab" data-mode="coaches">04 // COACHES</button>
+        <button class="mode-tab" data-mode="biohack">05 // RECOVERY</button>
+        <button class="mode-tab" data-mode="pass">06 // VIP KEY</button>
+      </nav>
+    </div>
+
+    <div class="cockpit-ribbon__right">
+      <div class="cockpit-time" id="cockpit-clock">
+        BA: --:--:-- GMT-3
+      </div>
+      <button class="audio-btn" id="audio-toggle" title="Alternar audio ambiental">
+        <span class="audio-bars">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="audio-lbl">BINAURAL 40Hz</span>
+      </button>
+      <a href="#access-terminal" class="os-btn os-btn-volt cockpit-cta-btn" onclick="document.querySelector('[data-mode=pass]')?.click()">
+        <span>PASS VIP</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Mobile Tactical Nav Switcher -->
+  <div class="cockpit-mobile-dock">
+    <button class="mobile-dock-btn active" data-mode="zones">ZONAS</button>
+    <button class="mobile-dock-btn" data-mode="protocols">PROGRAMAS</button>
+    <button class="mobile-dock-btn" data-mode="radar">HORARIOS</button>
+    <button class="mobile-dock-btn" data-mode="coaches">COACHES</button>
+    <button class="mobile-dock-btn" data-mode="biohack">CRYO</button>
+    <button class="mobile-dock-btn" data-mode="pass">VIP PASS</button>
+  </div>
+</div>
+
+<style>
+.cockpit-hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  pointer-events: none;
+}
+
+.cockpit-ribbon {
+  pointer-events: auto;
+  background: rgba(6, 7, 9, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--os-border-volt);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  font-family: var(--font-os-mono);
+  font-size: 0.72rem;
+}
+
+.cockpit-ribbon__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cockpit-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-os-tech);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+}
+
+.cockpit-sep {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.cockpit-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--os-muted);
+}
+
+/* Center Modes */
+.cockpit-modes {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mode-tab {
+  background: transparent;
+  border: none;
+  color: var(--os-muted);
+  font-family: var(--font-os-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-tab:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mode-tab.active {
+  background: var(--os-volt);
+  color: #060709;
+  font-weight: 800;
+  box-shadow: 0 0 15px rgba(217, 255, 0, 0.4);
+}
+
+/* Right */
+.cockpit-ribbon__right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cockpit-time {
+  color: var(--os-volt);
+  font-weight: 700;
+}
+
+.audio-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  color: var(--os-muted);
+  padding: 0.35rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-os-mono);
+  font-size: 0.62rem;
+  transition: all 0.2s ease;
+}
+
+.audio-btn:hover {
+  border-color: var(--os-volt);
+  color: var(--os-volt);
+}
+
+.audio-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 10px;
+}
+
+.audio-bars span {
+  width: 2px;
+  height: 100%;
+  background: var(--os-volt);
+  border-radius: 1px;
+  animation: audio-bounce 0.8s infinite ease-in-out alternate;
+}
+
+.audio-bars span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+.audio-bars span:nth-child(3) { animation-delay: 0.4s; height: 80%; }
+
+@keyframes audio-bounce {
+  from { height: 30%; }
+  to { height: 100%; }
+}
+
+.cockpit-cta-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+}
+
+/* Mobile Dock */
+.cockpit-mobile-dock {
+  display: none;
+  pointer-events: auto;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(6, 7, 9, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--os-border-volt);
+  border-radius: 6px;
+  padding: 0.4rem;
+  justify-content: space-between;
+  gap: 0.25rem;
+  z-index: 9000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.mobile-dock-btn {
+  background: transparent;
+  border: none;
+  color: var(--os-muted);
+  font-family: var(--font-os-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.5rem 0.25rem;
+  flex: 1;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.mobile-dock-btn.active {
+  background: var(--os-volt);
+  color: #060709;
+}
+
+@media (max-width: 1024px) {
+  .cockpit-modes { display: none; }
+  .cockpit-mobile-dock { display: flex; }
+  .audio-btn { display: none; }
+}
+</style>
+
+<script>
+  // Clock
+  const clockEl = document.getElementById('cockpit-clock');
+  const updateClock = () => {
+    const now = new Date();
+    const str = now.toLocaleTimeString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', hour12: false });
+    if (clockEl) clockEl.innerText = `BA: ${str} GMT-3`;
+  };
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Mode Switcher Engine
+  const modeTabs = document.querySelectorAll<HTMLButtonElement>('.mode-tab, .mobile-dock-btn');
+  
+  modeTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.mode;
+      if (!mode) return;
+
+      modeTabs.forEach(b => {
+        if (b.dataset.mode === mode) b.classList.add('active');
+        else b.classList.remove('active');
+      });
+
+      // Dispatch global OS mode event
+      window.dispatchEvent(new CustomEvent('osModeChange', { detail: { mode } }));
+
+      // Scroll to workspace pane
+      const targetPane = document.getElementById(`pane-${mode}`);
+      if (targetPane) {
+        targetPane.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+</script>
