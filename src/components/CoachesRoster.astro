@@ -1,0 +1,262 @@
+---
+// CoachesRoster.astro — Head Coaches & Master Trainers Roster
+const coaches = [
+  {
+    name: 'Valentina Rossi',
+    role: 'HEAD OF OLYMPIC LIFTING',
+    badge: 'IWF ELITE COACH',
+    prs: 'Snatch: 108kg · Clean & Jerk: 135kg',
+    bio: 'Ex-integrante de la Selección Nacional de Halterofilia con 12 años de experiencia en biomecánica deportiva y optimización del vector de tracción.',
+    specialty: 'Trayectoria de Barra · Fuerza Máxima',
+    image: 'https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1'
+  },
+  {
+    name: 'Marcos Valdés',
+    role: 'HEAD OF METABOLIC & HYROX',
+    badge: 'TOP 10 MUNDIAL HYROX',
+    prs: 'Sub-58min Hyrox Pro · 2000m Rower: 5:58',
+    bio: 'Especialista en fisiología del ejercicio láctico y periodización del umbral anaeróbico. Entrenador oficial de atletas de élite en circuitos internacionales.',
+    specialty: 'Potencia Anaeróbica · Ritmo de Carrera',
+    image: 'https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1'
+  },
+  {
+    name: 'Mateo Silva',
+    role: 'HEAD OF COMBAT & STRIKING',
+    badge: 'CAMPEÓN SUDAMERICANO',
+    prs: 'Récord Profesional: 18-2 · Black Belt BJJ',
+    bio: 'Boxeador profesional y preparador físico de atletas de artes marciales. Enfoque riguroso en la cadena cinética de transferencia de potencia y esquiva.',
+    specialty: 'Footwork · Precisión de Golpeo',
+    image: 'https://images.pexels.com/photos/4754146/pexels-photo-4754146.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1'
+  },
+  {
+    name: 'Dra. Camila Duarte',
+    role: 'HEAD OF BIO-MOBILITY & KINESIOLOGY',
+    badge: 'MÉDICA ESPECIALISTA',
+    prs: 'Certificada Balanced Body Allegro 2 Master',
+    bio: 'Médica especializada en rehabilitación deportiva y estabilidad espinal. Creadora del protocolo APEX de prevención biomecánica y longevidad articular.',
+    specialty: 'Control Escapular · Longevidad Espinal',
+    image: 'https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1'
+  }
+];
+---
+
+<section class="section coaches" id="coaches">
+  <div class="container">
+    <div class="coaches__head reveal">
+      <span class="mono-tag">04 // CUERPO TÉCNICO &amp; CIENTÍFICO</span>
+      <h2 class="display-title coaches__title">
+        MASTER <span class="highlight-volt">COACHES</span>
+      </h2>
+      <p class="coaches__desc">
+        Atletas de nivel olímpico y especialistas en medicina deportiva dedicados a perfeccionar tu biomecánica sin concesiones.
+      </p>
+    </div>
+
+    <!-- Coaches Grid -->
+    <div class="coaches__grid reveal" role="list">
+      {coaches.map(c => (
+        <div class="coach-card" role="listitem">
+          <div class="coach-card__img-wrap">
+            <img src={c.image} alt={`Coach ${c.name}`} class="coach-card__img" loading="lazy" />
+            <div class="coach-card__overlay"></div>
+            <span class="coach-badge">{c.badge}</span>
+          </div>
+
+          <div class="coach-card__body">
+            <span class="coach-role">{c.role}</span>
+            <h3 class="coach-name">{c.name}</h3>
+            
+            <div class="coach-pr-box">
+              <span class="pr-lbl">RÉCORDS / METAS</span>
+              <p class="pr-val">{c.prs}</p>
+            </div>
+
+            <p class="coach-bio">{c.bio}</p>
+
+            <div class="coach-spec">
+              <span class="spec-lbl">ESPECIALIDAD:</span>
+              <span class="spec-txt">{c.specialty}</span>
+            </div>
+
+            <a href="#vip-pass" class="btn btn-ghost coach-btn">
+              <span>AGENDAR 1-ON-1</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.coaches {
+  background: var(--color-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.coaches__head {
+  max-width: 650px;
+  margin-bottom: 3.5rem;
+}
+
+.coaches__title {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  margin-block: 0.5rem 1rem;
+}
+
+.coaches__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Grid */
+.coaches__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.coach-card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coach-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-volt);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(217, 255, 0, 0.2);
+}
+
+.coach-card__img-wrap {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.coach-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.15);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coach-card:hover .coach-card__img {
+  transform: scale(1.06);
+}
+
+.coach-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, #101624 100%);
+}
+
+.coach-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background: var(--color-volt);
+  color: #06080D;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.coach-card__body {
+  padding: 1.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.coach-role {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-cyber);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.coach-name {
+  font-family: var(--font-tech);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.coach-pr-box {
+  background: rgba(6, 8, 13, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.85rem;
+}
+
+.pr-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--color-volt);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.pr-val {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.coach-bio {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.coach-spec {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.75rem;
+}
+
+.spec-lbl {
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+}
+
+.spec-txt {
+  font-weight: 700;
+  color: var(--color-volt);
+}
+
+.coach-btn {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 1100px) {
+  .coaches__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .coaches__grid { grid-template-columns: 1fr; }
+}
+</style>

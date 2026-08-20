@@ -1,34 +1,34 @@
 ---
-// src/pages/index.astro — APEX Performance Club Home
+// src/pages/index.astro — APEX Performance Club Radical Redesign
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import FeaturedProperties from '../components/FeaturedProperties.astro';
-import WhyUs from '../components/WhyUs.astro';
-import Services from '../components/Services.astro';
-import Pricing from '../components/Pricing.astro';
-import Stats from '../components/Stats.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Blog from '../components/Blog.astro';
-import ContactCTA from '../components/ContactCTA.astro';
+import FacilityBlueprint from '../components/FacilityBlueprint.astro';
+import ProgramMatrix from '../components/ProgramMatrix.astro';
+import ScheduleTerminal from '../components/ScheduleTerminal.astro';
+import CoachesRoster from '../components/CoachesRoster.astro';
+import BiohackingLab from '../components/BiohackingLab.astro';
+import PricingCalculator from '../components/PricingCalculator.astro';
+import AthletesWall from '../components/AthletesWall.astro';
+import ContactTerminal from '../components/ContactTerminal.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="APEX Performance Club · Haute Performance & Athletic Sanctuary"
-  description="APEX Performance Club es el centro de entrenamiento de alto rendimiento, biomecánica y longevidad celular más exclusivo de Buenos Aires. 2.500 m² de equipamiento Eleiko, crioterapia a -110°C y coaching 1-on-1."
+  title="APEX ATHLETIC LAB // Haute Performance & Biomechanic Sanctuary"
+  description="Santuario de alto rendimiento, biomecánica y longevidad celular en Buenos Aires. 2.500 m² de equipamiento Eleiko, crioterapia a -110°C y coaching 1-on-1."
 >
   <Navbar />
   <main id="main-content">
     <Hero />
-    <FeaturedProperties />
-    <WhyUs />
-    <Services />
-    <Pricing />
-    <Stats />
-    <Testimonials />
-    <Blog />
-    <ContactCTA />
+    <FacilityBlueprint />
+    <ProgramMatrix />
+    <ScheduleTerminal />
+    <CoachesRoster />
+    <BiohackingLab />
+    <PricingCalculator />
+    <AthletesWall />
+    <ContactTerminal />
   </main>
   <Footer />
 </Layout>
@@ -40,43 +40,30 @@ import Footer from '../components/Footer.astro';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // ─── 1. Lenis smooth scroll ───────────────────────────────
+  // 1. Lenis smooth scroll
   const lenis = new Lenis({
-    duration: 1.3,
+    duration: 1.2,
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
     smoothWheel: true,
   });
 
   lenis.on('scroll', ScrollTrigger.update);
-
-  const lenisRaf = (time: number) => lenis.raf(time * 1000);
-  gsap.ticker.add(lenisRaf);
+  gsap.ticker.add((time: number) => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
 
-  // Refresh on full load
   window.addEventListener('load', () => ScrollTrigger.refresh());
 
-  // ─── Global scroll reveals (.reveal elements) ─────────
+  // 2. Global Scroll Reveals
   const revealElements = document.querySelectorAll<HTMLElement>('.reveal');
 
   revealElements.forEach((el) => {
-    let delay = 0;
-    if (el.classList.contains('reveal-delay-1')) delay = 0.08;
-    else if (el.classList.contains('reveal-delay-2')) delay = 0.16;
-    else if (el.classList.contains('reveal-delay-3')) delay = 0.24;
-    else if (el.classList.contains('reveal-delay-4')) delay = 0.32;
-    else if (el.classList.contains('reveal-delay-5')) delay = 0.40;
-
     gsap.fromTo(
       el,
-      { autoAlpha: 0, y: 35 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
-        duration: 0.85,
-        delay,
+        duration: 0.8,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,

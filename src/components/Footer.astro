@@ -1,326 +1,244 @@
 ---
-// Footer.astro — APEX Performance Club Athletic Footer
+// Footer.astro — High-Tech Brutalist Athletic Footer
 ---
 
-<footer class="footer" role="contentinfo">
-  <div class="container footer__inner">
-    <!-- Top Grid -->
-    <div class="footer__top">
-      <!-- Col 1: Brand & Doctrine -->
-      <div class="footer__brand">
-        <a href="#inicio" class="footer__logo" aria-label="APEX Performance Club - inicio">
-          <div class="footer__logo-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#footVoltGrad)" stroke="#080C14" stroke-width="0.5"/>
-              <defs>
-                <linearGradient id="footVoltGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#CCFF00"/>
-                  <stop offset="0.6" stop-color="#00F0FF"/>
-                  <stop offset="1" stop-color="#FF5500"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div class="footer__logo-text">
-            <span class="footer__logo-name">APEX</span>
-            <span class="footer__logo-sub">PERFORMANCE CLUB</span>
-          </div>
-        </a>
-
-        <p class="footer__doctrine">
-          Santuario de alto rendimiento, biomecánica y longevidad celular en Buenos Aires. Equipamiento olímpico Eleiko, periodización científica y coaching 1-on-1.
+<footer class="hud-footer" role="contentinfo">
+  <div class="container hud-footer__inner">
+    <!-- Top Row -->
+    <div class="hud-footer__top">
+      <div class="hud-footer__brand">
+        <div class="hud-footer__logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
+          </svg>
+          <span>APEX ATHLETIC LAB</span>
+        </div>
+        <p class="hud-footer__doctrine">
+          Santuario biomecánico de alto rendimiento, periodización de fuerza y biohacking celular en Buenos Aires. Equipamiento olímpico Eleiko IWF y crioterapia a -110°C.
         </p>
-
-        <!-- Social Icons -->
-        <div class="footer__socials">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram de APEX">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube de APEX">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-          </a>
-          <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Spotify Playlists de Entrenamiento APEX">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 11.5c2.5-1 5.5-.8 8 .5"/><path d="M9 14.5c2-.7 4.5-.5 6.5.5"/><path d="M7 8.5c3.5-1.5 7.5-1.2 11 .7"/></svg>
-          </a>
+        <div class="hud-footer__coords">
+          <span>LAT: -34.5885 // LON: -58.4287 · PALERMO SOHO</span>
         </div>
       </div>
 
-      <!-- Col 2: Navigation -->
-      <div class="footer__col">
-        <span class="footer__col-title">EL CLUB</span>
-        <ul class="footer__links">
-          <li><a href="#instalaciones" class="footer__link">Zonas de Alto Rendimiento</a></li>
-          <li><a href="#manifiesto" class="footer__link">El Manifiesto APEX</a></li>
-          <li><a href="#programas" class="footer__link">Disciplinas &amp; Clases</a></li>
-          <li><a href="#membresias" class="footer__link">Planes &amp; Membresías</a></li>
-          <li><a href="#testimonios" class="footer__link">Atletas &amp; Transformaciones</a></li>
-          <li><a href="#blog" class="footer__link">Ciencia &amp; Biohacking</a></li>
+      <!-- Navigation Matrix -->
+      <div class="hud-footer__col">
+        <span class="hud-footer__col-title">SISTEMA</span>
+        <ul class="hud-footer__links">
+          <li><a href="#zonas">01 // Facility Blueprint</a></li>
+          <li><a href="#disciplinas">02 // Program Matrix</a></li>
+          <li><a href="#horarios">03 // Live Timetable</a></li>
+          <li><a href="#coaches">04 // Master Coaches</a></li>
+          <li><a href="#biohacking">05 // Recovery Chamber</a></li>
+          <li><a href="#membresias">06 // Pass Builder</a></li>
         </ul>
       </div>
 
-      <!-- Col 3: Sedes & Horarios -->
-      <div class="footer__col">
-        <span class="footer__col-title">SEDES BUENOS AIRES</span>
-        <div class="footer__location-block">
-          <strong class="footer__loc-title">⚡ PALERMO SOHO</strong>
-          <p class="footer__loc-address">Gorriti 5120, Palermo<br />+54 11 4899-2739</p>
+      <!-- Locations -->
+      <div class="hud-footer__col">
+        <span class="hud-footer__col-title">SEDES BUENOS AIRES</span>
+        <div class="loc-item">
+          <span class="loc-tag">PALERMO SOHO</span>
+          <p class="loc-txt">Gorriti 5120, CABA<br />+54 11 4899-2739</p>
         </div>
-        <div class="footer__location-block">
-          <strong class="footer__loc-title">⚡ RECOLETA</strong>
-          <p class="footer__loc-address">Av. Alvear 1890, Recoleta<br />+54 11 4899-2740</p>
+        <div class="loc-item">
+          <span class="loc-tag">RECOLETA</span>
+          <p class="loc-txt">Av. Alvear 1890, CABA<br />+54 11 4899-2740</p>
         </div>
       </div>
 
-      <!-- Col 4: Newsletter -->
-      <div class="footer__col">
-        <span class="footer__col-title">APEX PERFORMANCE JOURNAL</span>
-        <p class="footer__news-desc">
-          Protocolos mensuales de biohacking, fisiología deportiva y acceso anticipado a workshops internacionales.
+      <!-- Newsletter -->
+      <div class="hud-footer__col">
+        <span class="hud-footer__col-title">APEX JOURNAL</span>
+        <p class="hud-footer__news-txt">
+          Protocolos de fisiología deportiva, papers de biomecánica y cupos anticipados a workshops olímpicos.
         </p>
-        <form class="footer__form" onsubmit="event.preventDefault(); this.innerHTML='<span style=\'color:#CCFF00;font-size:0.85rem;font-weight:700;\'>⚡ ¡Suscripción confirmada!</span>';">
-          <input type="email" placeholder="tu@email.com" class="footer__input" required aria-label="Correo para newsletter" />
-          <button type="submit" class="btn btn-volt footer__btn" aria-label="Suscribirse">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <form class="hud-footer__form" onsubmit="event.preventDefault(); this.innerHTML='<span style=\'color:var(--color-volt);font-size:0.75rem;font-family:var(--font-mono);\'>// SUSCRIPCIÓN ACTIVA</span>';">
+          <input type="email" placeholder="tu@email.com" required aria-label="Email para newsletter" />
+          <button type="submit" class="btn btn-volt" aria-label="Enviar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
       </div>
     </div>
 
     <!-- Bottom Bar -->
-    <div class="footer__bottom">
-      <p class="footer__copy">
+    <div class="hud-footer__bottom">
+      <p class="hud-footer__copy">
         &copy; {new Date().getFullYear()} APEX Performance Club. Todos los derechos reservados.
       </p>
-      <div class="footer__bottom-links">
-        <a href="#contacto" class="footer__bottom-link">Términos de Membresía</a>
-        <a href="#contacto" class="footer__bottom-link">Privacidad &amp; Datos</a>
-        <a href="#contacto" class="footer__bottom-link">Reglamento de Sala</a>
+      <div class="hud-footer__bottom-links">
+        <a href="#vip-pass">Términos de Sala</a>
+        <a href="#vip-pass">Privacidad &amp; Datos Biométricos</a>
+        <a href="#vip-pass">Reglamento IWF</a>
       </div>
     </div>
   </div>
 </footer>
 
 <style>
-.footer {
-  background: #05080E;
-  border-top: 1px solid rgba(204, 255, 0, 0.15);
-  padding-top: clamp(4rem, 8vw, 6.5rem);
+.hud-footer {
+  background: #04060A;
+  border-top: 1px solid var(--color-border-volt);
+  padding-top: clamp(4rem, 8vw, 6rem);
   padding-bottom: 2.5rem;
-  color: var(--color-cream-muted);
 }
 
-.footer__top {
+.hud-footer__top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.1fr 1.3fr;
-  gap: clamp(2rem, 4vw, 4rem);
-  padding-bottom: 4rem;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Brand */
-.footer__brand {
+.hud-footer__brand {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.footer__logo {
+.hud-footer__logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-}
-
-.footer__logo-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(18, 24, 38, 0.8);
-  border: 1px solid rgba(204, 255, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(204, 255, 0, 0.35);
-}
-
-.footer__logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.footer__logo-name {
-  font-family: var(--font-heading);
-  font-size: 1.45rem;
-  font-weight: 800;
+  gap: 0.65rem;
+  font-family: var(--font-tech);
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #FFFFFF;
-  letter-spacing: 0.14em;
 }
 
-.footer__logo-sub {
-  font-family: var(--font-body);
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: var(--ls-widest);
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #CCFF00, #00F0FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.footer__doctrine {
-  font-size: 0.85rem;
+.hud-footer__doctrine {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
   line-height: 1.65;
-  color: var(--color-cream-muted);
 }
 
-.footer__socials {
-  display: flex;
-  gap: 0.85rem;
+.hud-footer__coords {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-volt);
   margin-top: 0.5rem;
 }
 
-.social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: var(--color-volt);
-  border-color: var(--color-volt);
-  color: #080C14;
-  transform: translateY(-4px);
-  box-shadow: 0 0 16px rgba(204, 255, 0, 0.4);
-}
-
 /* Columns */
-.footer__col {
+.hud-footer__col {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.footer__col-title {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #FFFFFF;
+.hud-footer__col-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-volt);
+  letter-spacing: 0.1em;
 }
 
-.footer__links {
+.hud-footer__links {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
-.footer__link {
-  font-size: 0.85rem;
-  color: var(--color-cream-muted);
+.hud-footer__links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
   display: inline-block;
 }
 
-.footer__link:hover {
+.hud-footer__links a:hover {
   color: var(--color-volt);
   transform: translateX(4px);
 }
 
-/* Locations */
-.footer__location-block {
-  margin-bottom: 0.5rem;
+.loc-item {
+  margin-bottom: 0.65rem;
 }
 
-.footer__loc-title {
-  font-size: 0.75rem;
-  color: var(--color-volt);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+.loc-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #FFFFFF;
   display: block;
   margin-bottom: 0.2rem;
 }
 
-.footer__loc-address {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--color-cream-muted);
-}
-
-/* Newsletter */
-.footer__news-desc {
-  font-size: 0.82rem;
+.loc-txt {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
   line-height: 1.5;
 }
 
-.footer__form {
+.hud-footer__news-txt {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.hud-footer__form {
   display: flex;
   gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.footer__input {
-  background: rgba(18, 24, 38, 0.8);
+.hud-footer__form input {
+  background: rgba(16, 22, 36, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 0.85rem;
   color: #FFFFFF;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   flex: 1;
 }
 
-.footer__input:focus {
+.hud-footer__form input:focus {
   outline: none;
   border-color: var(--color-volt);
 }
 
-.footer__btn {
-  padding: 0.75rem 1.25rem;
-  flex-shrink: 0;
+.hud-footer__form button {
+  padding: 0.65rem 1rem;
 }
 
 /* Bottom */
-.footer__bottom {
+.hud-footer__bottom {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
-.footer__copy {
-  font-size: 0.78rem;
-  color: var(--color-cream-muted);
-}
-
-.footer__bottom-links {
+.hud-footer__bottom-links {
   display: flex;
   gap: 1.5rem;
 }
 
-.footer__bottom-link {
-  font-size: 0.78rem;
-  color: var(--color-cream-muted);
+.hud-footer__bottom-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer__bottom-link:hover {
+.hud-footer__bottom-links a:hover {
   color: #FFFFFF;
 }
 
 @media (max-width: 1024px) {
-  .footer__top { grid-template-columns: repeat(2, 1fr); }
+  .hud-footer__top { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 640px) {
-  .footer__top { grid-template-columns: 1fr; }
-  .footer__bottom { flex-direction: column; align-items: flex-start; }
+@media (max-width: 600px) {
+  .hud-footer__top { grid-template-columns: 1fr; }
+  .hud-footer__bottom { flex-direction: column; align-items: flex-start; }
 }
 </style>

@@ -1,0 +1,416 @@
+---
+// FacilityBlueprint.astro — Interactive Zone Blueprint & Facility Terminal
+const zones = [
+  {
+    id: 'z1',
+    level: 'LVL 01',
+    code: 'IRON-VAULT',
+    name: 'THE IRON TEMPLE & OLYMPIC LIFTING',
+    badge: '15.000 KG ELEIKO IWF',
+    image: 'https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1200&h=700&dpr=1',
+    specs: [
+      { label: 'PLATAFORMAS', val: '8 Tarimas IWF Roble Macizo' },
+      { label: 'RACKS', val: '12 Hammer Strength Power Racks' },
+      { label: 'MANCUERNAS', val: 'Uretano Calibrado hasta 70 KG' },
+      { label: 'SUPERFICIE', val: 'Caucho Vulcano 25mm Absorción' }
+    ],
+    desc: 'Espacio dedicado al levantamiento de peso máximo, halterofilia olímpica y powerlifting. Zona libre de tiza sin limitaciones de impacto acústico ni vibracional.'
+  },
+  {
+    id: 'z2',
+    level: 'LVL 02',
+    code: 'BIO-HYPERTROPHY',
+    name: 'BIOMECHANICS & HYPERTROPHY LAB',
+    badge: 'ARSENAL & PRIME FITNESS',
+    image: 'https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1200&h=700&dpr=1',
+    specs: [
+      { label: 'TECNOLOGÍA', val: 'Prime SmartCam Curva Adaptativa' },
+      { label: 'SQUAT ZONE', val: 'Pendulum & Belt Squat Arsenal' },
+      { label: 'AISLAMIENTO', val: 'Poleas Duales Vectoriales 3D' },
+      { label: 'BIOMECÁNICA', val: 'Estrés Articular Cero' }
+    ],
+    desc: 'Maquinaria de aislamiento neuromuscular con ajuste de curvas de resistencia. Máxima tensión mecánica con desgaste articular nulo.'
+  },
+  {
+    id: 'z3',
+    level: 'LVL 03',
+    code: 'TURF-HYROX',
+    name: 'METABOLIC TURF & 40M SLED TRACK',
+    badge: 'CENTRO OFICIAL HYROX',
+    image: 'https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=1200&h=700&dpr=1',
+    specs: [
+      { label: 'PISTA TRINEO', val: '40 Metros Césped Alta Fricción' },
+      { label: 'ERGÓMETROS', val: 'Concept2 Rowers & SkiErgs' },
+      { label: 'RESISTENCIA', val: 'Assault AirBikes Pro' },
+      { label: 'TRINEOS', val: 'Prowler Sleds con Discos Bumper' }
+    ],
+    desc: 'Zona de acondicionamiento anaeróbico y potencia láctica. Pista ininterrumpida de 40 metros para empuje y tracción de trineos Hyrox de competición.'
+  },
+  {
+    id: 'z4',
+    level: 'LVL 04',
+    code: 'COMBAT-RING',
+    name: 'THE OCTAGON ARENA & STRIKING',
+    badge: 'REGULATION BOXING RING',
+    image: 'https://images.pexels.com/photos/4754148/pexels-photo-4754148.jpeg?auto=compress&cs=tinysrgb&w=1200&h=700&dpr=1',
+    specs: [
+      { label: 'RING OFICIAL', val: 'Ring de Boxeo Profesional 6x6m' },
+      { label: 'BOLSAS', val: '14 Bolsas Hidráulicas Aquabag' },
+      { label: 'TATAMI', val: '200 m² BJJ & Lucha Olímpica' },
+      { label: 'SPARRING', val: 'Supervisión Pro Head Coaches' }
+    ],
+    desc: 'Espacio de combate con suelo amortiguado y bolsas de agua que minimizan el impacto en muñecas y hombros, permitiendo combinaciones de máxima potencia.'
+  },
+  {
+    id: 'z5',
+    level: 'LVL 05',
+    code: 'CRYO-RECOVERY',
+    name: 'BIOHACKING & CELLULAR CRYO SPA',
+    badge: 'CRIOTERAPIA -110°C',
+    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1200&h=700&dpr=1',
+    specs: [
+      { label: 'CRIOCÁMARA', val: 'Cuerpo Entero -110°C (3 Minutos)' },
+      { label: 'COLD PLUNGE', val: 'Piletas de Hielo a 3°C Constantes' },
+      { label: 'SAUNA', val: 'Infrarrojo de Espectro Completo' },
+      { label: 'COMPRESIÓN', val: 'Botas Neumáticas Normatec 3' }
+    ],
+    desc: 'Laboratorio de recuperación celular ultra rápida. Estimulación del sistema parasimpático, reducción de inflamación sistémica y aceleración del aclaramiento de lactato.'
+  },
+  {
+    id: 'z6',
+    level: 'LVL 06',
+    code: 'REFORMER-SHALA',
+    name: 'ATHLETIC REFORMER & MOBILITY SHALA',
+    badge: 'BALANCED BODY ALLEGRO 2',
+    image: 'https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=1200&h=700&dpr=1',
+    specs: [
+      { label: 'REFORMERS', val: '12 Camas Allegro 2 con Torre' },
+      { label: 'ILUMINACIÓN', val: 'Ciclos Circadianos Bio-Adaptativos' },
+      { label: 'BREATHWORK', val: 'Sesiones de Hipoxia Intermitente' },
+      { label: 'ESTABILIDAD', val: 'Core Profundo & Descompresión' }
+    ],
+    desc: 'Pilates reformador atlético enfocado en la estabilidad espinal, movilidad de cadera y descompresión articular para deportistas de alto rendimiento.'
+  }
+];
+---
+
+<section class="section blueprint" id="zonas">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="blueprint__head reveal">
+      <div class="blueprint__head-left">
+        <span class="mono-tag">01 // ARQUITECTURA DE LAS INSTALACIONES</span>
+        <h2 class="display-title blueprint__title">
+          FACILITY <span class="highlight-volt">BLUEPRINT</span>
+        </h2>
+      </div>
+      <div class="blueprint__head-right">
+        <p>
+          2.500 m² diseñados con tolerancias biomecánicas de nivel olímpico. Selecciona un nivel para explorar su manifiesto técnico y especificaciones de maquinaria.
+        </p>
+      </div>
+    </div>
+
+    <!-- Interactive Blueprint Terminal -->
+    <div class="blueprint__terminal reveal">
+      <!-- Left: Zone Index Selector -->
+      <div class="blueprint__selector" role="tablist" aria-label="Zonas del club">
+        {zones.map((z, i) => (
+          <button
+            class={`blueprint__tab ${i === 0 ? 'active' : ''}`}
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+            data-target={z.id}
+          >
+            <span class="tab-lvl">{z.level}</span>
+            <div class="tab-info">
+              <span class="tab-code">{z.code}</span>
+              <span class="tab-name">{z.name}</span>
+            </div>
+            <span class="tab-badge">{z.badge}</span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Right: Immersive Display Panel -->
+      <div class="blueprint__display">
+        {zones.map((z, i) => (
+          <div class={`blueprint__panel ${i === 0 ? 'active' : ''}`} id={`panel-${z.id}`}>
+            <div class="blueprint__img-wrap">
+              <img src={z.image} alt={z.name} class="blueprint__img" loading="lazy" />
+              <div class="blueprint__img-overlay"></div>
+              <div class="blueprint__tag-live">
+                <span class="pulse-dot"></span>
+                <span>ZONA OPERATIVA EN TIEMPO REAL</span>
+              </div>
+            </div>
+
+            <div class="blueprint__panel-body">
+              <div class="blueprint__panel-head">
+                <span class="mono-tag">{z.level} // {z.code}</span>
+                <h3 class="blueprint__panel-title">{z.name}</h3>
+                <p class="blueprint__panel-desc">{z.desc}</p>
+              </div>
+
+              <!-- Specs Grid -->
+              <div class="blueprint__specs-grid">
+                {z.specs.map(s => (
+                  <div class="spec-item">
+                    <span class="spec-item__lbl">{s.label}</span>
+                    <span class="spec-item__val">{s.val}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div class="blueprint__panel-cta">
+                <a href="#vip-pass" class="btn btn-volt">
+                  <span>AGENDAR SESIÓN EN ESTE NIVEL</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.blueprint {
+  background: var(--color-bg-alt);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.blueprint__head {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 3.5rem;
+}
+
+.blueprint__title {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  margin-top: 0.5rem;
+}
+
+.blueprint__head-right p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Terminal */
+.blueprint__terminal {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 2rem;
+  background: #06080D;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Selector Tabs */
+.blueprint__selector {
+  display: flex;
+  flex-direction: column;
+  background: rgba(16, 22, 36, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.blueprint__tab {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.35rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 3px solid transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.blueprint__tab:last-child {
+  border-bottom: none;
+}
+
+.blueprint__tab:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.blueprint__tab.active {
+  background: rgba(217, 255, 0, 0.06);
+  border-left-color: var(--color-volt);
+}
+
+.tab-lvl {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-volt);
+  letter-spacing: 0.1em;
+}
+
+.tab-code {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.tab-name {
+  font-family: var(--font-tech);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.tab-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-cyber);
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+/* Display Panel */
+.blueprint__display {
+  position: relative;
+  min-height: 560px;
+}
+
+.blueprint__panel {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+}
+
+.blueprint__panel.active {
+  display: flex;
+}
+
+.blueprint__img-wrap {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.blueprint__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.15);
+}
+
+.blueprint__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, #06080D 100%);
+}
+
+.blueprint__tag-live {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-volt);
+  background: rgba(6, 8, 13, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-volt);
+}
+
+.blueprint__panel-body {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blueprint__panel-title {
+  font-family: var(--font-tech);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-block: 0.35rem 0.75rem;
+}
+
+.blueprint__panel-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.blueprint__specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.spec-item {
+  background: rgba(16, 22, 36, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.spec-item__lbl {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-volt);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.spec-item__val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.blueprint__panel-cta {
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .blueprint__head { grid-template-columns: 1fr; }
+  .blueprint__terminal { grid-template-columns: 1fr; }
+  .blueprint__selector { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+}
+</style>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.blueprint__tab');
+  const panels = document.querySelectorAll<HTMLElement>('.blueprint__panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+      
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(`panel-${target}`)?.classList.add('active');
+    });
+  });
+</script>

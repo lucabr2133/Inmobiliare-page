@@ -1,284 +1,289 @@
 ---
-// Navbar.astro — APEX Performance Club Athletic Navigation
+// Navbar.astro — APEX Athletic HUD Header
 ---
 
-<header class="navbar" id="navbar">
-  <div class="container navbar__inner">
-    <!-- Logo -->
-    <a href="#inicio" class="navbar__logo" aria-label="APEX Performance Club - inicio">
-      <div class="navbar__logo-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#navVoltGrad)" stroke="#080C14" stroke-width="0.5"/>
-          <defs>
-            <linearGradient id="navVoltGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#CCFF00"/>
-              <stop offset="0.6" stop-color="#00F0FF"/>
-              <stop offset="1" stop-color="#FF5500"/>
-            </linearGradient>
-          </defs>
+<header class="hud-nav" id="navbar">
+  <!-- Top Telemetry Ribbon -->
+  <div class="hud-ribbon">
+    <div class="container hud-ribbon__inner">
+      <div class="hud-ribbon__status">
+        <span class="pulse-dot"></span>
+        <span class="hud-ribbon__txt">PALERMO: 74% CAPACIDAD // RECOLETA: VIP ONLY</span>
+      </div>
+      <div class="hud-ribbon__time" id="live-time">
+        BA: --:--:-- GMT-3
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <div class="container hud-nav__inner">
+    <!-- Brand -->
+    <a href="#inicio" class="hud-nav__brand" aria-label="APEX Athletic Club">
+      <div class="hud-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
         </svg>
       </div>
-      <div class="navbar__logo-text">
-        <span class="navbar__logo-name">APEX</span>
-        <span class="navbar__logo-sub">PERFORMANCE CLUB</span>
+      <div class="hud-nav__titles">
+        <span class="hud-nav__name">APEX</span>
+        <span class="hud-nav__sub">ATHLETIC LAB</span>
       </div>
     </a>
 
-    <!-- Nav Links -->
-    <nav class="navbar__nav" aria-label="Navegación principal">
-      <a href="#instalaciones" class="navbar__link">Instalaciones</a>
-      <a href="#manifiesto" class="navbar__link">El Estándar</a>
-      <a href="#programas" class="navbar__link">Disciplinas</a>
-      <a href="#membresias" class="navbar__link">Membresías</a>
-      <a href="#testimonios" class="navbar__link">Atletas</a>
-      <a href="#contacto" class="navbar__link">Contacto</a>
+    <!-- Nav Items -->
+    <nav class="hud-nav__menu" aria-label="Navegación principal">
+      <a href="#zonas" class="hud-nav__link"><span>01</span> ZONAS</a>
+      <a href="#disciplinas" class="hud-nav__link"><span>02</span> DISCIPLINAS</a>
+      <a href="#horarios" class="hud-nav__link"><span>03</span> HORARIOS</a>
+      <a href="#coaches" class="hud-nav__link"><span>04</span> COACHES</a>
+      <a href="#biohacking" class="hud-nav__link"><span>05</span> BIOHACKING</a>
+      <a href="#membresias" class="hud-nav__link"><span>06</span> PASES</a>
     </nav>
 
-    <!-- CTA + Hamburger -->
-    <div class="navbar__actions">
-      <a href="#contacto" class="btn btn-volt navbar__cta">
-        <span>1-Day VIP Pass</span>
+    <!-- Action -->
+    <div class="hud-nav__actions">
+      <a href="#vip-pass" class="btn btn-volt hud-nav__btn">
+        <span>VIP PASS</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span>
+      <button class="hud-nav__hamburger" id="nav-toggle" aria-label="Abrir menú móvil">
         <span></span>
         <span></span>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div class="navbar__mobile" id="mobile-menu" role="dialog" aria-label="Menú móvil" aria-hidden="true">
-    <nav class="navbar__mobile-nav">
-      <a href="#instalaciones" class="navbar__mobile-link">Instalaciones</a>
-      <a href="#manifiesto" class="navbar__mobile-link">El Estándar</a>
-      <a href="#programas" class="navbar__mobile-link">Disciplinas</a>
-      <a href="#membresias" class="navbar__mobile-link">Membresías</a>
-      <a href="#testimonios" class="navbar__mobile-link">Atletas</a>
-      <a href="#contacto" class="navbar__mobile-link">Contacto</a>
-      <a href="#contacto" class="btn btn-volt" style="width:100%;justify-content:center;margin-top:1.5rem;">Reclamar 1-Day VIP Pass</a>
-    </nav>
+  <!-- Mobile Drawer -->
+  <div class="hud-mobile-menu" id="hud-mobile" hidden>
+    <div class="hud-mobile-nav">
+      <a href="#zonas" class="hud-mobile-link"><span>01 //</span> ZONAS</a>
+      <a href="#disciplinas" class="hud-mobile-link"><span>02 //</span> DISCIPLINAS</a>
+      <a href="#horarios" class="hud-mobile-link"><span>03 //</span> HORARIOS</a>
+      <a href="#coaches" class="hud-mobile-link"><span>04 //</span> COACHES</a>
+      <a href="#biohacking" class="hud-mobile-link"><span>05 //</span> BIOHACKING</a>
+      <a href="#membresias" class="hud-mobile-link"><span>06 //</span> PASES</a>
+      <a href="#vip-pass" class="btn btn-volt" style="margin-top:1.5rem;width:100%;">SOLICITAR 1-DAY PASS</a>
+    </div>
   </div>
 </header>
 
 <style>
-.navbar {
+.hud-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--navbar-h);
-  transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
-  border-bottom: 1px solid transparent;
+  transition: all 0.35s ease;
+  background: rgba(6, 8, 13, 0.7);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.navbar.scrolled {
-  background: rgba(8, 12, 20, 0.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(204, 255, 0, 0.15);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+.hud-nav.scrolled {
+  background: rgba(6, 8, 13, 0.95);
+  border-bottom: 1px solid var(--color-border-volt);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
 }
 
-.navbar__inner {
+/* Ribbon */
+.hud-ribbon {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-block: 0.35rem;
+  background: rgba(16, 22, 36, 0.4);
+}
+
+.hud-ribbon__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.hud-ribbon__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hud-ribbon__txt {
+  color: var(--color-titanium);
+}
+
+.hud-ribbon__time {
+  color: var(--color-volt);
+  font-weight: 700;
+}
+
+/* Inner */
+.hud-nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  gap: var(--space-6);
+  height: 64px;
 }
 
-/* Logo */
-.navbar__logo {
+/* Brand */
+.hud-nav__brand {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  flex-shrink: 0;
+  gap: 0.75rem;
+  text-decoration: none;
 }
 
-.navbar__logo-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(18, 24, 38, 0.8);
-  border: 1px solid rgba(204, 255, 0, 0.4);
+.hud-nav__icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(217, 255, 0, 0.08);
+  border: 1px solid var(--color-border-volt);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(204, 255, 0, 0.35);
+  box-shadow: 0 0 15px rgba(217, 255, 0, 0.2);
 }
 
-.navbar__logo-text {
+.hud-nav__titles {
   display: flex;
   flex-direction: column;
-  line-height: 1.05;
 }
 
-.navbar__logo-name {
-  font-family: var(--font-heading);
-  font-size: 1.45rem;
+.hud-nav__name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
   font-weight: 800;
   color: #FFFFFF;
-  letter-spacing: 0.14em;
+  line-height: 1;
+  letter-spacing: 0.06em;
 }
 
-.navbar__logo-sub {
-  font-family: var(--font-body);
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: var(--ls-widest);
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #CCFF00, #00F0FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Nav links */
-.navbar__nav {
-  display: flex;
-  align-items: center;
-  gap: clamp(1.25rem, 2.5vw, 2.5rem);
-}
-
-.navbar__link {
-  font-size: 0.8rem;
+.hud-nav__sub {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--color-volt);
+  letter-spacing: 0.2em;
   font-weight: 700;
+}
+
+/* Menu */
+.hud-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hud-nav__link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-decoration: none;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-cream-muted);
-  transition: color var(--transition-fast), transform var(--transition-fast);
-  position: relative;
-  padding-block: 0.25rem;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
-.navbar__link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--grad-volt);
-  border-radius: 1px;
-  transition: width var(--transition-base);
+.hud-nav__link span {
+  color: var(--color-volt);
+  font-size: 0.65rem;
 }
 
-.navbar__link:hover {
+.hud-nav__link:hover {
   color: #FFFFFF;
 }
 
-.navbar__link:hover::after {
-  width: 100%;
-}
-
-/* Actions */
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.navbar__cta {
-  padding: 0.75rem 1.6rem;
+.hud-nav__btn {
+  padding: 0.65rem 1.4rem;
   font-size: 0.75rem;
 }
 
-/* Hamburger */
-.navbar__hamburger {
+.hud-nav__hamburger {
   display: none;
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 24px;
   flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  padding: 0;
-  z-index: 1001;
+  justify-content: space-around;
+  cursor: pointer;
 }
 
-.navbar__hamburger span {
-  display: block;
+.hud-nav__hamburger span {
   width: 100%;
   height: 2px;
-  background: #FFFFFF;
+  background: var(--color-volt);
   border-radius: 1px;
-  transition: transform var(--transition-base), opacity var(--transition-base);
 }
 
-.navbar__hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-.navbar__hamburger.open span:nth-child(2) { opacity: 0; }
-.navbar__hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-/* Mobile Menu */
-.navbar__mobile {
-  display: none;
+/* Mobile */
+.hud-mobile-menu {
   position: fixed;
-  inset: 0;
-  background: rgba(8, 12, 20, 0.98);
-  backdrop-filter: blur(24px);
+  top: 100px;
+  inset-inline: 0;
+  bottom: 0;
+  background: #06080D;
+  padding: 2rem;
   z-index: 999;
-  padding: calc(var(--navbar-h) + 2rem) var(--container-pad) 3rem;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.navbar__mobile.open {
-  display: flex;
-}
-
-.navbar__mobile-nav {
+.hud-mobile-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
-.navbar__mobile-link {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.hud-mobile-link {
+  font-family: var(--font-tech);
+  font-size: 1.5rem;
   color: #FFFFFF;
-  transition: color var(--transition-base);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.navbar__mobile-link:hover {
-  color: var(--color-volt);
-}
+.hud-mobile-link span { color: var(--color-volt); }
 
-@media (max-width: 900px) {
-  .navbar__nav { display: none; }
-  .navbar__hamburger { display: flex; }
-  .navbar__cta { display: none; }
+@media (max-width: 960px) {
+  .hud-nav__menu, .hud-nav__btn { display: none; }
+  .hud-nav__hamburger { display: flex; }
+  .hud-ribbon { display: none; }
 }
 </style>
 
 <script>
-  const navbar = document.getElementById('navbar');
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const nav = document.getElementById('navbar');
+  const toggle = document.getElementById('nav-toggle');
+  const mobile = document.getElementById('hud-mobile');
+  const timeEl = document.getElementById('live-time');
+
+  // Clock
+  const updateClock = () => {
+    const now = new Date();
+    const str = now.toLocaleTimeString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', hour12: false });
+    if (timeEl) timeEl.innerText = `BA: ${str} GMT-3`;
+  };
+  setInterval(updateClock, 1000);
+  updateClock();
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar?.classList.add('scrolled');
-    } else {
-      navbar?.classList.remove('scrolled');
-    }
+    if (window.scrollY > 30) nav?.classList.add('scrolled');
+    else nav?.classList.remove('scrolled');
   }, { passive: true });
 
-  hamburgerBtn?.addEventListener('click', () => {
-    const isOpen = hamburgerBtn.classList.toggle('open');
-    mobileMenu?.classList.toggle('open');
-    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  toggle?.addEventListener('click', () => {
+    const isHidden = mobile?.hasAttribute('hidden');
+    if (isHidden) mobile?.removeAttribute('hidden');
+    else mobile?.setAttribute('hidden', '');
   });
 
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburgerBtn?.classList.remove('open');
-      mobileMenu?.classList.remove('open');
-      hamburgerBtn?.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  mobile?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobile?.setAttribute('hidden', ''));
   });
 </script>
-

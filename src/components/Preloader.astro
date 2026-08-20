@@ -1,307 +1,236 @@
 ---
-// Preloader.astro — 100% Solid Opaque High-Performance Athletic Preloader
+// Preloader.astro — High-Tech Biometric Boot Sequence
 ---
 
-<div class="site-preloader" id="preloader">
-  <!-- Dynamic Volt & Cyan Kinetic Aura in Center -->
-  <div class="preloader-aura preloader-aura--volt"></div>
-  <div class="preloader-aura preloader-aura--cyan"></div>
-
-  <!-- Dead-Center Box -->
-  <div class="preloader-center" id="preloader-center">
-    <!-- Emblem -->
-    <div class="preloader-emblem">
-      <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#plVoltGrad)" stroke="#080C14" stroke-width="0.5"/>
-        <defs>
-          <linearGradient id="plVoltGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#CCFF00"/>
-            <stop offset="0.6" stop-color="#00F0FF"/>
-            <stop offset="1" stop-color="#FF5500"/>
-          </linearGradient>
-        </defs>
-      </svg>
+<div class="hud-preloader" id="preloader" role="progressbar" aria-label="Inicializando sistemas APEX" aria-valuemin="0" aria-valuemax="100">
+  <div class="hud-preloader__bg-grid"></div>
+  
+  <div class="hud-preloader__center">
+    <!-- Top System Telemetry -->
+    <div class="hud-preloader__top-tag">
+      <span class="pulse-dot"></span>
+      <span class="hud-preloader__sys-id">APEX BIOS v4.8 // ATHLETIC ENGINE</span>
     </div>
 
-    <!-- Brand -->
-    <div class="preloader-brand">
-      <span class="preloader-title">APEX</span>
-      <span class="preloader-sub">PERFORMANCE CLUB · ATHLETIC SANCTUARY</span>
-    </div>
-
-    <!-- Centered Percentage & Progress Bar -->
-    <div class="preloader-progress-box">
-      <div class="preloader-counter">
-        <span class="preloader-number" id="preloader-count">0</span>
-        <span class="preloader-pct">RPM</span>
-      </div>
-
-      <!-- Centered Progress Bar -->
-      <div class="preloader-bar-track">
-        <div class="preloader-bar-fill" id="preloader-bar"></div>
+    <!-- Central Kinetic Core -->
+    <div class="hud-preloader__core">
+      <div class="hud-core-ring hud-core-ring--outer"></div>
+      <div class="hud-core-ring hud-core-ring--inner"></div>
+      <div class="hud-core-logo">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
+        </svg>
       </div>
     </div>
 
-    <!-- Subtitle Tags -->
-    <div class="preloader-tags">
-      <span>BIOMECÁNICA 3D</span>
-      <span class="dot">✦</span>
-      <span>ELEIKO ZONE</span>
-      <span class="dot">✦</span>
-      <span>CRYO -110°C</span>
+    <!-- Dynamic Diagnostics Log -->
+    <div class="hud-preloader__log" id="preloader-log">
+      CALIBRATING BIOMECHANIC CORES...
+    </div>
+
+    <!-- High-Impact Numeric Readout -->
+    <div class="hud-preloader__counter">
+      <span class="hud-preloader__num" id="preloader-num">000</span>
+      <span class="hud-preloader__unit">RPM</span>
+    </div>
+
+    <!-- Progress Track -->
+    <div class="hud-preloader__track">
+      <div class="hud-preloader__bar" id="preloader-bar"></div>
     </div>
   </div>
 </div>
 
 <style>
-/* Total solid opaque dark backdrop */
-.site-preloader {
+.hud-preloader {
   position: fixed;
   inset: 0;
-  z-index: 999999;
-  background-color: #080C14 !important;
+  z-index: 10000;
+  background: #04060A;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  pointer-events: all;
-  opacity: 1;
-  visibility: visible;
-  will-change: transform, opacity;
 }
 
-/* Ambient glow in center */
-.preloader-aura {
+.hud-preloader__bg-grid {
   position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(85px);
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(217, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.preloader-aura--volt {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(204, 255, 0, 0.25) 0%, rgba(0, 240, 255, 0.12) 50%, transparent 75%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.preloader-aura--cyan {
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.2) 0%, rgba(255, 85, 0, 0.08) 50%, transparent 75%);
-  top: 55%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-}
-
-/* Center Box */
-.preloader-center {
+.hud-preloader__center {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.6rem;
-  max-width: 90vw;
-  will-change: transform, opacity;
+  max-width: 420px;
+  width: 90%;
 }
 
-/* Emblem */
-.preloader-emblem {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: rgba(18, 24, 38, 0.85);
-  border: 2px solid rgba(204, 255, 0, 0.6);
+.hud-preloader__top-tag {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 35px rgba(204, 255, 0, 0.45);
-  animation: pulse-aura 2s ease-in-out infinite;
-}
-
-@keyframes pulse-aura {
-  0%, 100% { transform: scale(0.96); box-shadow: 0 0 25px rgba(204, 255, 0, 0.35); }
-  50%       { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 240, 255, 0.65); }
-}
-
-/* Brand */
-.preloader-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.preloader-title {
-  font-family: 'Syne', system-ui, sans-serif;
-  font-size: clamp(3.2rem, 7vw, 5rem);
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  color: #FFFFFF;
-  line-height: 1;
-  text-shadow: 0 4px 30px rgba(0,0,0,0.9);
-}
-
-.preloader-sub {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #CCFF00, #00F0FF, #FF5500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Progress Box */
-.preloader-progress-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  width: 100%;
-}
-
-.preloader-counter {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
-.preloader-number {
-  font-family: 'Syne', sans-serif;
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1;
-  min-width: 70px;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-  text-shadow: 0 0 25px rgba(204, 255, 0, 0.4);
-}
-
-.preloader-pct {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-  color: #CCFF00;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-volt);
+  margin-bottom: 2rem;
   letter-spacing: 0.15em;
 }
 
-/* Centered Progress Bar */
-.preloader-bar-track {
-  width: 320px;
-  max-width: 80vw;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(204, 255, 0, 0.4);
-  border-radius: 9999px;
-  overflow: hidden;
+/* Kinetic Core Rings */
+.hud-preloader__core {
   position: relative;
-  box-shadow: inset 0 1px 4px rgba(0,0,0,0.6), 0 0 15px rgba(204, 255, 0, 0.25);
-}
-
-.preloader-bar-fill {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #FF5500 0%, #CCFF00 50%, #00F0FF 100%);
-  border-radius: 9999px;
-  transform-origin: left;
-  transform: scaleX(0);
-  box-shadow: 0 0 20px rgba(204, 255, 0, 0.9);
-}
-
-/* Tags */
-.preloader-tags {
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(148, 163, 184, 0.8);
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.preloader-tags .dot {
-  color: #CCFF00;
-  font-size: 0.65rem;
+.hud-core-ring {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hud-core-ring--outer {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed rgba(217, 255, 0, 0.4);
+  animation: hud-spin 8s linear infinite;
+}
+
+.hud-core-ring--inner {
+  width: 76px;
+  height: 76px;
+  border: 2px solid rgba(0, 240, 255, 0.5);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: hud-spin-rev 4s linear infinite;
+}
+
+.hud-core-logo {
+  filter: drop-shadow(0 0 16px rgba(217, 255, 0, 0.8));
+}
+
+@keyframes hud-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hud-spin-rev {
+  to { transform: rotate(-360deg); }
+}
+
+.hud-preloader__log {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.85rem;
+  min-height: 1.2rem;
+}
+
+.hud-preloader__counter {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.hud-preloader__num {
+  font-family: var(--font-tech);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.hud-preloader__unit {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-volt);
+}
+
+.hud-preloader__track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hud-preloader__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: var(--grad-volt);
+  box-shadow: 0 0 16px rgba(217, 255, 0, 0.9);
 }
 </style>
 
 <script>
-import gsap from 'gsap';
+  import gsap from 'gsap';
 
-const preloader = document.getElementById('preloader');
-const preCenter = document.getElementById('preloader-center');
-const preBar    = document.getElementById('preloader-bar');
-const preCount  = document.getElementById('preloader-count');
+  const preloader = document.getElementById('preloader');
+  const numEl = document.getElementById('preloader-num');
+  const barEl = document.getElementById('preloader-bar');
+  const logEl = document.getElementById('preloader-log');
 
-if (preloader && preBar && preCount && preCenter) {
-  const counterObj = { value: 0 };
+  const logs = [
+    'CONNECTING ELEIKO SENSORS...',
+    'SYNCHRONIZING HRV MATRIX...',
+    'CHECKING CRYO -110°C CHAMBER...',
+    'OPTIMIZING BIOMECHANIC CORES...',
+    'APEX SYSTEM READY'
+  ];
 
-  const tl = gsap.timeline({
-    onComplete: () => {
-      gsap.set(preloader, { display: 'none' });
-      // @ts-ignore
-      window.isPreloaderRevealed = true;
-      window.dispatchEvent(new Event('preloaderComplete'));
-    }
-  });
+  if (preloader && numEl && barEl) {
+    const obj = { val: 0 };
+    
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // @ts-ignore
+        window.isPreloaderRevealed = true;
+        window.dispatchEvent(new CustomEvent('preloaderReveal'));
 
-  // 1. Center elements fade in cleanly
-  tl.fromTo(preCenter,
-    { opacity: 0, y: 24, scale: 0.92 },
-    { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
-  )
-  // 2. Animate counter 0 -> 100 and fill the center bar smoothly
-  .to(counterObj, {
-    value: 100,
-    duration: 2.2,
-    ease: 'expo.inOut',
-    onUpdate: () => {
-      preCount.innerText = Math.round(counterObj.value).toString();
-    }
-  }, '+=0.05')
-  .to(preBar, { scaleX: 1, duration: 2.2, ease: 'expo.inOut' }, '<')
-  // 3. Hold at 100% for a moment
-  .to(preCenter, { scale: 1.05, duration: 0.35, ease: 'power2.out' }, '+=0.1')
-  // 4. Center smoothly fades out
-  .to(preCenter, { opacity: 0, y: -40, scale: 1.1, duration: 0.5, ease: 'power3.in' }, '+=0.1')
-  // 5. Slide-up the entire solid screen smoothly & trigger Hero entrance onStart
-  .to(preloader, {
-    yPercent: -100,
-    duration: 1.1,
-    ease: 'expo.inOut',
-    onStart: () => {
-      // @ts-ignore
-      window.isPreloaderRevealed = true;
-      window.dispatchEvent(new Event('preloaderReveal'));
-    }
-  }, '-=0.1');
+        gsap.to(preloader, {
+          yPercent: -100,
+          duration: 0.9,
+          ease: 'expo.inOut',
+          onComplete: () => {
+            preloader.style.display = 'none';
+            window.dispatchEvent(new CustomEvent('preloaderComplete'));
+          }
+        });
+      }
+    });
 
-  // Fallback safety: If anything hangs, force completion after 5s
-  setTimeout(() => {
-    if (preloader.style.display !== 'none') {
-      // @ts-ignore
-      window.isPreloaderRevealed = true;
-      window.dispatchEvent(new Event('preloaderReveal'));
-      gsap.to(preloader, { yPercent: -100, duration: 0.6, ease: 'expo.inOut', onComplete: () => {
-        gsap.set(preloader, { display: 'none' });
-        window.dispatchEvent(new Event('preloaderComplete'));
-      }});
-    }
-  }, 5000);
-} else {
-  // @ts-ignore
-  window.isPreloaderRevealed = true;
-  window.dispatchEvent(new Event('preloaderComplete'));
-}
+    tl.to(obj, {
+      val: 100,
+      duration: 1.8,
+      ease: 'power2.inOut',
+      onUpdate: () => {
+        const rounded = Math.round(obj.val);
+        numEl.innerText = rounded < 100 ? String(rounded).padStart(3, '0') : '100';
+        barEl.style.width = `${rounded}%`;
+
+        if (logEl) {
+          const logIdx = Math.min(Math.floor((rounded / 100) * logs.length), logs.length - 1);
+          logEl.innerText = logs[logIdx];
+        }
+      }
+    });
+  }
 </script>
-

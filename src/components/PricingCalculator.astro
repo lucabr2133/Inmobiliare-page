@@ -1,0 +1,550 @@
+---
+// PricingCalculator.astro — Interactive Membership Pass Builder
+---
+
+<section class="section pass-builder" id="membresias">
+  <div class="container">
+    <div class="pass-builder__head reveal">
+      <span class="mono-tag">06 // CONFIGURADOR DE ACCESO</span>
+      <h2 class="display-title pass-builder__title">
+        PASS <span class="highlight-volt">BUILDER</span>
+      </h2>
+      <p class="pass-builder__desc">
+        Configura tu membresía a medida. Selecciona frecuencia de entrenamiento, acceso al Recovery Spa y coaching personalizado para generar tu tarjeta digital.
+      </p>
+    </div>
+
+    <!-- Interactive Builder Grid -->
+    <div class="pass-builder__grid reveal">
+      <!-- Left: Interactive Controls -->
+      <div class="pass-controls">
+        <!-- 1. Tier Level -->
+        <div class="control-group">
+          <label class="control-group__title">1. SELECCIONA NIVEL DE ACCESO</label>
+          <div class="tier-options">
+            <button class="tier-btn active" data-tier="silver" data-base="55000">
+              <span class="tier-tag">NIVEL 01</span>
+              <span class="tier-name">SILVER ACCESS</span>
+              <span class="tier-sub">The Iron Temple + Hypertophy</span>
+            </button>
+            <button class="tier-btn" data-tier="black" data-base="89000">
+              <span class="tier-tag tier-tag--highlight">ALL-ACCESS</span>
+              <span class="tier-name">BLACK DIAMOND</span>
+              <span class="tier-sub">6 Zonas + Clases Ilimitadas</span>
+            </button>
+            <button class="tier-btn" data-tier="vip" data-base="160000">
+              <span class="tier-tag">1-ON-1</span>
+              <span class="tier-name">APEX VIP PRIVATE</span>
+              <span class="tier-sub">Head Coach + Valet + Shakes</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Billing Frequency -->
+        <div class="control-group">
+          <label class="control-group__title">2. FRECUENCIA DE FACTURACIÓN</label>
+          <div class="freq-options">
+            <button class="freq-btn active" data-freq="monthly" data-discount="1">
+              <span>MENSUAL</span>
+              <small>Sin compromiso a largo plazo</small>
+            </button>
+            <button class="freq-btn" data-freq="annual" data-discount="0.8">
+              <span>ANUAL <span class="badge-volt">-20% OFF</span></span>
+              <small>Facturación anual unificada</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Add-on Toggles -->
+        <div class="control-group">
+          <label class="control-group__title">3. SERVICIOS COMPLEMENTARIOS</label>
+          <div class="addons-list">
+            <label class="addon-item">
+              <input type="checkbox" id="addon-cryo" data-price="18000" />
+              <div class="addon-info">
+                <span class="addon-name">Pase Ilimitado Cryo Spa (-110°C &amp; Saunas)</span>
+                <span class="addon-price">+$18.000 / mes</span>
+              </div>
+            </label>
+
+            <label class="addon-item">
+              <input type="checkbox" id="addon-coach" data-price="35000" />
+              <div class="addon-info">
+                <span class="addon-name">4 Sesiones 1-on-1 Biomecánica al Mes</span>
+                <span class="addon-price">+$35.000 / mes</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Live Digital Pass Card Preview -->
+      <div class="pass-preview-wrapper">
+        <div class="digital-pass" id="digital-pass">
+          <div class="digital-pass__bg-pattern"></div>
+          
+          <!-- Card Header -->
+          <div class="digital-pass__head">
+            <div class="digital-pass__brand">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
+              </svg>
+              <span>APEX ATHLETIC PASS</span>
+            </div>
+            <span class="digital-pass__serial">#APX-2025-998</span>
+          </div>
+
+          <!-- Card Body -->
+          <div class="digital-pass__body">
+            <div class="pass-tier-badge" id="card-tier-tag">NIVEL 01 // ACCESO LIBRE</div>
+            <h3 class="pass-tier-title" id="card-tier-title">SILVER ACCESS</h3>
+            <p class="pass-tier-meta" id="card-tier-meta">Acceso The Iron Temple &amp; Hypertrophy Lab</p>
+
+            <!-- Holographic Chip & QR -->
+            <div class="digital-pass__security">
+              <div class="pass-chip"></div>
+              <div class="pass-qr">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="#FFFFFF">
+                  <path d="M3 3h6v6H3zm2 2v2h2V5zm8-2h6v6h-6zm2 2v2h2V5zM3 13h6v6H3zm2 2v2h2v-2zm13-2h3v3h-3zm-5 0h2v2h-2zm2 2h3v3h-3zm-2 2h2v2h-2zm4 0h2v2h-2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer (Price & CTA) -->
+          <div class="digital-pass__foot">
+            <div>
+              <span class="pass-price-lbl">INVERSIÓN MENSUAL</span>
+              <div class="pass-price-row">
+                <span class="pass-price-curr">$</span>
+                <span class="pass-price-val" id="total-price">55.000</span>
+                <span class="pass-price-period">/ mes</span>
+              </div>
+            </div>
+            <a href="#vip-pass" class="btn btn-volt pass-emit-btn">
+              <span>EMITIR ESTE PASE</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.pass-builder {
+  background: var(--color-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pass-builder__head {
+  max-width: 680px;
+  margin-bottom: 3.5rem;
+}
+
+.pass-builder__title {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  margin-block: 0.5rem 1rem;
+}
+
+.pass-builder__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Grid */
+.pass-builder__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.pass-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.control-group__title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-volt);
+  letter-spacing: 0.1em;
+}
+
+/* Tier Options */
+.tier-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.tier-btn {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tier-btn:hover {
+  background: rgba(22, 30, 48, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tier-btn.active {
+  background: rgba(22, 30, 48, 0.95);
+  border-color: var(--color-volt);
+  box-shadow: 0 0 20px rgba(217, 255, 0, 0.2);
+}
+
+.tier-tag {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.tier-tag--highlight {
+  color: var(--color-volt);
+  font-weight: 800;
+}
+
+.tier-name {
+  font-family: var(--font-tech);
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.tier-sub {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+}
+
+/* Frequency */
+.freq-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.freq-btn {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.freq-btn span {
+  font-family: var(--font-tech);
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge-volt {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  background: var(--color-volt);
+  color: #06080D;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.freq-btn small {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+.freq-btn.active {
+  border-color: var(--color-volt);
+  background: rgba(22, 30, 48, 0.95);
+}
+
+/* Addons */
+.addons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.addon-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.addon-item input[type="checkbox"] {
+  accent-color: var(--color-volt);
+  width: 16px;
+  height: 16px;
+}
+
+.addon-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.addon-name {
+  font-size: 0.82rem;
+  color: #FFFFFF;
+}
+
+.addon-price {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-volt);
+}
+
+/* Digital Pass Preview */
+.pass-preview-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.digital-pass {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(135deg, #161E30 0%, #0D1320 60%, #06080D 100%);
+  border: 1.5px solid var(--color-volt);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(217, 255, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.digital-pass__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.digital-pass__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.1em;
+}
+
+.digital-pass__serial {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-volt);
+}
+
+.digital-pass__body {
+  margin-bottom: 2.5rem;
+}
+
+.pass-tier-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-cyber);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.pass-tier-title {
+  font-family: var(--font-tech);
+  font-size: 2rem;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.pass-tier-meta {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.digital-pass__security {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pass-chip {
+  width: 44px;
+  height: 32px;
+  background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pass-qr {
+  background: #06080D;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.digital-pass__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+}
+
+.pass-price-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.pass-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.pass-price-curr {
+  font-family: var(--font-tech);
+  font-size: 1.25rem;
+  color: var(--color-volt);
+}
+
+.pass-price-val {
+  font-family: var(--font-tech);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.pass-price-period {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.pass-emit-btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 960px) {
+  .pass-builder__grid { grid-template-columns: 1fr; }
+  .tier-options { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+  let currentBase = 55000;
+  let currentDiscount = 1;
+  let currentTierTitle = 'SILVER ACCESS';
+  let currentTierMeta = 'Acceso The Iron Temple & Hypertrophy Lab';
+  let currentTierBadge = 'NIVEL 01 // ACCESO LIBRE';
+
+  const tierBtns = document.querySelectorAll<HTMLButtonElement>('.tier-btn');
+  const freqBtns = document.querySelectorAll<HTMLButtonElement>('.freq-btn');
+  const addonCryo = document.getElementById('addon-cryo') as HTMLInputElement;
+  const addonCoach = document.getElementById('addon-coach') as HTMLInputElement;
+  const totalPriceEl = document.getElementById('total-price');
+
+  const cardTitle = document.getElementById('card-tier-title');
+  const cardMeta = document.getElementById('card-tier-meta');
+  const cardBadge = document.getElementById('card-tier-tag');
+
+  const metaMap: Record<string, { title: string; meta: string; badge: string }> = {
+    silver: {
+      title: 'SILVER ACCESS',
+      meta: 'Acceso The Iron Temple & Hypertrophy Lab',
+      badge: 'NIVEL 01 // ACCESO LIBRE'
+    },
+    black: {
+      title: 'BLACK DIAMOND',
+      meta: '6 Zonas APEX + Clases Ilimitadas + 2 Crio',
+      badge: 'ALL-ACCESS // MÁS ELEGIDO'
+    },
+    vip: {
+      title: 'APEX VIP PRIVATE',
+      meta: 'Head Coach 1-on-1 + Crio Ilimitada + Valet',
+      badge: 'NIVEL VIP // EXCLUSIVO'
+    }
+  };
+
+  const calculateTotal = () => {
+    let base = currentBase;
+    if (addonCryo?.checked) base += 18000;
+    if (addonCoach?.checked) base += 35000;
+
+    const finalPrice = Math.round(base * currentDiscount);
+    if (totalPriceEl) totalPriceEl.innerText = finalPrice.toLocaleString('es-AR');
+  };
+
+  tierBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tierBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const tier = btn.dataset.tier ?? 'silver';
+      currentBase = parseInt(btn.dataset.base ?? '55000', 10);
+
+      if (cardTitle) cardTitle.innerText = metaMap[tier].title;
+      if (cardMeta) cardMeta.innerText = metaMap[tier].meta;
+      if (cardBadge) cardBadge.innerText = metaMap[tier].badge;
+
+      calculateTotal();
+    });
+  });
+
+  freqBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      freqBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentDiscount = parseFloat(btn.dataset.discount ?? '1');
+      calculateTotal();
+    });
+  });
+
+  addonCryo?.addEventListener('change', calculateTotal);
+  addonCoach?.addEventListener('change', calculateTotal);
+</script>

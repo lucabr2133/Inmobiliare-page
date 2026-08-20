@@ -1,0 +1,410 @@
+---
+// ProgramMatrix.astro — Interactive Split-Screen Discipline Matrix
+const programs = [
+  {
+    id: 'prog-1',
+    num: '01',
+    code: 'HYROX-ENGINE',
+    title: 'HYROX ENGINE & METABOLIC COMP',
+    subtitle: 'Acondicionamiento láctico de alta intensidad y carrera oficial',
+    intensity: '95%',
+    calories: '850 KCAL / SESIÓN',
+    duration: '60 MIN',
+    focus: 'Potencia Anaeróbica · Trineos · Ergómetros',
+    coach: 'Coach Marcos Valdés (Top 10 Mundial Hyrox)',
+    image: 'https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&dpr=1'
+  },
+  {
+    id: 'prog-2',
+    num: '02',
+    code: 'OLYMPIC-LIFT',
+    title: 'OLYMPIC WEIGHTLIFTING MASTERY',
+    subtitle: 'Arranque (Snatch) y Envión (Clean & Jerk) con feedback por video',
+    intensity: '90%',
+    calories: '650 KCAL / SESIÓN',
+    duration: '75 MIN',
+    focus: 'Fuerza Máxima · Velocidad de Barra · IWF Eleiko',
+    coach: 'Coach Valentina Rossi (Ex-Atleta Selección Nacional)',
+    image: 'https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&dpr=1'
+  },
+  {
+    id: 'prog-3',
+    num: '03',
+    code: 'COMBAT-PRO',
+    title: 'COMBAT BOXING & STRIKING LAB',
+    subtitle: 'Técnica de golpeo en bolsas Aquabag, footwork y rounds de sparring',
+    intensity: '88%',
+    calories: '780 KCAL / SESIÓN',
+    duration: '50 MIN',
+    focus: 'Agilidad · Reflejos · Cadena Cinética de Golpeo',
+    coach: 'Coach Mateo Silva (Campeón Sudamericano Boxeo)',
+    image: 'https://images.pexels.com/photos/4754146/pexels-photo-4754146.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&dpr=1'
+  },
+  {
+    id: 'prog-4',
+    num: '04',
+    code: 'REFORMER-CORE',
+    title: 'ATHLETIC REFORMER & BIO-MOBILITY',
+    subtitle: 'Pilates dinámico de alta resistencia sobre camas Allegro 2',
+    intensity: '75%',
+    calories: '450 KCAL / SESIÓN',
+    duration: '55 MIN',
+    focus: 'Estabilidad Lumbo-Pélvica · Control Escapular',
+    coach: 'Coach Camila Duarte (Kinesióloga Deportiva)',
+    image: 'https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&dpr=1'
+  }
+];
+---
+
+<section class="section matrix" id="disciplinas">
+  <div class="container">
+    <div class="matrix__head reveal">
+      <span class="mono-tag">02 // PROTOCOLOS DE ENTRENAMIENTO</span>
+      <h2 class="display-title matrix__title">
+        PROGRAM <span class="highlight-volt">MATRIX</span>
+      </h2>
+      <p class="matrix__subtitle">
+        Disciplinas periodizadas por científicos del deporte. Cada sesión responde a un estímulo neuromuscular y metabólico medible en telemetría.
+      </p>
+    </div>
+
+    <!-- Interactive Split-Screen Matrix -->
+    <div class="matrix__body reveal">
+      <!-- Left: Program List -->
+      <div class="matrix__list" role="list">
+        {programs.map((p, i) => (
+          <div
+            class={`matrix__item ${i === 0 ? 'active' : ''}`}
+            role="listitem"
+            data-target={p.id}
+          >
+            <div class="matrix__item-top">
+              <span class="matrix__num">{p.num}</span>
+              <span class="matrix__code">[ {p.code} ]</span>
+            </div>
+            <h3 class="matrix__item-title">{p.title}</h3>
+            <p class="matrix__item-sub">{p.subtitle}</p>
+            
+            <!-- Quick HUD stats on item -->
+            <div class="matrix__item-telemetry">
+              <span>⚡ {p.intensity} INTENSIDAD</span>
+              <span>⏱ {p.duration}</span>
+              <span>🔥 {p.calories}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right: Live Dynamic Display -->
+      <div class="matrix__preview">
+        {programs.map((p, i) => (
+          <div class={`preview-card ${i === 0 ? 'active' : ''}`} id={`preview-${p.id}`}>
+            <div class="preview-card__img-wrap">
+              <img src={p.image} alt={p.title} class="preview-card__img" loading="lazy" />
+              <div class="preview-card__overlay"></div>
+              
+              <!-- Floating HUD Badge -->
+              <div class="preview-card__hud-badge">
+                <span class="pulse-dot"></span>
+                <span>METRICS ACTIVE</span>
+              </div>
+            </div>
+
+            <div class="preview-card__body">
+              <div class="preview-metric-row">
+                <div class="metric-gauge">
+                  <span class="metric-gauge__lbl">CARGA METABÓLICA</span>
+                  <div class="metric-gauge__bar-wrap">
+                    <div class="metric-gauge__bar" style={`width: ${p.intensity};`}></div>
+                  </div>
+                  <span class="metric-gauge__val">{p.intensity}</span>
+                </div>
+              </div>
+
+              <div class="preview-info-box">
+                <span class="info-lbl">ENFOQUE NEUROMUSCULAR</span>
+                <p class="info-val">{p.focus}</p>
+              </div>
+
+              <div class="preview-info-box">
+                <span class="info-lbl">HEAD COACH A CARGO</span>
+                <p class="info-val" style="color:var(--color-volt);">{p.coach}</p>
+              </div>
+
+              <div class="preview-cta">
+                <a href="#vip-pass" class="btn btn-volt" style="width:100%;">
+                  <span>RESERVAR SPOT EN ESTA DISCIPLINA</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.matrix {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.matrix__head {
+  max-width: 680px;
+  margin-bottom: 3.5rem;
+}
+
+.matrix__title {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  margin-block: 0.5rem 1rem;
+}
+
+.matrix__subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Split-Screen Layout */
+.matrix__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* List */
+.matrix__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.matrix__item {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid transparent;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix__item:hover {
+  background: rgba(22, 30, 48, 0.9);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(6px);
+}
+
+.matrix__item.active {
+  background: rgba(22, 30, 48, 0.95);
+  border-left-color: var(--color-volt);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(217, 255, 0, 0.15);
+}
+
+.matrix__item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.matrix__num {
+  font-family: var(--font-tech);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-volt);
+}
+
+.matrix__code {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-cyber);
+  letter-spacing: 0.1em;
+}
+
+.matrix__item-title {
+  font-family: var(--font-tech);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.matrix__item-sub {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.matrix__item-telemetry {
+  display: flex;
+  gap: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-titanium);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.75rem;
+}
+
+/* Preview Card */
+.matrix__preview {
+  position: relative;
+  min-height: 580px;
+}
+
+.preview-card {
+  display: none;
+  background: #0D1320;
+  border: 1px solid var(--color-border-volt);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.preview-card.active {
+  display: flex;
+}
+
+.preview-card__img-wrap {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.preview-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75) contrast(1.15);
+}
+
+.preview-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, #0D1320 100%);
+}
+
+.preview-card__hud-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(6, 8, 13, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-volt);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-volt);
+}
+
+.preview-card__body {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+/* Gauge */
+.metric-gauge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.metric-gauge__lbl {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  width: 130px;
+  flex-shrink: 0;
+}
+
+.metric-gauge__bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.metric-gauge__bar {
+  height: 100%;
+  background: var(--grad-volt);
+  box-shadow: 0 0 10px rgba(217, 255, 0, 0.8);
+}
+
+.metric-gauge__val {
+  font-family: var(--font-tech);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-volt);
+  width: 40px;
+  text-align: right;
+}
+
+.preview-info-box {
+  background: rgba(16, 22, 36, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.info-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.info-val {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.preview-cta {
+  margin-top: auto;
+}
+
+@media (max-width: 960px) {
+  .matrix__body { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+  const items = document.querySelectorAll<HTMLElement>('.matrix__item');
+  const cards = document.querySelectorAll<HTMLElement>('.preview-card');
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const target = item.dataset.target;
+      items.forEach(i => i.classList.remove('active'));
+      cards.forEach(c => c.classList.remove('active'));
+
+      item.classList.add('active');
+      document.getElementById(`preview-${target}`)?.classList.add('active');
+    });
+
+    item.addEventListener('click', () => {
+      const target = item.dataset.target;
+      items.forEach(i => i.classList.remove('active'));
+      cards.forEach(c => c.classList.remove('active'));
+
+      item.classList.add('active');
+      document.getElementById(`preview-${target}`)?.classList.add('active');
+    });
+  });
+</script>
