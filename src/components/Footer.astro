@@ -1,442 +1,199 @@
 ---
-// Footer.astro — Tactical Cockpit System Telemetry Footer
+// Footer.astro — Clean modern footer
 ---
 
-<footer class="cockpit-footer" role="contentinfo">
-  <div class="container cockpit-footer__inner">
-    <!-- Top Tactical Bar -->
-    <div class="footer-top-hud">
-      <div class="footer-brand-large">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
-        </svg>
-        <span class="footer-sys-title">APEX // ATHLETIC COMMAND OS</span>
-      </div>
-
-      <div class="footer-telemetry-strip">
-        <div class="f-tele-item">
-          <span class="os-lamp"></span>
-          <span>SYSTEM STATUS: NOMINAL</span>
-        </div>
-        <div class="f-tele-sep">/</div>
-        <div class="f-tele-item">
-          <span>PING: 12ms</span>
-        </div>
-        <div class="f-tele-sep">/</div>
-        <div class="f-tele-item">
-          <span>LAT: -34.5885 · LON: -58.4287</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Tactical Grid -->
-    <div class="footer-main-grid">
-      <!-- Col 1: System Doctrine & Locations -->
-      <div class="footer-col footer-col--doctrine">
-        <h3 class="f-col-title">SEDES &amp; CONTROL DE ACCESO</h3>
-        
-        <div class="f-loc-card">
-          <div class="f-loc-header">
-            <span class="f-loc-tag">SEDE ALPHA</span>
-            <span class="f-loc-name">PALERMO SOHO</span>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/></svg>
+          <div>
+            <span class="footer__logo-title">APEX</span>
+            <span class="footer__logo-sub">ATHLETIC CLUB</span>
           </div>
-          <p class="f-loc-addr">Gorriti 5120, CABA</p>
-          <div class="f-loc-hours">
-            <span>LUN - VIE: 06:00 - 23:00</span>
-            <span>SÁB - DOM: 08:00 - 20:00</span>
-          </div>
-          <span class="f-loc-phone">TEL: +54 11 4899-2739</span>
         </div>
-
-        <div class="f-loc-card">
-          <div class="f-loc-header">
-            <span class="f-loc-tag">SEDE BETA</span>
-            <span class="f-loc-name">RECOLETA</span>
-          </div>
-          <p class="f-loc-addr">Av. Alvear 1890, CABA</p>
-          <div class="f-loc-hours">
-            <span>LUN - VIE: 06:00 - 23:00</span>
-            <span>SÁB - DOM: 08:00 - 20:00</span>
-          </div>
-          <span class="f-loc-phone">TEL: +54 11 4899-2740</span>
+        <p class="footer__tagline">Santuario de alto rendimiento, biomecánica y longevidad celular en Buenos Aires.</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
         </div>
       </div>
 
-      <!-- Col 2: Cockpit Mode Direct Jumpers -->
-      <div class="footer-col">
-        <h3 class="f-col-title">SUBSISTEMAS DEL COCKPIT</h3>
-        <nav class="f-subsystems-nav">
-          <button class="f-jump-btn" onclick="document.querySelector('[data-mode=zones]')?.click()">
-            <span class="f-btn-idx">[ 01 ]</span>
-            <span class="f-btn-txt">Zone CCTV Monitor &amp; Blueprint</span>
-          </button>
-          <button class="f-jump-btn" onclick="document.querySelector('[data-mode=protocols]')?.click()">
-            <span class="f-btn-idx">[ 02 ]</span>
-            <span class="f-btn-txt">Biomechanic Training Protocols</span>
-          </button>
-          <button class="f-jump-btn" onclick="document.querySelector('[data-mode=radar]')?.click()">
-            <span class="f-btn-idx">[ 03 ]</span>
-            <span class="f-btn-txt">Live Satellite Class Radar</span>
-          </button>
-          <button class="f-jump-btn" onclick="document.querySelector('[data-mode=coaches]')?.click()">
-            <span class="f-btn-idx">[ 04 ]</span>
-            <span class="f-btn-txt">Olympic Master Dossier &amp; PRs</span>
-          </button>
-          <button class="f-jump-btn" onclick="document.querySelector('[data-mode=biohack]')?.click()">
-            <span class="f-btn-idx">[ 05 ]</span>
-            <span class="f-btn-txt">Cellular Cryo Chamber (-110°C)</span>
-          </button>
-          <button class="f-jump-btn" onclick="document.querySelector('[data-mode=pass]')?.click()">
-            <span class="f-btn-idx">[ 06 ]</span>
-            <span class="f-btn-txt">Digital Smart Pass Key Generator</span>
-          </button>
-        </nav>
+      <div class="footer__col">
+        <h4>Secciones</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Disciplinas</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#coaches">Coaches</a>
+        <a href="#membresias">Membresías</a>
+        <a href="#contacto">Contacto</a>
       </div>
 
-      <!-- Col 3: Live Telemetry Diagnostics & Comms -->
-      <div class="footer-col footer-col--telemetry">
-        <h3 class="f-col-title">DIAGNÓSTICO EN TIEMPO REAL</h3>
-        
-        <div class="diag-console-box">
-          <div class="diag-row">
-            <span class="diag-lbl">ELEIKO IWF LOAD:</span>
-            <span class="diag-val">15.000 KG (100%)</span>
-          </div>
-          <div class="diag-row">
-            <span class="diag-lbl">CRYO CHAMBER:</span>
-            <span class="diag-val" style="color:var(--os-volt);">-110.0°C ACTIVE</span>
-          </div>
-          <div class="diag-row">
-            <span class="diag-lbl">TURF SLED TRACK:</span>
-            <span class="diag-val">40 METROS LIBRE</span>
-          </div>
-          <div class="diag-row">
-            <span class="diag-lbl">SECURITY PROTOCOL:</span>
-            <span class="diag-val">SHA-256 BIOMETRIC</span>
-          </div>
-        </div>
+      <div class="footer__col">
+        <h4>Sedes</h4>
+        <p>Palermo Soho<br/><span>Gorriti 5120</span></p>
+        <p>Recoleta<br/><span>Av. Alvear 1890</span></p>
+        <p style="margin-top:0.5rem;">Lun-Sáb 06:00-23:00<br/><span>Dom 08:00-20:00</span></p>
+      </div>
 
-        <div class="f-comms-box">
-          <span class="comms-title">SUSCRIPCIÓN AL APEX JOURNAL</span>
-          <p class="comms-desc">Papers de biomecánica, periodización y acceso anticipado.</p>
-          <form class="comms-form" onsubmit="event.preventDefault(); this.innerHTML='<span style=\'color:var(--os-volt);font-size:0.75rem;font-family:var(--font-os-mono);\'>// COMMS CHANNEL ACTIVE</span>';">
-            <input type="email" placeholder="atleta@email.com" required />
-            <button type="submit" class="os-btn os-btn-volt comms-submit">ENVIAR</button>
-          </form>
-        </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <p>+54 9 11 5491-0000</p>
+        <p>info@apexclub.com.ar</p>
+        <a href="#contacto" class="btn btn-volt" style="margin-top:1rem;font-size:0.7rem;padding:0.6rem 1.2rem;">AGENDAR VISITA</a>
       </div>
     </div>
 
-    <!-- Bottom Metadata Bar -->
-    <div class="footer-bottom-bar">
-      <div class="f-copy-box">
-        <span>&copy; {new Date().getFullYear()} APEX PERFORMANCE CLUB // ALL RIGHTS RESERVED</span>
-        <span class="f-encrypted-badge">ENCRYPTED ATHLETIC PROTOCOL</span>
-      </div>
-      <div class="f-legal-links">
-        <a href="#access-terminal">Reglamento IWF</a>
-        <a href="#access-terminal">Privacidad Biometría</a>
-        <a href="#access-terminal">Términos de Sala</a>
+    <div class="footer__bottom">
+      <span>&copy; 2026 APEX Athletic Club. Todos los derechos reservados.</span>
+      <div class="footer__legal">
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
       </div>
     </div>
   </div>
 </footer>
 
 <style>
-.cockpit-footer {
-  background: #040508;
-  border-top: 1px solid var(--os-border-volt);
+.footer {
+  background: #060606;
+  border-top: 1px solid var(--color-border);
   padding-top: 4rem;
-  padding-bottom: 2.5rem;
-  font-family: var(--font-os-mono);
-  position: relative;
-  overflow: hidden;
+  padding-bottom: 2rem;
 }
 
-.cockpit-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--os-volt) 50%, transparent 100%);
-  box-shadow: 0 0 15px var(--os-volt);
-}
-
-.cockpit-footer__inner {
-  display: flex;
-  flex-direction: column;
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* Top Bar */
-.footer-top-hud {
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer__logo-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  display: block;
+  line-height: 1;
+}
+
+.footer__logo-sub {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--color-volt);
+  letter-spacing: 0.15em;
+  display: block;
+}
+
+.footer__tagline {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  max-width: 280px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer__socials a {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer__socials a:hover {
+  border-color: var(--color-volt);
+  color: var(--color-volt);
+  background: var(--color-volt-dim);
+}
+
+.footer__col h4 {
+  font-family: var(--font-tech);
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.footer__col a {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.footer__col a:hover { color: var(--color-volt); }
+
+.footer__col p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.footer__col p span {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+}
+
+.footer__bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
   flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__legal {
+  display: flex;
   gap: 1.5rem;
 }
 
-.footer-brand-large {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-os-tech);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: 0.06em;
-}
-
-.footer-telemetry-strip {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  font-size: 0.68rem;
-  color: var(--os-muted);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 0.4rem 0.85rem;
-  border-radius: 2px;
-}
-
-.f-tele-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.f-tele-sep {
-  color: rgba(255, 255, 255, 0.2);
-}
-
-/* Main Grid */
-.footer-main-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1.2fr 1.3fr;
-  gap: 3rem;
-}
-
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.f-col-title {
-  font-family: var(--font-os-tech);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--os-volt);
-  letter-spacing: 0.08em;
-  border-bottom: 1px solid rgba(217, 255, 0, 0.2);
-  padding-bottom: 0.5rem;
-}
-
-/* Location Cards */
-.f-loc-card {
-  background: #080A0E;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-left: 2px solid var(--os-volt);
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.f-loc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.f-loc-tag {
-  font-size: 0.58rem;
-  color: var(--os-volt);
-}
-
-.f-loc-name {
-  font-family: var(--font-os-tech);
-  font-size: 0.95rem;
-  color: #FFFFFF;
-}
-
-.f-loc-addr {
-  font-size: 0.75rem;
-  color: var(--os-muted);
-}
-
-.f-loc-hours {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.65rem;
-  color: var(--os-muted);
-  margin-top: 0.25rem;
-}
-
-.f-loc-phone {
-  font-size: 0.68rem;
-  color: #FFFFFF;
-  margin-top: 0.25rem;
-}
-
-/* Subsystems Nav */
-.f-subsystems-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.f-jump-btn {
-  background: #080A0E;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 0.65rem 0.85rem;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  color: var(--os-muted);
-  font-family: var(--font-os-mono);
-  font-size: 0.72rem;
-  transition: all 0.2s ease;
-  border-radius: 2px;
-}
-
-.f-jump-btn:hover {
-  background: rgba(217, 255, 0, 0.08);
-  border-color: var(--os-border-volt);
-  color: #FFFFFF;
-  transform: translateX(4px);
-}
-
-.f-btn-idx {
-  color: var(--os-volt);
-  font-weight: 700;
-}
-
-/* Telemetry Diagnostics */
-.diag-console-box {
-  background: #080A0E;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-radius: 2px;
-}
-
-.diag-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.68rem;
-}
-
-.diag-lbl {
-  color: var(--os-muted);
-}
-
-.diag-val {
-  color: #FFFFFF;
-  font-weight: 700;
-}
-
-.f-comms-box {
-  background: #080A0E;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 1.15rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  border-radius: 2px;
-}
-
-.comms-title {
-  font-size: 0.68rem;
-  color: var(--os-volt);
-  font-weight: 700;
-}
-
-.comms-desc {
-  font-size: 0.68rem;
-  color: var(--os-muted);
-  line-height: 1.4;
-}
-
-.comms-form {
-  display: flex;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-
-.comms-form input {
-  background: #060709;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0.5rem 0.75rem;
-  color: #FFFFFF;
-  font-family: var(--font-os-mono);
-  font-size: 0.72rem;
-  flex: 1;
-  border-radius: 2px;
-}
-
-.comms-form input:focus {
-  outline: none;
-  border-color: var(--os-volt);
-}
-
-.comms-submit {
-  padding: 0.5rem 0.85rem;
-  font-size: 0.68rem;
-}
-
-/* Bottom Metadata Bar */
-.footer-bottom-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 1.5rem;
-  font-size: 0.65rem;
-  color: var(--os-muted);
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.f-copy-box {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.f-encrypted-badge {
-  color: var(--os-volt);
-  border: 1px solid var(--os-border-volt);
-  padding: 0.15rem 0.4rem;
-  border-radius: 2px;
-  font-size: 0.58rem;
-}
-
-.f-legal-links {
-  display: flex;
-  gap: 1.25rem;
-}
-
-.f-legal-links a {
-  color: var(--os-muted);
+.footer__legal a {
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.f-legal-links a:hover {
-  color: var(--os-volt);
+.footer__legal a:hover { color: var(--color-volt); }
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 1024px) {
-  .footer-main-grid { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; text-align: center; }
 }
 </style>

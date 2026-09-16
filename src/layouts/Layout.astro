@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import Cursor from '../components/Cursor.astro';
 import Preloader from '../components/Preloader.astro';
 
 export interface Props {
@@ -10,7 +9,7 @@ export interface Props {
 }
 
 const {
-  title = 'APEX ATHLETIC LAB // Haute Performance & Biomechanic Sanctuary',
+  title = 'APEX Athletic Club — Alto Rendimiento & Biohacking en Buenos Aires',
   description = 'Santuario de alto rendimiento, biomecánica y longevidad celular en Buenos Aires. 2.500 m² de equipamiento Eleiko, crioterapia a -110°C y coaching 1-on-1.',
   ogImage = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=1',
 } = Astro.props;
@@ -25,29 +24,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://apexclub
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
-
-    <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="APEX Performance Club" />
-    <meta name="keywords" content="gimnasio de lujo, alto rendimiento, biomecanica, eleiko, crioterapia, hyrox, halterofilia, buenos aires, palermo soho, recoleta" />
-
-    <!-- Google Fonts: Syne, Chakra Petch, JetBrains Mono, Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=JetBrains+Mono:wght@400;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="APEX Performance Club" />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -55,7 +41,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://apexclub
   </head>
   <body>
     <Preloader />
-    <Cursor />
     <slot />
   </body>
 </html>

@@ -1,259 +1,203 @@
 ---
-// Hero.astro — Editorial Brutalist Athletic Hero (No Blue, No Top Tag)
+// Hero.astro — Cinematic Landing Hero with GSAP animations
 ---
 
-<section class="hud-hero" id="inicio">
-  <!-- Atmospheric Background -->
-  <div class="hud-hero__bg">
+<section class="hero" id="inicio">
+  <div class="hero__bg">
     <img
       src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
-      alt="Entrenamiento de alta intensidad en APEX Athletic Club"
-      class="hud-hero__img"
-      id="hero-img"
+      alt="APEX Athletic Club - Entrenamiento de alto rendimiento"
+      class="hero__img"
     />
-    <div class="hud-hero__overlay"></div>
-    <div class="hud-hero__scanlines"></div>
+    <div class="hero__overlay"></div>
   </div>
 
-  <div class="container hud-hero__content">
-    <!-- Massive Brutalist Title (No top tag above) -->
-    <h1 class="display-title hud-hero__title reveal" id="hero-title">
-      HUMAN<br />
-      <span class="highlight-volt">POTENTIAL</span><br />
-      ENGINEERED
+  <div class="container hero__content">
+    <h1 class="hero__title reveal">
+      TU MEJOR<br />
+      <span class="highlight-volt">VERSIÓN</span><br />
+      EMPIEZA ACÁ
     </h1>
 
-    <!-- Subtitle & Action Grid -->
-    <div class="hud-hero__bottom-grid reveal">
-      <div class="hud-hero__lead">
-        <p>
-          El primer santuario atlético de precisión biomecánica, periodización basada en HRV y biohacking celular en Buenos Aires. 2.500 m² de equipamiento olímpico Eleiko y crioterapia a -110°C.
-        </p>
-        <div class="hud-hero__actions">
-          <a href="#vip-pass" class="btn btn-volt">
-            <span>RECLAMAR 1-DAY PASS</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#zonas" class="btn btn-ghost">
-            <span>EXPLORAR ZONAS</span>
-          </a>
-        </div>
-      </div>
+    <p class="hero__lead reveal">
+      El primer santuario atlético de precisión biomecánica, periodización basada en HRV
+      y biohacking celular en Buenos Aires. 2.500 m² de puro rendimiento.
+    </p>
 
-      <!-- Quick Telemetry HUD -->
-      <div class="hud-hero__telemetry">
-        <div class="telemetry-box">
-          <span class="telemetry-val">2.500<small>M²</small></span>
-          <span class="telemetry-lbl">SUPERFICIE OLÍMPICA</span>
-        </div>
-        <div class="telemetry-box">
-          <span class="telemetry-val">-110<small>°C</small></span>
-          <span class="telemetry-lbl">CRYO RECOVERY SPA</span>
-        </div>
-        <div class="telemetry-box">
-          <span class="telemetry-val">15<small>TON</small></span>
-          <span class="telemetry-lbl">DISCOS ELEIKO IWF</span>
-        </div>
-        <div class="telemetry-box">
-          <span class="telemetry-val">1:1</span>
-          <span class="telemetry-lbl">COACHING BIOMECÁNICO</span>
-        </div>
+    <div class="hero__actions reveal">
+      <a href="#contacto" class="btn btn-volt">
+        <span>EMPEZAR AHORA</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#servicios" class="btn btn-ghost">
+        <span>VER SERVICIOS</span>
+      </a>
+    </div>
+
+    <div class="hero__stats reveal">
+      <div class="hero__stat">
+        <span class="hero__stat-val">2.500<small>m²</small></span>
+        <span class="hero__stat-lbl">Superficie Total</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-val">-110<small>°C</small></span>
+        <span class="hero__stat-lbl">Cámara Crioterapia</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-val">15<small>ton</small></span>
+        <span class="hero__stat-lbl">Equipamiento Eleiko</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-val">1:1</span>
+        <span class="hero__stat-lbl">Coaching Personal</span>
       </div>
     </div>
   </div>
 
-  <!-- Live Marquee Ticker (No Blue) -->
-  <div class="hud-marquee" aria-hidden="true">
-    <div class="hud-marquee__inner">
-      <span>⚡ ELEIKO CERTIFIED FACILITY</span>
-      <span>///</span>
-      <span>HYROX OFFICIAL TRAINING CLUB</span>
-      <span>///</span>
-      <span>-110°C WHOLE BODY CRYO</span>
-      <span>///</span>
-      <span>PRIME FITNESS SMARTCAM</span>
-      <span>///</span>
-      <span>ARSENAL STRENGTH RELOADED</span>
-      <span>///</span>
-      <span>BALANCED BODY ALLEGRO 2</span>
-      <span>///</span>
-      <span>⚡ ELEIKO CERTIFIED FACILITY</span>
-      <span>///</span>
-      <span>HYROX OFFICIAL TRAINING CLUB</span>
-      <span>///</span>
-      <span>-110°C WHOLE BODY CRYO</span>
-    </div>
+  <div class="hero__scroll-cue">
+    <span>SCROLL</span>
+    <div class="hero__scroll-line"></div>
   </div>
 </section>
 
 <style>
-.hud-hero {
+.hero {
   position: relative;
   min-height: 100svh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: calc(var(--navbar-h) + 3rem);
+  align-items: center;
   overflow: hidden;
-  background: var(--color-bg);
 }
 
-.hud-hero__bg {
+.hero__bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
 }
 
-.hud-hero__img {
+.hero__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  filter: brightness(0.42) contrast(1.2) saturate(0.85);
+  filter: brightness(0.35) contrast(1.15) saturate(0.9);
 }
 
-.hud-hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 35% 40%,
-    rgba(8, 10, 14, 0.4) 0%,
-    rgba(8, 10, 14, 0.88) 65%,
-    #080A0E 100%
-  );
-}
-
-.hud-hero__scanlines {
+.hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%, 
-    rgba(0, 0, 0, 0.35) 50%
+    to bottom,
+    rgba(10, 10, 10, 0.3) 0%,
+    rgba(10, 10, 10, 0.6) 50%,
+    #0A0A0A 100%
   );
-  background-size: 100% 4px;
-  pointer-events: none;
-  opacity: 0.6;
 }
 
-.hud-hero__content {
+.hero__content {
   position: relative;
   z-index: 2;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-block: 2.5rem;
+  padding-top: calc(var(--navbar-h) + 4rem);
+  padding-bottom: 6rem;
 }
 
-.hud-hero__title {
-  font-size: clamp(3.4rem, 8.5vw, 7.5rem);
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.05;
   letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero__lead {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 550px;
   margin-bottom: 2.5rem;
 }
 
-.hud-hero__bottom-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: end;
-}
-
-.hud-hero__lead p {
-  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
-  margin-bottom: 2rem;
-  max-width: 540px;
-}
-
-.hud-hero__actions {
+.hero__actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-bottom: 4rem;
 }
 
-/* Telemetry Box Grid */
-.hud-hero__telemetry {
+.hero__stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 700px;
 }
 
-.telemetry-box {
-  background: rgba(20, 23, 30, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.hero__stat {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-left: 3px solid var(--color-volt);
-  padding: 1.15rem;
-  border-radius: var(--radius-sm);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
 }
 
-.telemetry-box:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-volt);
-}
-
-.telemetry-val {
+.hero__stat-val {
   font-family: var(--font-tech);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #FFFFFF;
-  line-height: 1;
-  display: flex;
-  align-items: baseline;
-  gap: 0.2rem;
-  margin-bottom: 0.3rem;
+  display: block;
+  line-height: 1.2;
 }
 
-.telemetry-val small {
-  font-size: 0.85rem;
+.hero__stat-val small {
+  font-size: 0.8rem;
   color: var(--color-volt);
+  margin-left: 2px;
 }
 
-.telemetry-lbl {
+.hero__stat-lbl {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   color: var(--color-text-muted);
-  letter-spacing: 0.1em;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-/* Marquee (No Blue) */
-.hud-marquee {
-  position: relative;
-  z-index: 2;
-  background: #10131A;
-  border-top: 1px solid var(--color-border-volt);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-block: 0.75rem;
-  overflow: hidden;
-  white-space: nowrap;
+.hero__scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  right: var(--container-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 5;
 }
 
-.hud-marquee__inner {
-  display: inline-flex;
-  gap: 2.5rem;
+.hero__scroll-cue span {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  color: var(--color-volt);
-  animation: marquee-scroll 25s linear infinite;
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  writing-mode: vertical-rl;
 }
 
-.hud-marquee__inner span:nth-child(even) {
-  color: #FFFFFF;
+.hero__scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--color-volt), transparent);
+  animation: scroll-pulse 2s ease-in-out infinite;
 }
 
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.3; transform: scaleY(0.6); }
 }
 
-@media (max-width: 900px) {
-  .hud-hero__bottom-grid { grid-template-columns: 1fr; }
-  .hud-hero__actions .btn { width: 100%; justify-content: center; }
+@media (max-width: 768px) {
+  .hero__stats { grid-template-columns: repeat(2, 1fr); }
+  .hero__actions .btn { width: 100%; justify-content: center; }
 }
 </style>
 
@@ -261,17 +205,13 @@
   import gsap from 'gsap';
 
   const revealHero = () => {
-    gsap.fromTo('.hud-hero .reveal',
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'expo.out',
-        clearProps: 'transform'
-      }
-    );
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    
+    tl.fromTo('.hero__title', { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1 })
+      .fromTo('.hero__lead', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.5')
+      .fromTo('.hero__actions', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
+      .fromTo('.hero__stat', { opacity: 0, y: 25, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1 }, '-=0.3')
+      .fromTo('.hero__scroll-cue', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
   };
 
   // @ts-ignore
