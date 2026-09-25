@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import Preloader from '../components/Preloader.astro';
 
 export interface Props {
   title?: string;
@@ -8,8 +7,8 @@ export interface Props {
 }
 
 const {
-  title = 'Inmobiliare — Inmobiliaria Boutique en Buenos Aires',
-  description = 'Inmobiliaria boutique especializada en propiedades de lujo en Buenos Aires. Más de 15 años de trayectoria en Palermo, Recoleta, Puerto Madero y Nordelta.',
+  title = 'Vision Seguridad Electrónica',
+  description = 'Venta e instalación de cámaras de seguridad, alarmas, cercos eléctricos, cerraduras inteligentes y más.',
 } = Astro.props;
 ---
 
@@ -28,7 +27,6 @@ const {
     <meta property="og:locale" content="es_AR" />
   </head>
   <body>
-    <Preloader />
     <slot />
   </body>
 </html>
