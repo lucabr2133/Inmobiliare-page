@@ -1,0 +1,125 @@
+---
+---
+
+<section class="team" id="equipo">
+  <div class="container">
+    <div class="team__header">
+      <span class="section-label reveal">Nuestro Equipo</span>
+      <h2 class="section-title reveal">Las personas detrás de<br /><em>cada operación</em></h2>
+      <p class="section-subtitle reveal">
+        Un equipo multidisciplinario de profesionales apasionados por el mercado inmobiliario porteño.
+      </p>
+    </div>
+
+    <div class="team__grid">
+      <div class="team-card reveal">
+        <div class="team-card__img">
+          <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Carolina Méndez" />
+        </div>
+        <div class="team-card__info">
+          <h3>Carolina Méndez</h3>
+          <span>Directora Comercial</span>
+          <p>20 años de experiencia en el mercado premium de Buenos Aires. Especialista en propiedades de alto valor en Recoleta y Palermo.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-card__img">
+          <img src="https://images.pexels.com/photos/6456300/pexels-photo-6456300.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Martín Gaviria" />
+        </div>
+        <div class="team-card__info">
+          <h3>Martín Gaviria</h3>
+          <span>Director de Inversiones</span>
+          <p>MBA en Finanzas (UTDT). Especialista en análisis de rentabilidad, proyectos en pozo y estructuras fiduciarias.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-card__img">
+          <img src="https://images.pexels.com/photos/6740174/pexels-photo-6740174.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lucía Stein" />
+        </div>
+        <div class="team-card__info">
+          <h3>Lucía Stein</h3>
+          <span>Asesora Legal</span>
+          <p>Abogada UBA especializada en derecho inmobiliario. Coordina escrituras, contratos y due diligence patrimonial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.team { background: var(--color-bg); }
+
+.team__header { margin-bottom: clamp(3rem, 5vw, 4.5rem); }
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card__img {
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.team-card__img img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(100%) brightness(0.95);
+  transition: filter 0.5s ease;
+}
+
+.team-card:hover .team-card__img img {
+  filter: grayscale(0%) brightness(1);
+}
+
+.team-card__info h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 0.15rem;
+}
+
+.team-card__info span {
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.team-card__info p {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) { .team__grid { grid-template-columns: 1fr; max-width: 400px; } }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.team-card').forEach((card: any, i: number) => {
+    gsap.fromTo(card,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.7, delay: i * 0.12, ease: 'power2.out',
+        scrollTrigger: { trigger: card, start: 'top 88%' } }
+    );
+  });
+</script>

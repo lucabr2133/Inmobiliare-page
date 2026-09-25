@@ -1,74 +1,53 @@
 ---
-// Services.astro — Servicios & Disciplinas
 ---
 
 <section class="services" id="servicios">
   <div class="container">
-    <div class="services__header">
-      <h2 class="section-title reveal">NUESTRAS <span class="highlight-volt">DISCIPLINAS</span></h2>
-      <p class="section-subtitle reveal">
-        Programas diseñados por especialistas en rendimiento, con metodologías basadas en ciencia del deporte.
-      </p>
-    </div>
-
     <div class="services__grid">
-      <div class="service-card reveal">
-        <div class="service-card__img-wrap">
-          <img src="https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Halterofilia" />
-        </div>
-        <div class="service-card__body">
-          <h3>Halterofilia</h3>
-          <p>Plataformas olímpicas con discos Eleiko IWF. Técnica, potencia y competencia supervisada.</p>
-        </div>
+      <div class="services__left">
+        <span class="section-label reveal">Servicios</span>
+        <h2 class="section-title reveal">Asesoramiento<br /><em>integral</em></h2>
+        <p class="section-subtitle reveal">
+          Cada servicio está respaldado por un equipo multidisciplinario de profesionales
+          del mercado inmobiliario, legales y financieros.
+        </p>
       </div>
 
-      <div class="service-card reveal">
-        <div class="service-card__img-wrap">
-          <img src="https://images.pexels.com/photos/4164766/pexels-photo-4164766.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fuerza & Powerlifting" />
+      <div class="services__right">
+        <div class="svc reveal">
+          <div class="svc__header">
+            <h3>Compraventa de Propiedades</h3>
+            <span class="svc__arrow">→</span>
+          </div>
+          <p>Gestión completa del proceso de compra y venta. Valuación de mercado, estrategia de comercialización, negociación y cierre de operación.</p>
         </div>
-        <div class="service-card__body">
-          <h3>Fuerza & Powerlifting</h3>
-          <p>Racks de competición, deadlift platforms y coaching de periodización ondulada.</p>
+        <div class="svc reveal">
+          <div class="svc__header">
+            <h3>Alquileres & Administración</h3>
+            <span class="svc__arrow">→</span>
+          </div>
+          <p>Alquileres temporarios y permanentes con administración integral: cobro, mantenimiento, seguros y atención al propietario.</p>
         </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-card__img-wrap">
-          <img src="https://images.pexels.com/photos/6551174/pexels-photo-6551174.jpeg?auto=compress&cs=tinysrgb&w=600" alt="HYROX" />
+        <div class="svc reveal">
+          <div class="svc__header">
+            <h3>Tasaciones Profesionales</h3>
+            <span class="svc__arrow">→</span>
+          </div>
+          <p>Valuaciones con análisis comparativo de mercado, tendencias de zona y proyección de rentabilidad. Informe detallado en 48hs.</p>
         </div>
-        <div class="service-card__body">
-          <h3>HYROX Training</h3>
-          <p>Centro oficial de entrenamiento HYROX. Ski erg, sled push, wall balls y más.</p>
+        <div class="svc reveal">
+          <div class="svc__header">
+            <h3>Consultoría de Inversión</h3>
+            <span class="svc__arrow">→</span>
+          </div>
+          <p>Asesoramiento para inversores: análisis de proyectos en pozo, retorno por zona, diversificación de portfolio y estructuras fiduciarias.</p>
         </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-card__img-wrap">
-          <img src="https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Funcional & Metcon" />
-        </div>
-        <div class="service-card__body">
-          <h3>Funcional & MetCon</h3>
-          <p>WODs de alta intensidad, circuitos metabólicos y preparación física completa.</p>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-card__img-wrap">
-          <img src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mobility & Yoga" />
-        </div>
-        <div class="service-card__body">
-          <h3>Mobility & Yoga</h3>
-          <p>Flexibilidad, movilidad articular y recuperación activa guiada por instructores certificados.</p>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-card__img-wrap">
-          <img src="https://images.pexels.com/photos/6740306/pexels-photo-6740306.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Recovery Lab" />
-        </div>
-        <div class="service-card__body">
-          <h3>Recovery Lab</h3>
-          <p>Crioterapia -110°C, saunas infrarrojas, cold plunge y compresión neumática.</p>
+        <div class="svc reveal">
+          <div class="svc__header">
+            <h3>Asesoramiento Legal</h3>
+            <span class="svc__arrow">→</span>
+          </div>
+          <p>Equipo legal especializado en operaciones inmobiliarias: escrituras, hipotecas, contratos y due diligence patrimonial.</p>
         </div>
       </div>
     </div>
@@ -76,79 +55,71 @@
 </section>
 
 <style>
-.services {
-  background: var(--color-bg);
-}
-
-.services__header {
-  text-align: center;
-  margin-bottom: clamp(3rem, 5vw, 4rem);
-}
-
-.services__header .section-subtitle {
-  margin-inline: auto;
-}
+.services { background: var(--color-bg-alt); }
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
 }
 
-.service-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.35s ease;
+.services__left { position: sticky; top: calc(var(--navbar-h) + 2rem); }
+
+.services__right {
+  display: flex;
+  flex-direction: column;
 }
 
-.service-card:hover {
-  border-color: var(--color-border-volt);
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+.svc {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+  cursor: default;
+  transition: padding-left 0.3s ease;
 }
 
-.service-card__img-wrap {
-  overflow: hidden;
-  height: 200px;
-}
+.svc:first-child { border-top: 1px solid var(--color-border); }
 
-.service-card__img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
+.svc:hover { padding-left: 1rem; }
 
-.service-card:hover .service-card__img-wrap img {
-  transform: scale(1.08);
-}
-
-.service-card__body {
-  padding: 1.5rem;
-}
-
-.service-card__body h3 {
-  font-family: var(--font-tech);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #FFFFFF;
+.svc__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.service-card__body p {
+.svc__header h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.svc__arrow {
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.svc:hover .svc__arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.svc p {
   font-size: 0.88rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+  color: var(--color-text-light);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 500px;
 }
 
-@media (max-width: 1024px) {
-  .services__grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .services__grid { grid-template-columns: 1fr; }
+  .services__left { position: static; }
 }
 </style>
 
@@ -157,25 +128,11 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.fromTo('.services .section-title',
-    { opacity: 0, y: 40 },
-    { opacity: 1, y: 0, duration: 0.8, scrollTrigger: { trigger: '.services', start: 'top 80%' } }
-  );
-
-  gsap.fromTo('.services .section-subtitle',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.7, delay: 0.15, scrollTrigger: { trigger: '.services', start: 'top 80%' } }
-  );
-
-  gsap.utils.toArray('.service-card').forEach((card: any, i: number) => {
-    gsap.fromTo(card,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0, duration: 0.7,
-        delay: i * 0.08,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: card, start: 'top 88%' }
-      }
+  gsap.utils.toArray('.svc').forEach((el: any, i: number) => {
+    gsap.fromTo(el,
+      { opacity: 0, x: 30 },
+      { opacity: 1, x: 0, duration: 0.7, delay: i * 0.08, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 90%' } }
     );
   });
 </script>

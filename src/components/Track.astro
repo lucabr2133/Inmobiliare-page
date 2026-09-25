@@ -1,0 +1,171 @@
+---
+---
+
+<section class="track" id="trayectoria">
+  <div class="container">
+    <div class="track__header">
+      <span class="section-label reveal" style="color:var(--color-gold-light);">Trayectoria</span>
+      <h2 class="section-title reveal" style="color:var(--color-white);">Números que hablan<br /><em>por nosotros</em></h2>
+    </div>
+
+    <div class="track__stats">
+      <div class="track__stat reveal">
+        <span class="track__stat-val">+500</span>
+        <span class="track__stat-lbl">Operaciones cerradas</span>
+      </div>
+      <div class="track__stat reveal">
+        <span class="track__stat-val">15</span>
+        <span class="track__stat-lbl">Años en el mercado</span>
+      </div>
+      <div class="track__stat reveal">
+        <span class="track__stat-val">98%</span>
+        <span class="track__stat-lbl">Clientes que nos recomiendan</span>
+      </div>
+      <div class="track__stat reveal">
+        <span class="track__stat-val">USD 120M</span>
+        <span class="track__stat-lbl">En volumen transaccionado</span>
+      </div>
+    </div>
+
+    <div class="track__portfolio">
+      <div class="track__item reveal">
+        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Penthouse Palermo" />
+        <div class="track__item-info">
+          <span>Palermo Hollywood</span>
+          <h3>Penthouse 280m²</h3>
+        </div>
+      </div>
+      <div class="track__item reveal">
+        <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Clásico Recoleta" />
+        <div class="track__item-info">
+          <span>Recoleta</span>
+          <h3>Piso clásico reciclado</h3>
+        </div>
+      </div>
+      <div class="track__item reveal">
+        <img src="https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Loft Puerto Madero" />
+        <div class="track__item-info">
+          <span>Puerto Madero</span>
+          <h3>Loft con vista al río</h3>
+        </div>
+      </div>
+      <div class="track__item reveal">
+        <img src="https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Residencia Nordelta" />
+        <div class="track__item-info">
+          <span>Nordelta</span>
+          <h3>Residencia con parque</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.track {
+  background: var(--color-bg-dark);
+  color: var(--color-white);
+}
+
+.track__header {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.track__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: clamp(4rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 4rem);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.track__stat-val {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--color-gold-light);
+  display: block;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+
+.track__stat-lbl {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+
+.track__portfolio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.track__item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+
+.track__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: brightness(0.7);
+}
+
+.track__item:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.85);
+}
+
+.track__item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(26,26,24,0.85), transparent);
+}
+
+.track__item-info span {
+  font-size: 0.65rem;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.track__item-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-white);
+}
+
+@media (max-width: 900px) {
+  .track__stats { grid-template-columns: repeat(2, 1fr); }
+  .track__portfolio { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .track__stats { grid-template-columns: 1fr 1fr; }
+  .track__portfolio { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.track .reveal').forEach((el: any, i: number) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 35 },
+      { opacity: 1, y: 0, duration: 0.75, delay: i < 4 ? i * 0.1 : 0, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' } }
+    );
+  });
+</script>

@@ -1,165 +1,53 @@
 ---
-// Preloader.astro — High-Tech Biometric Boot Sequence (No Blue, No Top Tag)
 ---
 
-<div class="hud-preloader" id="preloader" role="progressbar" aria-label="Inicializando sistemas APEX" aria-valuemin="0" aria-valuemax="100">
-  <div class="hud-preloader__bg-grid"></div>
-  
-  <div class="hud-preloader__center">
-    <!-- Central Kinetic Core -->
-    <div class="hud-preloader__core">
-      <div class="hud-core-ring hud-core-ring--outer"></div>
-      <div class="hud-core-ring hud-core-ring--inner"></div>
-      <div class="hud-core-logo">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Dynamic Diagnostics Log -->
-    <div class="hud-preloader__log" id="preloader-log">
-      CALIBRATING BIOMECHANIC CORES...
-    </div>
-
-    <!-- Numeric Readout -->
-    <div class="hud-preloader__counter">
-      <span class="hud-preloader__num" id="preloader-num">000</span>
-      <span class="hud-preloader__unit">RPM</span>
-    </div>
-
-    <!-- Progress Track -->
-    <div class="hud-preloader__track">
-      <div class="hud-preloader__bar" id="preloader-bar"></div>
+<div class="preloader" id="preloader">
+  <div class="preloader__inner">
+    <span class="preloader__brand">INMOBILIARE</span>
+    <div class="preloader__bar-wrap">
+      <div class="preloader__bar" id="preloader-bar"></div>
     </div>
   </div>
 </div>
 
 <style>
-.hud-preloader {
+.preloader {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: #060709;
+  background: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.hud-preloader__bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(217, 255, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(217, 255, 0, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.hud-preloader__center {
-  position: relative;
-  z-index: 2;
+.preloader__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 420px;
-  width: 90%;
+  gap: 1.5rem;
+  width: 180px;
 }
 
-/* Kinetic Core Rings */
-.hud-preloader__core {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
+.preloader__brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 0.25em;
 }
 
-.hud-core-ring {
-  position: absolute;
-  border-radius: 50%;
-}
-
-.hud-core-ring--outer {
-  width: 100px;
-  height: 100px;
-  border: 2px dashed rgba(217, 255, 0, 0.4);
-  animation: hud-spin 8s linear infinite;
-}
-
-.hud-core-ring--inner {
-  width: 76px;
-  height: 76px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  border-top-color: var(--color-volt);
-  border-bottom-color: var(--color-volt);
-  animation: hud-spin-rev 4s linear infinite;
-}
-
-.hud-core-logo {
-  filter: drop-shadow(0 0 16px rgba(217, 255, 0, 0.8));
-}
-
-@keyframes hud-spin {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes hud-spin-rev {
-  to { transform: rotate(-360deg); }
-}
-
-.hud-preloader__log {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.85rem;
-  min-height: 1.2rem;
-}
-
-.hud-preloader__counter {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  margin-bottom: 1.5rem;
-}
-
-.hud-preloader__num {
-  font-family: var(--font-tech);
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1;
-  letter-spacing: 0.05em;
-}
-
-.hud-preloader__unit {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--color-volt);
-}
-
-.hud-preloader__track {
+.preloader__bar-wrap {
   width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  height: 1px;
+  background: var(--color-border);
   overflow: hidden;
-  position: relative;
 }
 
-.hud-preloader__bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+.preloader__bar {
+  height: 100%;
   width: 0%;
-  background: var(--color-volt);
-  box-shadow: 0 0 16px rgba(217, 255, 0, 0.9);
+  background: var(--color-gold);
 }
 </style>
 
@@ -167,53 +55,19 @@
   import gsap from 'gsap';
 
   const preloader = document.getElementById('preloader');
-  const numEl = document.getElementById('preloader-num');
-  const barEl = document.getElementById('preloader-bar');
-  const logEl = document.getElementById('preloader-log');
+  const bar = document.getElementById('preloader-bar');
 
-  const logs = [
-    'CONNECTING ELEIKO SENSORS...',
-    'SYNCHRONIZING HRV MATRIX...',
-    'CHECKING CRYO -110°C CHAMBER...',
-    'OPTIMIZING BIOMECHANIC CORES...',
-    'APEX SYSTEM READY'
-  ];
-
-  if (preloader && numEl && barEl) {
-    const obj = { val: 0 };
-    
-    const tl = gsap.timeline({
+  if (preloader && bar) {
+    gsap.timeline({
       onComplete: () => {
         // @ts-ignore
         window.isPreloaderRevealed = true;
         window.dispatchEvent(new CustomEvent('preloaderReveal'));
-
         gsap.to(preloader, {
-          yPercent: -100,
-          duration: 0.8,
-          ease: 'expo.inOut',
-          onComplete: () => {
-            preloader.style.display = 'none';
-            window.dispatchEvent(new CustomEvent('preloaderComplete'));
-          }
+          opacity: 0, duration: 0.5, ease: 'power2.inOut',
+          onComplete: () => { preloader.style.display = 'none'; }
         });
       }
-    });
-
-    tl.to(obj, {
-      val: 100,
-      duration: 1.6,
-      ease: 'power2.inOut',
-      onUpdate: () => {
-        const rounded = Math.round(obj.val);
-        numEl.innerText = rounded < 100 ? String(rounded).padStart(3, '0') : '100';
-        barEl.style.width = `${rounded}%`;
-
-        if (logEl) {
-          const logIdx = Math.min(Math.floor((rounded / 100) * logs.length), logs.length - 1);
-          logEl.innerText = logs[logIdx];
-        }
-      }
-    });
+    }).to(bar, { width: '100%', duration: 1, ease: 'power2.inOut' });
   }
 </script>

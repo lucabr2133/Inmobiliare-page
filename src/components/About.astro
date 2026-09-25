@@ -1,139 +1,103 @@
 ---
-// About.astro — Quiénes Somos section
 ---
 
 <section class="about" id="nosotros">
   <div class="container">
-    <div class="about__grid">
-      <div class="about__content">
-        <h2 class="section-title reveal">MÁS QUE UN <span class="highlight-volt">GIMNASIO</span></h2>
-        <p class="section-subtitle reveal">
-          APEX es un santuario de alto rendimiento diseñado para atletas que buscan resultados
-          extraordinarios. Cada metro cuadrado está pensado para maximizar tu potencial físico
-          y mental.
-        </p>
-        <div class="about__features reveal">
-          <div class="about__feature">
-            <div class="about__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9FF00" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <div>
-              <h3>Equipamiento Élite</h3>
-              <p>15 toneladas de Eleiko certificado IWF, Arsenal Strength y plataformas olímpicas profesionales.</p>
-            </div>
-          </div>
-          <div class="about__feature">
-            <div class="about__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9FF00" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-            <div>
-              <h3>Tecnología Biomecánica</h3>
-              <p>Análisis de movimiento 3D, monitoreo HRV en tiempo real y periodización basada en datos.</p>
-            </div>
-          </div>
-          <div class="about__feature">
-            <div class="about__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9FF00" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6"/><circle cx="12" cy="12" r="2"/></svg>
-            </div>
-            <div>
-              <h3>Recovery Lab</h3>
-              <p>Crioterapia a -110°C, saunas infrarrojas, terapia de compresión y cold plunge pools.</p>
-            </div>
-          </div>
-        </div>
+    <div class="about__intro">
+      <span class="section-label reveal">La Firma</span>
+      <h2 class="section-title reveal">Una filosofía basada en<br /><em>la confianza</em></h2>
+      <p class="section-subtitle reveal" style="max-width:640px;">
+        Inmobiliare nació con una premisa simple: tratar cada operación inmobiliaria con la misma
+        dedicación que si fuera propia. Desde 2010, acompañamos a nuestros clientes en cada
+        decisión con transparencia, criterio profesional y un profundo conocimiento del mercado porteño.
+      </p>
+    </div>
+
+    <div class="about__values">
+      <div class="about__value reveal">
+        <span class="about__value-num">01</span>
+        <h3>Transparencia</h3>
+        <p>Información clara y honesta en cada etapa. Nuestros clientes toman decisiones informadas, sin sorpresas.</p>
       </div>
-      <div class="about__visual reveal">
-        <img
-          src="https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Interior del gimnasio APEX Athletic Club"
-          class="about__img"
-        />
-        <div class="about__img-accent"></div>
+      <div class="about__value reveal">
+        <span class="about__value-num">02</span>
+        <h3>Exclusividad</h3>
+        <p>Trabajamos con un portfolio limitado para garantizar atención personalizada y un servicio verdaderamente boutique.</p>
       </div>
+      <div class="about__value reveal">
+        <span class="about__value-num">03</span>
+        <h3>Criterio</h3>
+        <p>15 años de experiencia nos permiten ofrecer valuaciones precisas, negociaciones estratégicas y asesoramiento con fundamento.</p>
+      </div>
+      <div class="about__value reveal">
+        <span class="about__value-num">04</span>
+        <h3>Relación</h3>
+        <p>El 80% de nuestras operaciones provienen de recomendaciones. Ese es nuestro mejor indicador de confianza.</p>
+      </div>
+    </div>
+
+    <div class="about__image reveal">
+      <img
+        src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Equipo Inmobiliare en reunión"
+      />
     </div>
   </div>
 </section>
 
 <style>
-.about {
-  background: var(--color-bg);
-  position: relative;
+.about { background: var(--color-bg); }
+
+.about__intro {
+  max-width: 700px;
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
 }
 
-.about__grid {
+.about__values {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(3rem, 6vw, 6rem);
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
 }
 
-.about__content .section-subtitle {
-  margin-bottom: 2.5rem;
+.about__value {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
 }
 
-.about__features {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.about__value-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.75rem;
 }
 
-.about__feature {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+.about__value h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 0.4rem;
 }
 
-.about__feature-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--color-volt-dim);
-  border: 1px solid var(--color-border-volt);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.about__feature h3 {
-  font-family: var(--font-tech);
-  font-size: 1rem;
-  color: #FFFFFF;
-  margin-bottom: 0.25rem;
-}
-
-.about__feature p {
+.about__value p {
   font-size: 0.88rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+  color: var(--color-text-light);
+  line-height: 1.65;
+  font-weight: 300;
 }
 
-.about__visual {
-  position: relative;
-}
-
-.about__img {
-  border-radius: 8px;
+.about__image img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 21/9;
   object-fit: cover;
+  filter: brightness(0.95);
 }
 
-.about__img-accent {
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--color-border-volt);
-  border-radius: 8px;
-  z-index: -1;
-}
-
-@media (max-width: 900px) {
-  .about__grid { grid-template-columns: 1fr; }
-  .about__visual { order: -1; }
-}
+@media (max-width: 900px) { .about__values { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .about__values { grid-template-columns: 1fr; } }
 </style>
 
 <script>
@@ -143,19 +107,9 @@
 
   gsap.utils.toArray('.about .reveal').forEach((el: any) => {
     gsap.fromTo(el,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1, y: 0, duration: 0.9, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
-      }
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.85, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' } }
     );
   });
-
-  gsap.fromTo('.about__img-accent',
-    { opacity: 0, x: 20, y: -20 },
-    {
-      opacity: 1, x: 0, y: 0, duration: 1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.about__visual', start: 'top 80%' }
-    }
-  );
 </script>

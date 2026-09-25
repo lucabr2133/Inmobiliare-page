@@ -1,57 +1,41 @@
 ---
-// Footer.astro — Clean modern footer
 ---
 
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <div class="footer__logo">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#D9FF00"/></svg>
-          <div>
-            <span class="footer__logo-title">APEX</span>
-            <span class="footer__logo-sub">ATHLETIC CLUB</span>
-          </div>
-        </div>
-        <p class="footer__tagline">Santuario de alto rendimiento, biomecánica y longevidad celular en Buenos Aires.</p>
-        <div class="footer__socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Twitter">TW</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="LinkedIn">LI</a>
-        </div>
+        <span class="footer__logo">INMOBILIARE</span>
+        <p>Inmobiliaria boutique especializada en propiedades de lujo en Buenos Aires desde 2010.</p>
       </div>
-
       <div class="footer__col">
-        <h4>Secciones</h4>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Disciplinas</a>
-        <a href="#instalaciones">Instalaciones</a>
-        <a href="#coaches">Coaches</a>
-        <a href="#membresias">Membresías</a>
+        <h4>La Firma</h4>
+        <a href="#nosotros">Quiénes Somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#equipo">Equipo</a>
         <a href="#contacto">Contacto</a>
       </div>
-
       <div class="footer__col">
-        <h4>Sedes</h4>
-        <p>Palermo Soho<br/><span>Gorriti 5120</span></p>
-        <p>Recoleta<br/><span>Av. Alvear 1890</span></p>
-        <p style="margin-top:0.5rem;">Lun-Sáb 06:00-23:00<br/><span>Dom 08:00-20:00</span></p>
+        <h4>Zonas</h4>
+        <a href="#trayectoria">Palermo</a>
+        <a href="#trayectoria">Recoleta</a>
+        <a href="#trayectoria">Puerto Madero</a>
+        <a href="#trayectoria">Belgrano</a>
+        <a href="#trayectoria">Nordelta</a>
       </div>
-
       <div class="footer__col">
         <h4>Contacto</h4>
-        <p>+54 9 11 5491-0000</p>
-        <p>info@apexclub.com.ar</p>
-        <a href="#contacto" class="btn btn-volt" style="margin-top:1rem;font-size:0.7rem;padding:0.6rem 1.2rem;">AGENDAR VISITA</a>
+        <p>Av. Alvear 1580, P.12<br />Recoleta, CABA</p>
+        <p>+54 9 11 5555-0000</p>
+        <p>info@inmobiliare.com.ar</p>
       </div>
     </div>
-
     <div class="footer__bottom">
-      <span>&copy; 2026 APEX Athletic Club. Todos los derechos reservados.</span>
+      <span>&copy; 2026 Inmobiliare. Todos los derechos reservados.</span>
       <div class="footer__legal">
-        <a href="#">Términos</a>
-        <a href="#">Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de Privacidad</a>
       </div>
     </div>
   </div>
@@ -59,109 +43,62 @@
 
 <style>
 .footer {
-  background: #060606;
-  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-dark);
   padding-top: 4rem;
   padding-bottom: 2rem;
+  color: rgba(255,255,255,0.6);
 }
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 3rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .footer__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.footer__logo-title {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-gold-light);
+  letter-spacing: 0.2em;
   display: block;
-  line-height: 1;
+  margin-bottom: 0.75rem;
 }
 
-.footer__logo-sub {
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  color: var(--color-volt);
-  letter-spacing: 0.15em;
-  display: block;
-}
-
-.footer__tagline {
+.footer__brand p {
   font-size: 0.85rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+  line-height: 1.6;
   max-width: 280px;
-}
-
-.footer__socials {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.footer__socials a {
-  width: 36px;
-  height: 36px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.footer__socials a:hover {
-  border-color: var(--color-volt);
-  color: var(--color-volt);
-  background: var(--color-volt-dim);
+  font-weight: 300;
 }
 
 .footer__col h4 {
-  font-family: var(--font-tech);
-  font-size: 0.9rem;
-  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
   margin-bottom: 1rem;
-  letter-spacing: 0.04em;
 }
 
 .footer__col a {
   display: block;
   font-size: 0.85rem;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.5);
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  transition: color 0.2s ease;
+  margin-bottom: 0.4rem;
+  font-weight: 300;
+  transition: color 0.2s;
 }
 
-.footer__col a:hover { color: var(--color-volt); }
+.footer__col a:hover { color: var(--color-gold-light); }
 
 .footer__col p {
   font-size: 0.85rem;
-  color: var(--color-text-muted);
   line-height: 1.5;
-  margin-bottom: 0.6rem;
-}
-
-.footer__col p span {
-  color: rgba(255,255,255,0.4);
-  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 300;
 }
 
 .footer__bottom {
@@ -169,29 +106,22 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 1.5rem;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
+  font-size: 0.72rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.footer__legal {
-  display: flex;
-  gap: 1.5rem;
-}
+.footer__legal { display: flex; gap: 1.5rem; }
 
 .footer__legal a {
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.4);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
 
-.footer__legal a:hover { color: var(--color-volt); }
+.footer__legal a:hover { color: var(--color-gold-light); }
 
-@media (max-width: 900px) {
-  .footer__grid { grid-template-columns: 1fr 1fr; }
-}
-
+@media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) {
   .footer__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
